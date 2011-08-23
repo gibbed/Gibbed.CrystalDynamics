@@ -37,14 +37,14 @@ namespace Gibbed.DeusEx3.FileFormats
         public List<Big.Entry> Entries
             = new List<Big.Entry>();
 
-        public int EstimateHeaderSize()
+        public static int EstimateHeaderSize(int count)
         {
             return
-                4 + // file alignment
+                (4 + // file alignment
                 64 + // base path
                 4 + // count
-                (4 * this.Entries.Count) + // name hashes
-                (16 * this.Entries.Count) // entry table
+                (4 * count) + // name hashes
+                (16 * count)) // entry table
                 .Align(2048); // aligned to 2048 bytes
         }
 
@@ -54,7 +54,9 @@ namespace Gibbed.DeusEx3.FileFormats
             output.WriteString(this.BasePath, 64, Encoding.ASCII);
             output.WriteValueS32(this.Entries.Count, this.LittleEndian);
 
-            var entries = this.Entries.OrderBy(e => e.NameHash);
+            var entries = this.Entries
+                .OrderBy(e => e.Size)
+                .OrderBy(e => e.NameHash);
             
             foreach (var entry in entries)
             {
