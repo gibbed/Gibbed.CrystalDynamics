@@ -24,11 +24,11 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Gibbed.DeusEx3.FileFormats;
-using Big = Gibbed.DeusEx3.FileFormats.Big;
-using Gibbed.IO;
 using System.Xml;
+using Gibbed.DeusEx3.FileFormats;
+using Gibbed.IO;
 using NDesk.Options;
+using Big = Gibbed.DeusEx3.FileFormats.Big;
 
 namespace Gibbed.DeusEx3.Unpack
 {
@@ -98,7 +98,6 @@ namespace Gibbed.DeusEx3.Unpack
 
             string inputPath = extras[0];
             string outputPath = extras.Count > 1 ? extras[1] : Path.ChangeExtension(inputPath, null) + "_unpack";
-            string datPath;
 
             var manager = ProjectData.Manager.Load();
             if (manager.ActiveProject == null)
@@ -129,6 +128,7 @@ namespace Gibbed.DeusEx3.Unpack
                 xml.WriteStartElement("files");
                 xml.WriteAttributeString("endian", big.LittleEndian == true ? "little" : "big");
                 xml.WriteAttributeString("basepath", big.BasePath);
+                xml.WriteAttributeString("alignment", big.FileAlignment.ToString("X8"));
 
                 Stream data = null;
                 uint? currentBigFile = null;
@@ -254,7 +254,7 @@ namespace Gibbed.DeusEx3.Unpack
 
                                     currentBigFile = entryBigFile;
                                     data = File.OpenRead(Path.ChangeExtension(inputPath,
-                                        "." + currentBigFile.ToString().PadLeft(3, '0')));
+                                        "." + currentBigFile.Value.ToString().PadLeft(3, '0')));
                                 }
 
                                 data.Seek(entryOffset, SeekOrigin.Begin);
