@@ -160,43 +160,71 @@ namespace Gibbed.DeusEx3.Pack
             uint? currentBigFile = null;
             Stream data = null;
 
-            var firstOffset = (uint)BigFile.EstimateHeaderSize(entries.Count);
-            var firstBlock = firstOffset / 2048;
+            var headerSize = (uint)BigFile.EstimateHeaderSize(entries.Count);
+            var firstOffset = headerSize / 2048;
 
             var maxBlocksPerFile = big.FileAlignment / 2048;
-            var offset = firstOffset;
+            
+            var globalOffset = 0u;
+            var localOffset = firstOffset;
+
+            Console.WriteLine("First block = {0} ({1})",
+                localOffset, globalOffset);
+            Console.WriteLine("Max blocks per file = {0}",
+                maxBlocksPerFile);
+
+            var entryBigFile = 0u;
 
             foreach (var entry in entries)
             {
-                var entryBigFile = (offset / 2048) / maxBlocksPerFile;
-                var entryOffset = ((offset / 2048) % maxBlocksPerFile) * 2048;
-
-                if (currentBigFile.HasValue == false ||
-                    currentBigFile.Value != entryBigFile)
-                {
-                    if (data != null)
-                    {
-                        data.Close();
-                        data = null;
-                    }
-
-                    currentBigFile = entryBigFile;
-                    data = File.Create(Path.ChangeExtension(outputPath,
-                        "." + currentBigFile.Value.ToString().PadLeft(3, '0')));
-                }
-
-                data.Seek(entryOffset, SeekOrigin.Begin);
                 using (var input = File.OpenRead(entry.Path))
                 {
                     var length = (uint)input.Length;
 
-                    entry.Size = length;
-                    entry.Offset = offset / 2048;
+                    var blockCount = length.Align(2048) / 2048;
 
+                    if (blockCount > maxBlocksPerFile)
+                    {
+                        Console.WriteLine("'{0}' can't fit in the archive! (writing as much as possible)", entry.Path);
+                        blockCount = maxBlocksPerFile;
+                        length = blockCount * 2048;
+                    }
+
+                    if (localOffset + blockCount > maxBlocksPerFile)
+                    {
+                        localOffset = 0;
+                        globalOffset += maxBlocksPerFile;
+                        entryBigFile++;
+                    }
+
+                    if (currentBigFile.HasValue == false ||
+                        currentBigFile.Value != entryBigFile)
+                    {
+                        if (data != null)
+                        {
+                            data.Close();
+                            data = null;
+                        }
+
+                        currentBigFile = entryBigFile;
+                        data = File.Create(Path.ChangeExtension(outputPath,
+                            "." + currentBigFile.Value.ToString().PadLeft(3, '0')));
+                    }
+
+                    data.Seek(localOffset * 2048, SeekOrigin.Begin);
+                    data.WriteFromStream(input, length);
+
+                    Console.WriteLine("| {0} : {1} : {2}, {3}",
+                        globalOffset,
+                        localOffset,
+                        blockCount,
+                        entry.Path);
+
+                    entry.Size = length;
+                    entry.Offset = globalOffset + localOffset;
                     big.Entries.Add(entry);
 
-                    data.WriteFromStream(input, length);
-                    offset += length.Align(2048);
+                    localOffset += blockCount;
                 }
             }
 
