@@ -85,7 +85,7 @@ namespace Gibbed.DeusEx3.FileFormats
 
             this.LittleEndian =
                 fileAlignment == 0x7FF00000 ||
-                fileAlignment != 0x62300000;
+                fileAlignment == 0x62300000;
             this.FileAlignment = this.LittleEndian == true ?
                 fileAlignment : fileAlignment.Swap();
 
