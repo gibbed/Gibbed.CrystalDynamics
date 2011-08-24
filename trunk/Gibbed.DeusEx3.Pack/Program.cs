@@ -168,15 +168,15 @@ namespace Gibbed.DeusEx3.Pack
             var globalOffset = 0u;
             var localOffset = firstOffset;
 
-            Console.WriteLine("First block = {0} ({1})",
-                localOffset, globalOffset);
-            Console.WriteLine("Max blocks per file = {0}",
-                maxBlocksPerFile);
-
             var entryBigFile = 0u;
 
             foreach (var entry in entries)
             {
+                if (verbose == true)
+                {
+                    Console.WriteLine(entry.Path);
+                }
+
                 using (var input = File.OpenRead(entry.Path))
                 {
                     var length = (uint)input.Length;
@@ -213,12 +213,6 @@ namespace Gibbed.DeusEx3.Pack
 
                     data.Seek(localOffset * 2048, SeekOrigin.Begin);
                     data.WriteFromStream(input, length);
-
-                    Console.WriteLine("| {0} : {1} : {2}, {3}",
-                        globalOffset,
-                        localOffset,
-                        blockCount,
-                        entry.Path);
 
                     entry.Size = length;
                     entry.Offset = globalOffset + localOffset;
