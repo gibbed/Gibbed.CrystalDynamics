@@ -1,4 +1,4 @@
-; 7976/15974 (49%)
+; 7998/15974 (50%)
 pc-w\alarm.drm
 pc-w\alarm_dispatcher.drm
 pc-w\alarm_light.drm
@@ -504,6 +504,7 @@ pc-w\art\textures\default_mat_txt\water_soft1.drm
 pc-w\art\textures\detailmaps\normal_details_honeycomb_hard.drm
 pc-w\art\textures\detailmaps\normal_details_pyramiddiag.drm
 pc-w\art\textures\fx\triangle_dispersion.drm
+pc-w\audio\snds\foley\weapon\rifle\player\combatrifle_rof1_lp.drm
 pc-w\audio\snds\foley\weapon\rifle\player\combatrifle_rof4_lp.drm
 pc-w\audio\streams\character\adam\augmentations\takedown\aug_singlestunback_c.mul
 pc-w\audio\streams\character\adam\augmentations\takedown\aug_singlestunfront_b.mul
@@ -519,6 +520,7 @@ pc-w\audio\streams\character\combattant\black_a\black_a_brk_damageballistic\blac
 pc-w\audio\streams\character\combattant\black_a\black_a_brk_damageballistic\blacka_brk_damageballistic_011.mul
 pc-w\audio\streams\character\combattant\black_a\black_a_brk_death\black_a_brk_death_01.mul
 pc-w\audio\streams\character\combattant\black_a\black_a_brk_death\black_a_brk_death_03.mul
+pc-w\audio\streams\character\combattant\black_a\black_a_brk_heavydamageballistic\blacka_brk_heavydamageballistic_002.mul
 pc-w\audio\streams\character\combattant\black_b\black_b_brk_damageballistic\blackb_brk_damageballistic_002.mul
 pc-w\audio\streams\character\combattant\black_b\black_b_brk_damageballistic\blackb_brk_damageballistic_006.mul
 pc-w\audio\streams\character\combattant\black_b\black_b_brk_damageballistic\blackb_brk_damageballistic_007.mul
@@ -529,6 +531,7 @@ pc-w\audio\streams\character\combattant\white_a\white_a_brk_damageballistic\whit
 pc-w\audio\streams\character\combattant\white_a\white_a_brk_damageballistic\whitea_brk_damageballistic_003.mul
 pc-w\audio\streams\character\combattant\white_a\white_a_brk_damageballistic\whitea_brk_damageballistic_007.mul
 pc-w\audio\streams\character\combattant\white_a\white_a_brk_death\white_a_brk_death_01.mul
+pc-w\audio\streams\character\combattant\white_a\white_a_brk_heavydamageballistic\whitea_brk_heavydamageballistic_002.mul
 pc-w\audio\streams\character\combattant\white_b\white_b_brk_damageballistic\whiteb_brk_damageballistic_001.mul
 pc-w\audio\streams\character\combattant\white_b\white_b_brk_damageballistic\whiteb_brk_damageballistic_002.mul
 pc-w\audio\streams\character\combattant\white_b\white_b_brk_damageballistic\whiteb_brk_damageballistic_003.mul
@@ -1013,6 +1016,7 @@ pc-w\design_database\ourstorysofar\3sarifundersiege.drm
 pc-w\design_database\ourstorysofar\4thewolfamongsheep.drm
 pc-w\design_database\ourstorysofar\backgroundimage.drm
 pc-w\design_database\savedgamethumbnail\savedgames\detroitcitystreets.drm
+pc-w\design_database\savedgamethumbnail\savedgames\sarifhq.drm
 pc-w\design_database\savedgamethumbnail\savedgames\sarifmanufacture.drm
 pc-w\design_database\videos\cinematics\final_cinematics\cut_01_shq0_1a_planspreparation\dxni_100_v11-plans&preparations_assembly.usm
 pc-w\design_database\videos\cinematics\final_cinematics\cut_01_shq0_1c_jensenmeganelevator\elevator_cutscn_sarifhq_rail_tutorial2.usm
@@ -4627,6 +4631,18 @@ pc-w\s_scn_global_light_conv_det_sam_assembly.drm
 pc-w\s_scn_global_light_conv_det_sam_ext_warehouse.drm
 pc-w\s_scn_global_light_conv_det_sarif_industries.drm
 pc-w\s_scn_global_light_conv_det_sarif_industries_background.drm
+pc-w\s_scn_global_preorder_premiumpack_det_city__masterunit.drm
+pc-w\s_scn_global_preorder_premiumpack_det_sam_assembly.drm
+pc-w\s_scn_global_preorder_premiumpack_det_sam_ext_warehouse.drm
+pc-w\s_scn_global_preorder_premiumpack_det_sarif_industries.drm
+pc-w\s_scn_global_preorder_premiumpack_det_sarif_industries_background.drm
+pc-w\s_scn_global_preorder_weaponpower_det_city__masterunit.drm
+pc-w\s_scn_global_preorder_weaponpower_det_sam__background.drm
+pc-w\s_scn_global_preorder_weaponpower_det_sam__masterunit.drm
+pc-w\s_scn_global_preorder_weaponpower_det_sam_assembly.drm
+pc-w\s_scn_global_preorder_weaponpower_det_sam_ext_warehouse.drm
+pc-w\s_scn_global_preorder_weaponpower_det_sarif_industries.drm
+pc-w\s_scn_global_preorder_weaponpower_det_sarif_industries_background.drm
 pc-w\sarif_industries_part03_baseball_support.drm
 pc-w\sarifhq_labtutorial_civilian_davidsarif.drm
 pc-w\sarifhq_labtutorial_corpse_female_scientist_a.drm
@@ -7499,6 +7515,8 @@ pc-w\shaderlibs\pt_alpha_4af8135453490177_dx11.drm
 pc-w\shaderlibs\pt_alpha_4af8135453490177_dx9.drm
 pc-w\shaderlibs\pt_alpha_a2957644b522c8bd_dx11.drm
 pc-w\shaderlibs\pt_alpha_a2957644b522c8bd_dx9.drm
+pc-w\shaderlibs\pt_alpha_fe962a145823e140_dx11.drm
+pc-w\shaderlibs\pt_alpha_fe962a145823e140_dx9.drm
 pc-w\shaderlibs\pt_alpha_glow_4af8135453490177_dx11.drm
 pc-w\shaderlibs\pt_alpha_glow_4af8135453490177_dx9.drm
 pc-w\shaderlibs\pt_alpha_glow_a2957644b522c8bd_dx11.drm
@@ -7563,6 +7581,10 @@ pc-w\shaderlibs\window_parallaxmapping_c718a9403813d3a5_dx11.drm
 pc-w\shaderlibs\window_parallaxmapping_c718a9403813d3a5_dx9.drm
 pc-w\shaderlibs\world_laserbeam_79464a5e59514c7f_dx11.drm
 pc-w\shaderlibs\world_laserbeam_79464a5e59514c7f_dx9.drm
+pc-w\shaderlibs\wp_glowsights_dx11.drm
+pc-w\shaderlibs\wp_glowsights_dx9.drm
+pc-w\shaderlibs\wp_scope_lens_a06ade6e725754a2_dx11.drm
+pc-w\shaderlibs\wp_scope_lens_a06ade6e725754a2_dx9.drm
 pc-w\shaderlibs\wp_weapon_main_01ec7d55b007ed6b_dx11.drm
 pc-w\shaderlibs\wp_weapon_main_01ec7d55b007ed6b_dx9.drm
 pc-w\shaderlibs\wp_weapon_main_a088147143943afb_dx11.drm
