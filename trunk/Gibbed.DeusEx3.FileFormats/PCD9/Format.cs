@@ -22,8 +22,11 @@
 
 namespace Gibbed.DeusEx3.FileFormats.PCD9
 {
+    // Possibly a direct mapping from D3DFORMAT?
     public enum Format : uint
     {
+        A8R8G8B8 = 21,
+
         DXT1 = 0x31545844,
         DXT3 = 0x33545844,
         DXT5 = 0x35545844,

@@ -27,14 +27,14 @@ namespace Gibbed.DeusEx3.FileFormats.DRM
         Generic = 0,
         Empty = 1,
         Animation = 2,
-        RenderResource1 = 5,
+        RenderResource = 5,
         Wave = 6,
         DTPData = 7,
         Script = 8,
         ShaderLib = 9,
         Material = 10,
         Object = 11,
-        RenderResource2 = 12,
+        Unknown12 = 12, // Probably Mesh
         CollisionMesh = 13,
         StreamGroupList = 14,
     }

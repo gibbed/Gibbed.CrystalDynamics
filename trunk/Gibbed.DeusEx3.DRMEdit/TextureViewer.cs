@@ -38,7 +38,7 @@ namespace Gibbed.DeusEx3.DRMEdit
             this.hintLabel.Text = "";
         }
 
-        public void LoadResource(FileFormats.DRM.Section section)
+        public void LoadSection(FileFormats.DRM.Section section)
         {
             var texture = new FileFormats.PCD9File();
             texture.Deserialize(section.Data);
@@ -160,6 +160,12 @@ namespace Gibbed.DeusEx3.DRMEdit
 
                 switch (this.Texture.Format)
                 {
+                    case FileFormats.PCD9.Format.A8R8G8B8:
+                    {
+                        data = mip.Data;
+                        break;
+                    }
+
                     case FileFormats.PCD9.Format.DXT1:
                     {
                         data = Squish.Native.DecompressImage(
@@ -246,7 +252,15 @@ namespace Gibbed.DeusEx3.DRMEdit
 
         private void OnSaveToFile(object sender, EventArgs e)
         {
-            this.previewPictureBox.Image.Save(@"T:\test.png", ImageFormat.Png);
+            if (this.saveFileDialog.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+
+            using (var output = this.saveFileDialog.OpenFile())
+            {
+                this.previewPictureBox.Image.Save(output, ImageFormat.Png);
+            }
         }
     }
 }
