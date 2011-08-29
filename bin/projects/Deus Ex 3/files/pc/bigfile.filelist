@@ -1,4 +1,4 @@
-; 15701/15974 (98%)
+; 15703/15974 (98%)
 pc-w\alarm.drm
 pc-w\alarm_dispatcher.drm
 pc-w\alarm_light.drm
@@ -998,6 +998,7 @@ pc-w\audio\streams\living_world\snoring\male\snoringinspire_05.mul
 pc-w\audio\streams\living_world\snorting\snort_02.mul
 pc-w\audio\streams\living_world\snorting\snort_04.mul
 pc-w\audio\streams\music\breakdancing_music\drum_n_bass.mul
+pc-w\audio\streams\music\dx_originaltheme\dx1theme2000.mul
 pc-w\audio\streams\music\end_credits\endcredits.mul
 pc-w\audio\streams\music\pirate_radio_musictracks\pr_airfield.mul
 pc-w\audio\streams\music\pirate_radio_musictracks\pr_batterypark.mul
@@ -1778,6 +1779,7 @@ pc-w\design_database\videos\cinematics\final_cinematics\cut_21_end_12_player_amb
 pc-w\design_database\videos\cinematics\final_cinematics\cut_21_end_3_darrow_ambivalent\dxme103_final_nosound.usm
 pc-w\design_database\videos\cinematics\final_cinematics\cut_21_end_6_sarif_ambivalent\dxme203_final.usm
 pc-w\design_database\videos\cinematics\final_cinematics\cut_21_end_9_taggart_ambivalent\dxme303_final.usm
+pc-w\design_database\videos\cinematics\final_cinematics\cut_22_epilogue\epilogue.usm
 pc-w\design_database\videos\cinematics\game_intro\amdgamingevolved.usm
 pc-w\design_database\videos\cinematics\tutorial\dx3_advancedhackingtutorial\dx3_advancedhackingtutorial_pc.usm
 pc-w\design_database\videos\cinematics\tutorial\dx3_augmentationstutorial\dx3_augmentationstutorial_pc.usm
