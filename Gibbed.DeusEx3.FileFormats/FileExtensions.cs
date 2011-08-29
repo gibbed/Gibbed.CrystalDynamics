@@ -20,6 +20,9 @@
  *    distribution.
  */
 
+using System;
+using Gibbed.IO;
+
 namespace Gibbed.DeusEx3.FileFormats
 {
     public static class FileExtensions
@@ -60,47 +63,24 @@ namespace Gibbed.DeusEx3.FileFormats
             }
             else if (
                 read >= 4 &&
-                guess[0] == 0x44 &&
-                guess[1] == 0xAC &&
-                guess[2] == 0 &&
-                guess[3] == 0)
-            {
-                return "mul";
-            }
-            else if (
-                read >= 4 &&
-                guess[3] == 0x44 &&
-                guess[2] == 0xAC &&
-                guess[1] == 0 &&
-                guess[0] == 0)
-            {
-                return "mul";
-            }
-            else if (
-                read >= 4 &&
-                guess[0] == 0x80 &&
-                guess[1] == 0xBB &&
-                guess[2] == 0 &&
-                guess[3] == 0)
-            {
-                return "mul";
-            }
-            else if (
-                read >= 4 &&
-                guess[3] == 0x80 &&
-                guess[2] == 0xBB &&
-                guess[1] == 0 &&
-                guess[0] == 0)
-            {
-                return "mul";
-            }
-            else if (
-                read >= 4 &&
                 guess[0] == 'M' &&
                 guess[1] == 'u' &&
                 guess[2] == 's')
             {
                 return "mus";
+            }
+
+            // sound data
+            if (read >= 4)
+            {
+                var sampleRate = BitConverter.ToUInt32(guess, 0);
+
+                if (sampleRate == 22050 || sampleRate.Swap() == 22050 ||
+                    sampleRate == 44100 || sampleRate.Swap() == 44100 ||
+                    sampleRate == 48000 || sampleRate.Swap() == 48000)
+                {
+                    return "mul";
+                }
             }
 
             return "unknown";
