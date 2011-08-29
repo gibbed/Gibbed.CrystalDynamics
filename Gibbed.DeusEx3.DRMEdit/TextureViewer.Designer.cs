@@ -63,6 +63,7 @@ namespace Gibbed.DeusEx3.DRMEdit
             this.showAlphaButton = new System.Windows.Forms.ToolStripButton();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.hintLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.previewPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.previewPictureBox)).BeginInit();
             this.toolStrip.SuspendLayout();
@@ -182,6 +183,11 @@ namespace Gibbed.DeusEx3.DRMEdit
             this.hintLabel.Size = new System.Drawing.Size(30, 17);
             this.hintLabel.Text = "Hint";
             // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.DefaultExt = "png";
+            this.saveFileDialog.Filter = "PNG Files (*.png)|*.png|All Files (*.*)|*.*";
+            // 
             // TextureViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,5 +223,6 @@ namespace Gibbed.DeusEx3.DRMEdit
         private System.Windows.Forms.ToolStripButton showAlphaButton;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel hintLabel;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }

@@ -76,10 +76,32 @@ namespace Gibbed.DeusEx3.FileFormats
                         mipHeight = 1;
                     }
 
-                    int blockCount = ((mipWidth + 3) / 4) * ((mipHeight + 3) / 4);
-                    int blockSize = this.Format == PCD9.Format.DXT1 ? 8 : 16;
+                    int size;
+                    switch (this.Format)
+                    {
+                        case PCD9.Format.A8R8G8B8:
+                        {
+                            size = mipWidth * mipHeight * 4;
+                            break;
+                        }
 
-                    var buffer = new byte[blockCount * blockSize];
+                        case PCD9.Format.DXT1:
+                        case PCD9.Format.DXT3:
+                        case PCD9.Format.DXT5:
+                        {
+                            int blockCount = ((mipWidth + 3) / 4) * ((mipHeight + 3) / 4);
+                            int blockSize = this.Format == PCD9.Format.DXT1 ? 8 : 16;
+                            size = blockCount * blockSize;
+                            break;
+                        }
+
+                        default:
+                        {
+                            throw new NotSupportedException();
+                        }
+                    }
+
+                    var buffer = new byte[size];
                     if (data.Read(buffer, 0, buffer.Length) != buffer.Length)
                     {
                         throw new EndOfStreamException();
@@ -94,6 +116,11 @@ namespace Gibbed.DeusEx3.FileFormats
 
                     mipWidth >>= 1;
                     mipHeight >>= 1;
+                }
+
+                if (data.Position != data.Length)
+                {
+                    throw new InvalidOperationException();
                 }
             }
         }

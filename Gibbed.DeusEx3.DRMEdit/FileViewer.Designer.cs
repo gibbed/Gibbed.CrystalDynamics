@@ -81,7 +81,9 @@ namespace Gibbed.DeusEx3.DRMEdit
             this.typeImageList.TransparentColor = System.Drawing.Color.Transparent;
             this.typeImageList.Images.SetKeyName(0, "Unknown");
             this.typeImageList.Images.SetKeyName(1, "__DRM");
-            this.typeImageList.Images.SetKeyName(2, "RenderResource1");
+            this.typeImageList.Images.SetKeyName(2, "RenderResource");
+            this.typeImageList.Images.SetKeyName(3, "Script");
+            this.typeImageList.Images.SetKeyName(4, "Wave");
             // 
             // toolStrip
             // 

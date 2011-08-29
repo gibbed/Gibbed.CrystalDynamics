@@ -68,7 +68,11 @@ namespace Gibbed.DeusEx3.DRMEdit
                 var typeName = section.Type.ToString();
 
                 var name = section.NameHash.ToString("X8");
-                name += " " + typeName;
+                name += " : " + typeName;
+                name += string.Format(" [{0:X2} {1:X4} {2:X8}]",
+                    section.Unknown05,
+                    section.Unknown06,
+                    section.Unknown10);
 
                 if (section.Data != null)
                 {
@@ -110,15 +114,25 @@ namespace Gibbed.DeusEx3.DRMEdit
                 section.Data.Seek(0, SeekOrigin.Begin);
             }
 
-            if (section.Type == FileFormats.DRM.SectionType.RenderResource1)
+            if (section.Type == FileFormats.DRM.SectionType.RenderResource)
             {
                 var viewer = new TextureViewer()
                 {
                     MdiParent = this.MdiParent,
                 };
-                viewer.LoadResource(section);
+                viewer.LoadSection(section);
                 viewer.Show();
             }
+            else
+            {
+                var viewer = new RawViewer()
+                {
+                    MdiParent = this.MdiParent,
+                };
+                viewer.LoadSection(section);
+                viewer.Show();
+            }
+            /*
             else
             {
                 MessageBox.Show(
@@ -127,6 +141,7 @@ namespace Gibbed.DeusEx3.DRMEdit
                     "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            */
         }
 
         private void OnViewObject(object sender, EventArgs e)

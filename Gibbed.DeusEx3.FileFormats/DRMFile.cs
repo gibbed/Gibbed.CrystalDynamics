@@ -120,13 +120,16 @@ namespace Gibbed.DeusEx3.FileFormats
                 var section = new DRM.Section();
                 section.NameHash = sectionHeader.NameHash;
                 section.Type = sectionHeader.Type;
+                section.Unknown05 = sectionHeader.Unknown05;
+                section.Unknown06 = sectionHeader.Unknown06;
+                section.Unknown10 = sectionHeader.Unknown10;
 
                 if ((sectionHeader.Unknown05 & 1) != 0)
                 {
                     throw new NotImplementedException();
                 }
 
-                if (section.Type == DRM.SectionType.RenderResource1)
+                if (section.Type == DRM.SectionType.RenderResource)
                 {
                 }
 
