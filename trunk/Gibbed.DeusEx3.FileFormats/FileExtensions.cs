@@ -47,7 +47,7 @@ namespace Gibbed.DeusEx3.FileFormats
                 guess[2] == 'I' &&
                 guess[3] == 'D')
             {
-                return "cpk";
+                return "usm";
             }
             else if (
                 read >= 4 &&
