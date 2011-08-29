@@ -1,4 +1,4 @@
-; 27/28 (96%)
+; 28/28 (100%)
 pc-w\bk_window_200x100_a.drm
 pc-w\bk_window_open_space_a.drm
 pc-w\bk_window_open_space_b.drm
@@ -12,6 +12,7 @@ pc-w\globalscaleformdatabase.drm
 pc-w\imf\imf_architecture\imf_interior\imf_sarif_manifacture\imf_warehouse\break_window_sarif_a\break_window_sarif_a.drm
 pc-w\inputmap_database.drm
 pc-w\local\locals.bin
+pc-w\sha_tym_pool_room.drm
 pc-w\shaderlibs\applydof2_dx11_79464a5e59514c7f_dx11.drm
 pc-w\shaderlibs\applydof2_dx11_79464a5e59514c7f_dx9.drm
 pc-w\shaderlibs\computecoc_79464a5e59514c7f_dx11.drm
