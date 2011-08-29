@@ -39,15 +39,9 @@ namespace Gibbed.DeusEx3.DRMDecompress
         public static void Main(string[] args)
         {
             bool showHelp = false;
-            bool overwriteFiles = false;
 
             var options = new OptionSet()
             {
-                {
-                    "o|overwrite",
-                    "overwrite existing files",
-                    v => overwriteFiles = v != null
-                },
                 {
                     "h|help",
                     "show this message and exit", 
@@ -101,13 +95,9 @@ namespace Gibbed.DeusEx3.DRMDecompress
                 data.Position = 0;
             }
 
-            if (overwriteFiles == true ||
-                File.Exists(outputPath) == false)
+            using (var output = File.Create(outputPath))
             {
-                using (var output = File.Create(outputPath))
-                {
-                    output.WriteFromStream(data, data.Length);
-                }
+                output.WriteFromStream(data, data.Length);
             }
         }
     }
