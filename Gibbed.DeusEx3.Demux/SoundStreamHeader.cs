@@ -30,10 +30,13 @@ namespace Gibbed.DeusEx3.Demux
     {
         public int SampleRate;
         public int Unknown004;
-        public int Unknown008;
+        public int SampleCount;
         public int ChannelCount;
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 28)]
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
         public byte[] Unknown010;
+        public uint Unknown020;
+        public uint Unknown024;
+        public uint FaceDataSize;
         public uint Unknown02C;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
         public byte[] Unknown030;
@@ -42,8 +45,9 @@ namespace Gibbed.DeusEx3.Demux
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public byte[] Unknown040;
         public float Unknown044;
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 40)]
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 36)]
         public byte[] Unknown048;
+        public float Unknown06C;
         public float Unknown070;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public byte[] Unknown074;
@@ -55,12 +59,16 @@ namespace Gibbed.DeusEx3.Demux
         {
             this.SampleRate = this.SampleRate.Swap();
             this.Unknown004 = this.Unknown004.Swap();
-            this.Unknown008 = this.Unknown008.Swap();
+            this.SampleCount = this.SampleCount.Swap();
             this.ChannelCount = this.ChannelCount.Swap();
+            this.Unknown020 = this.Unknown020.Swap();
+            this.Unknown024 = this.Unknown024.Swap();
+            this.FaceDataSize = this.FaceDataSize.Swap();
             this.Unknown02C = this.Unknown02C.Swap();
             this.SegmentCount = this.SegmentCount.Swap();
             this.Unknown03C = this.Unknown03C.Swap();
             this.Unknown044 = this.Unknown044.Swap();
+            this.Unknown06C = this.Unknown06C.Swap();
             this.Unknown070 = this.Unknown070.Swap();
             this.Unknown078 = this.Unknown078.Swap();
         }

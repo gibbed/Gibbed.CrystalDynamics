@@ -25,6 +25,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Gibbed.IO;
+using System.Runtime.InteropServices;
 using NDesk.Options;
 
 namespace Gibbed.DeusEx3.Demux
@@ -106,6 +107,12 @@ namespace Gibbed.DeusEx3.Demux
 
             using (var input = File.OpenRead(inputPath))
             {
+                var structureSize = Marshal.SizeOf(typeof(SoundStreamHeader));
+                if (structureSize != 0x2D0)
+                {
+                    throw new InvalidOperationException();
+                }
+
                 var header = input.ReadStructure<SoundStreamHeader>(0x800);
 
                 if (validSampleRates.Contains(header.SampleRate) == false &&
@@ -124,7 +131,7 @@ namespace Gibbed.DeusEx3.Demux
                 {
                     Console.WriteLine("sample rate = {0}", header.SampleRate);
                     Console.WriteLine("unknown 4 = {0:X8}", header.Unknown004);
-                    Console.WriteLine("unknown 8 = {0:X8}", header.Unknown008);
+                    Console.WriteLine("unknown 8 = {0:X8}", header.SampleCount);
                     Console.WriteLine("channels = {1}", header.ChannelCount);
                 }
 
@@ -192,7 +199,7 @@ namespace Gibbed.DeusEx3.Demux
 
                 while (input.Position < input.Length)
                 {
-                    var segmentUnknown0 = input.ReadValueU32(littleEndian);
+                    var segmentType = input.ReadValueU32(littleEndian);
                     var segmentSize = input.ReadValueU32(littleEndian);
                     var segmentUnknown4 = input.ReadValueU32(littleEndian);
                     var segmentUnknown8 = input.ReadValueU32(littleEndian);
@@ -200,14 +207,29 @@ namespace Gibbed.DeusEx3.Demux
                     if (verbose == true)
                     {
                         Console.WriteLine("segment : {0}, {1}, {2}, {3}",
-                            segmentUnknown0, segmentSize, segmentUnknown4, segmentUnknown8);
+                            segmentType, segmentSize, segmentUnknown4, segmentUnknown8);
                     }
 
-                    if (segmentUnknown0 != 0 ||
-                        segmentUnknown4 != 0 ||
+                    // 0 = audio
+                    // 1 = cinematic
+                    // 2 = subtitles
+                    if (segmentType != 0 &&
+                        segmentType != 1 &&
+                        segmentType != 2)
+                    {
+                        throw new FormatException();
+                    }
+
+                    if (segmentUnknown4 != 0 ||
                         segmentUnknown8 != 0)
                     {
                         throw new FormatException();
+                    }
+
+                    if (segmentType == 1 || segmentType == 2)
+                    {
+                        input.Seek(segmentSize.Align(16), SeekOrigin.Current);
+                        continue;
                     }
 
                     using (var data = input.ReadToMemoryStream(segmentSize.Align(16)))
