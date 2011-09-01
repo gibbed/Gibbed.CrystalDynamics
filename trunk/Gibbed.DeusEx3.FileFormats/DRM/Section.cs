@@ -26,10 +26,11 @@ namespace Gibbed.DeusEx3.FileFormats.DRM
 {
     public class Section
     {
-        public uint NameHash;
+        public uint Id;
         public byte Unknown05;
         public ushort Unknown06;
         public uint Unknown10;
+        public byte Flags;
 
         public SectionType Type;
         public SectionResolver Resolver = null;

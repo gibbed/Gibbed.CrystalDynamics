@@ -34,7 +34,7 @@ namespace Gibbed.DeusEx3.FileFormats.DRM
         ShaderLib = 9,
         Material = 10,
         Object = 11,
-        Unknown12 = 12, // Probably Mesh
+        RenderMesh = 12,
         CollisionMesh = 13,
         StreamGroupList = 14,
     }
