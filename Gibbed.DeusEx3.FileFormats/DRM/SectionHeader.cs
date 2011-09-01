@@ -34,7 +34,7 @@ namespace Gibbed.DeusEx3.FileFormats.DRM
         public byte Unknown05;
         public ushort Unknown06;
         public uint Flags;
-        public uint NameHash;
+        public uint Id;
         public uint Unknown10;
 
         private static Dictionary<byte, SectionType> ValidSectionTypes;
@@ -71,7 +71,7 @@ namespace Gibbed.DeusEx3.FileFormats.DRM
             this.Unknown05 = input.ReadValueU8();
             this.Unknown06 = input.ReadValueU16(littleEndian);
             this.Flags = input.ReadValueU32(littleEndian);
-            this.NameHash = input.ReadValueU32(littleEndian);
+            this.Id = input.ReadValueU32(littleEndian);
             this.Unknown10 = input.ReadValueU32(littleEndian);
         }
 

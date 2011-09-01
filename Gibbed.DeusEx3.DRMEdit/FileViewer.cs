@@ -22,6 +22,7 @@
 
 using System;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Gibbed.DeusEx3.DRMEdit
@@ -63,13 +64,14 @@ namespace Gibbed.DeusEx3.DRMEdit
             root.ImageKey = "__DRM";
             root.SelectedImageKey = "__DRM";
 
-            foreach (var section in this.FileData.Sections)
+            foreach (var section in this.FileData.Sections.OrderBy(s => s.Id))
             {
                 var typeName = section.Type.ToString();
 
-                var name = section.NameHash.ToString("X8");
+                var name = section.Id.ToString("X8");
                 name += " : " + typeName;
-                name += string.Format(" [{0:X2} {1:X4} {2:X8}]",
+                name += string.Format(" [{0:X2} {1:X2} {2:X4} {3:X8}]",
+                    section.Flags,
                     section.Unknown05,
                     section.Unknown06,
                     section.Unknown10);

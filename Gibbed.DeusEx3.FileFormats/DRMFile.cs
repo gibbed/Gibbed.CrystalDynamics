@@ -118,8 +118,9 @@ namespace Gibbed.DeusEx3.FileFormats
                 var sectionHeader = sectionHeaders[i];
 
                 var section = new DRM.Section();
-                section.NameHash = sectionHeader.NameHash;
+                section.Id = sectionHeader.Id;
                 section.Type = sectionHeader.Type;
+                section.Flags = (byte)(sectionHeader.Flags & 0xFF);
                 section.Unknown05 = sectionHeader.Unknown05;
                 section.Unknown06 = sectionHeader.Unknown06;
                 section.Unknown10 = sectionHeader.Unknown10;

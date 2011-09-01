@@ -62,6 +62,8 @@ namespace Gibbed.DeusEx3.DRMEdit
             // 
             // hexBox
             // 
+            this.hexBox.BackColor = System.Drawing.SystemColors.Window;
+            this.hexBox.BackColorDisabled = System.Drawing.SystemColors.Control;
             this.hexBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.hexBox.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hexBox.LineInfoForeColor = System.Drawing.Color.Empty;
@@ -89,6 +91,7 @@ namespace Gibbed.DeusEx3.DRMEdit
             // 
             // loadFromFileButton
             // 
+            this.loadFromFileButton.Enabled = false;
             this.loadFromFileButton.Image = ((System.Drawing.Image)(resources.GetObject("loadFromFileButton.Image")));
             this.loadFromFileButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.loadFromFileButton.Name = "loadFromFileButton";
