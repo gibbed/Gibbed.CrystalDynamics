@@ -1,4 +1,4 @@
-; 15805/15974 (98%)
+; 15810/15974 (98%)
 pc-w\alarm.drm
 pc-w\alarm_dispatcher.drm
 pc-w\alarm_light.drm
@@ -926,9 +926,12 @@ pc-w\audio\streams\character\combattant\white_b\white_b_brk_heavydamageballistic
 pc-w\audio\streams\character\combattant\white_b\white_b_brk_heavydamageballistic\whiteb_brk_heavydamageballistic_002.mul
 pc-w\audio\streams\character\combattant\white_b\white_b_brk_heavydamageballistic\whiteb_brk_heavydamageballistic_003.mul
 pc-w\audio\streams\character\combattant\white_b\white_b_brk_heavydamageballistic\whiteb_brk_heavydamageballistic_004.mul
+pc-w\audio\streams\character\combattant\white_c\white_c_brk_damageballistic\whitec_brk_damageballistic_001.mul
 pc-w\audio\streams\character\combattant\white_c\white_c_brk_damageballistic\whitec_brk_damageballistic_002.mul
+pc-w\audio\streams\character\combattant\white_c\white_c_brk_damageballistic\whitec_brk_damageballistic_003.mul
 pc-w\audio\streams\character\combattant\white_c\white_c_brk_damageballistic\whitec_brk_damageballistic_004.mul
 pc-w\audio\streams\character\combattant\white_c\white_c_brk_damageballistic\whitec_brk_damageballistic_006.mul
+pc-w\audio\streams\character\combattant\white_c\white_c_brk_damageballistic\whitec_brk_damageballistic_007.mul
 pc-w\audio\streams\character\combattant\white_c\white_c_brk_damageballistic\whitec_brk_damageballistic_008.mul
 pc-w\audio\streams\character\combattant\white_c\white_c_brk_death\white_c_brk_death_01.mul
 pc-w\audio\streams\character\combattant\white_c\white_c_brk_death\white_c_brk_death_02.mul
@@ -1037,8 +1040,10 @@ pc-w\audio\streams\scaleform\pausemenu\pausedambience.mul
 pc-w\audio\streams\stigner\bossfighthealth\namir\stinger_1.mul
 pc-w\audio\streams\stigner\bossfighthealth\namir\stinger_2.mul
 pc-w\audio\streams\stigner\bossfighthealth\namir\stinger_3.mul
+pc-w\audio\streams\stigner\conversation_01\sfx_loosing_04.mul
 pc-w\audio\streams\stigner\conversation_01\sfx_winning_01.mul
 pc-w\audio\streams\stigner\conversation_01\sfx_winning_02.mul
+pc-w\audio\streams\stigner\conversation_01\sfx_winning_03.mul
 pc-w\audio\streams\stigner\conversation_01\sfx_winning_06.mul
 pc-w\base_alarm_light.drm
 pc-w\base_breakable_sliding_window.drm
