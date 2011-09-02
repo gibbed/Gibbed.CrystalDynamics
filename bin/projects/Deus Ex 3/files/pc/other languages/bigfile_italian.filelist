@@ -1,4 +1,4 @@
-; 4836/16024 (30%)
+; 4848/16024 (30%)
 pc-w\audio\streams\vo\eng\det_fema\adam_jensen\as01\fema_adam_dia_as01_002.mul
 pc-w\audio\streams\vo\eng\det_fema\adam_jensen\as01\fema_adam_dia_as01_010.mul
 pc-w\audio\streams\vo\eng\det_fema\adam_jensen\as01\fema_adam_dia_as01_014.mul
@@ -2122,6 +2122,7 @@ pc-w\audio\streams\vo\eng\global_barks\npcs\spec_op\mb02\uni_bspecop02_brk_takeo
 pc-w\audio\streams\vo\eng\global_barks\npcs\spec_op\mb02\uni_bspecop02_brk_takeoffensivecover_002.mul
 pc-w\audio\streams\vo\eng\global_barks\npcs\spec_op\mb02\uni_bspecop02_brk_takeoffensivecover_003.mul
 pc-w\audio\streams\vo\eng\global_barks\npcs\spec_op\mb02\uni_bspecop02_brk_visualmajordeadbodyallies_001.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\spec_op\mb02\uni_bspecop02_brk_visualmajorinsight_001.mul
 pc-w\audio\streams\vo\eng\global_barks\npcs\spec_op\mb02\uni_bspecop02_brk_visualmajorinsight_004.mul
 pc-w\audio\streams\vo\eng\global_barks\npcs\spec_op\mb02\uni_bspecop02_brk_visualminoropendoor_001.mul
 pc-w\audio\streams\vo\eng\global_barks\npcs\spec_op\mb02\uni_bspecop02_brk_visualminoropendoorallies_001.mul
@@ -2136,6 +2137,7 @@ pc-w\audio\streams\vo\eng\global_barks\npcs\spec_op\mw01\barks\uni_wspecop01_brk
 pc-w\audio\streams\vo\eng\global_barks\npcs\spec_op\mw01\barks\uni_wspecop01_brk_attack_hqintro_001.mul
 pc-w\audio\streams\vo\eng\global_barks\npcs\spec_op\mw01\barks\uni_wspecop01_brk_audiomajornpcidentifyingthreat_001.mul
 pc-w\audio\streams\vo\eng\global_barks\npcs\spec_op\mw01\barks\uni_wspecop01_brk_audiomajornpcidentifyingthreat_002.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\spec_op\mw01\barks\uni_wspecop01_brk_audiomajornpcidentifyingthreat_003.mul
 pc-w\audio\streams\vo\eng\global_barks\npcs\spec_op\mw01\barks\uni_wspecop01_brk_audiomajornpcidentifyingthreatresponse_001.mul
 pc-w\audio\streams\vo\eng\global_barks\npcs\spec_op\mw01\barks\uni_wspecop01_brk_audiomajortakedown_001.mul
 pc-w\audio\streams\vo\eng\global_barks\npcs\spec_op\mw01\barks\uni_wspecop01_brk_audiomajortakedownallies_001.mul
@@ -2701,8 +2703,10 @@ pc-w\audio\streams\vo\eng\occupations\det2\thug_mb01\det2_bthug01_occ_arrested_0
 pc-w\audio\streams\vo\eng\occupations\det2\thug_mb01\det2_bthug01_occ_arrested_002.mul
 pc-w\audio\streams\vo\eng\occupations\sarif_hq01\civ_fw01\receptionist_phonechat\hq01_fw01_occ_receptionist_phonechat_001.mul
 pc-w\audio\streams\vo\eng\occupations\sarif_hq01\civ_fw01\receptionist_phonechat\hq01_fw01_occ_receptionist_phonechat_002.mul
+pc-w\audio\streams\vo\eng\occupations\sarif_hq01\civ_fw01\receptionist_phonechat\hq01_fw01_occ_receptionist_phonechat_004.mul
 pc-w\audio\streams\vo\eng\occupations\sarif_hq01\civ_fw02\phonechat\hq01_fw02_occ_phonechat_003.mul
 pc-w\audio\streams\vo\eng\occupations\sarif_hq01\civ_mb02\phonechat\hq01_mb02_occ_phonechat_004.mul
+pc-w\audio\streams\vo\eng\occupations\sarif_hq01\civ_mw01\phonechat\hq01_mw01_occ_phonechat_002.mul
 pc-w\audio\streams\vo\eng\occupations\sarif_hq01\civ_mw01\phonechat\hq01_mw01_occ_phonechat_006.mul
 pc-w\audio\streams\vo\eng\occupations\sarif_hq01\civ_mw01\phoneenter\hq01_mw01_occ_phoneenter_001.mul
 pc-w\audio\streams\vo\eng\occupations\sarif_hq01\civ_mw02\phonechat\hq01_mw02_occ_phonechat_005.mul
@@ -3014,7 +3018,14 @@ pc-w\audio\streams\vo\eng\sarif_hq01\adam_jensen\cp08\hq01_cp08_dia_adam_008.mul
 pc-w\audio\streams\vo\eng\sarif_hq01\adam_jensen\cp08\hq01_cp08_dia_adam_017.mul
 pc-w\audio\streams\vo\eng\sarif_hq01\npcs\civilians\fb01\overheard\ohd03\hq01_fb01_3tr_ohd03_001.mul
 pc-w\audio\streams\vo\eng\sarif_hq01\npcs\civilians\fb01\overheard\ohd03\hq01_fb01_dia_ohd03_001.mul
+pc-w\audio\streams\vo\eng\sarif_hq01\npcs\civilians\fb02\overheard\ohd08\hq01_fb02_dia_ohd08_001.mul
+pc-w\audio\streams\vo\eng\sarif_hq01\npcs\civilians\fb02\overheard\ohd08\hq01_fb02_dia_ohd08_003.mul
+pc-w\audio\streams\vo\eng\sarif_hq01\npcs\civilians\fb02\overheard\ohd08\hq01_fb02_dia_ohd08_005.mul
+pc-w\audio\streams\vo\eng\sarif_hq01\npcs\civilians\fb02\overheard\ohd08\hq01_fb02_dia_ohd08_007.mul
 pc-w\audio\streams\vo\eng\sarif_hq01\npcs\civilians\fw01\3rd_tier\hq01_fw01_3tr_general_005.mul
+pc-w\audio\streams\vo\eng\sarif_hq01\npcs\civilians\fw01\overheard\ohd08\hq01_fw01_dia_ohd08_002.mul
+pc-w\audio\streams\vo\eng\sarif_hq01\npcs\civilians\fw01\overheard\ohd08\hq01_fw01_dia_ohd08_004.mul
+pc-w\audio\streams\vo\eng\sarif_hq01\npcs\civilians\fw01\overheard\ohd08\hq01_fw01_dia_ohd08_006.mul
 pc-w\audio\streams\vo\eng\sarif_hq01\npcs\civilians\mb01\3rd_tier\hq01_mb01_3tr_general_001.mul
 pc-w\audio\streams\vo\eng\sarif_hq01\npcs\civilians\mb01\3rd_tier\hq01_mb01_3tr_general_003.mul
 pc-w\audio\streams\vo\eng\sarif_hq01\npcs\civilians\mb01\overheard\ohd03\hq01_mb01_3tr_ohd03_001.mul
@@ -3132,6 +3143,7 @@ pc-w\audio\streams\vo\eng\sarif_hq01\npcs\unique\det_pritchard\cp06\hq01_cp06_di
 pc-w\audio\streams\vo\eng\sarif_hq01\npcs\unique\det_pritchard\cp06\hq01_cp06_dia_prit_024.mul
 pc-w\audio\streams\vo\eng\sarif_hq01\npcs\unique\det_pritchard\cp06\hq01_cp06_dia_prit_026.mul
 pc-w\audio\streams\vo\eng\sarif_hq01\npcs\unique\det_pritchard\cp06\hq01_cp06_dia_prit_028.mul
+pc-w\audio\streams\vo\eng\sarif_hq01\npcs\unique\det_pritchard\cp06\hq01_cp06_dia_prit_030.mul
 pc-w\audio\streams\vo\eng\sarif_hq01\npcs\unique\det_scientist_1\cp01\hqin_cp01_dia_sci1_021.mul
 pc-w\audio\streams\vo\eng\sarif_hq01\npcs\unique\det_vasili_sevchenko\cp01\hqin_cp01_dia_vasi_028.mul
 pc-w\audio\streams\vo\eng\sarif_hq01\npcs\unique\det_vasili_sevchenko\cp01\hqin_cp01_dia_vasi_032.mul
