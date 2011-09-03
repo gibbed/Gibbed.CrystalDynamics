@@ -1,4 +1,4 @@
-; 15810/15974 (98%)
+; 15813/15974 (98%)
 pc-w\alarm.drm
 pc-w\alarm_dispatcher.drm
 pc-w\alarm_light.drm
@@ -803,6 +803,7 @@ pc-w\audio\streams\ambience\ambientriotloopfiltered-02.mul
 pc-w\audio\streams\ambience\ambientriotloopfiltered-industries.mul
 pc-w\audio\streams\ambience\faketaggartconference.mul
 pc-w\audio\streams\ambience\sin_omegaranch_fakeexplosion.mul
+pc-w\audio\streams\character\adam\augmentations\aug_claymore\aug_claymore_08.mul
 pc-w\audio\streams\character\adam\augmentations\aug_ptw\aug_grabthroughwallkill.mul
 pc-w\audio\streams\character\adam\augmentations\aug_ptw\aug_punchthroughwall.mul
 pc-w\audio\streams\character\adam\augmentations\takedown\aug_doublekillback_a.mul
@@ -919,6 +920,7 @@ pc-w\audio\streams\character\combattant\white_b\white_b_brk_damageballistic\whit
 pc-w\audio\streams\character\combattant\white_b\white_b_brk_damageballistic\whiteb_brk_damageballistic_007.mul
 pc-w\audio\streams\character\combattant\white_b\white_b_brk_damageballistic\whiteb_brk_damageballistic_008.mul
 pc-w\audio\streams\character\combattant\white_b\white_b_brk_damageballistic\whiteb_brk_damageballistic_009.mul
+pc-w\audio\streams\character\combattant\white_b\white_b_brk_death\white_b_brk_claymoredeath_01.mul
 pc-w\audio\streams\character\combattant\white_b\white_b_brk_death\white_b_brk_claymoredeath_02.mul
 pc-w\audio\streams\character\combattant\white_b\white_b_brk_death\white_b_brk_death_01.mul
 pc-w\audio\streams\character\combattant\white_b\white_b_brk_death\white_b_brk_death_02.mul
@@ -1035,6 +1037,7 @@ pc-w\audio\streams\scaleform\hacking\hacking_v1_ambient.mul
 pc-w\audio\streams\scaleform\hacking\hacking_v2_ambient.mul
 pc-w\audio\streams\scaleform\hacking\hacking_v3_ambient.mul
 pc-w\audio\streams\scaleform\hacking\hacking_v4_ambient.mul
+pc-w\audio\streams\scaleform\mapselector\menutheme.mul
 pc-w\audio\streams\scaleform\pausemenu\menutheme.mul
 pc-w\audio\streams\scaleform\pausemenu\pausedambience.mul
 pc-w\audio\streams\stigner\bossfighthealth\namir\stinger_1.mul
