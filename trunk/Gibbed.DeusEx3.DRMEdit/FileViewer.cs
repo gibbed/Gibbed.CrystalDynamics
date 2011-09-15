@@ -22,6 +22,7 @@
 
 using System;
 using System.IO;
+using Gibbed.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -50,6 +51,32 @@ namespace Gibbed.DeusEx3.DRMEdit
                 var rez = new FileFormats.DRMFile();
                 rez.Deserialize(input);
                 this.FileData = rez;
+
+                foreach (var section in rez.Sections)
+                {
+                    if (section.Resolver == null)
+                    {
+                        continue;
+                    }
+
+                    foreach (var unknown in section.Resolver.Unknown2s)
+                    {
+                        section.Data.Seek(unknown.Unknown0, SeekOrigin.Begin);
+                        var id = section.Data.ReadValueU32();
+                        if (id == 0x00013065)
+                        {
+                        }
+                    }
+
+                    foreach (var unknown in section.Resolver.Unknown4s)
+                    {
+                        section.Data.Seek(unknown.Unknown0, SeekOrigin.Begin);
+                        var id = section.Data.ReadValueU32();
+                        if (id == 0x00013065)
+                        {
+                        }
+                    }
+                }
             }
 
             this.BuildTree();

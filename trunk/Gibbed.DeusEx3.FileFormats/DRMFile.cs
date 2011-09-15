@@ -138,7 +138,7 @@ namespace Gibbed.DeusEx3.FileFormats
                 {
                     using (var buffer = input.ReadToMemoryStream(sectionHeader.HeaderSize))
                     {
-                        var resolver = new DRM.SectionResolver();
+                        var resolver = new DRM.Resolver();
                         resolver.Deserialize(buffer, this.LittleEndian);
                         section.Resolver = resolver;
                     }

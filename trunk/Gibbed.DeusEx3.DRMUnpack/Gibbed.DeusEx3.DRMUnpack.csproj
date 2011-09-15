@@ -5,14 +5,13 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7189FA0A-DE18-4CB8-B058-12E5449A4373}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{1667BB83-E5EC-4C2D-894C-B24DF8CF154C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gibbed.DeusEx3.DRMEdit</RootNamespace>
-    <AssemblyName>Gibbed.DeusEx3.DRMEdit</AssemblyName>
+    <RootNamespace>Gibbed.DeusEx3.DRMUnpack</RootNamespace>
+    <AssemblyName>Gibbed.DeusEx3.DRMUnpack</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -35,78 +34,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Be.Windows.Forms.HexBox">
-      <HintPath>..\other\Be.Windows.Forms.HexBox.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Explorer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Explorer.Designer.cs">
-      <DependentUpon>Explorer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FileViewer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FileViewer.Designer.cs">
-      <DependentUpon>FileViewer.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RawViewer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RawViewer.designer.cs">
-      <DependentUpon>RawViewer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TextureViewer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TextureViewer.Designer.cs">
-      <DependentUpon>TextureViewer.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Explorer.resx">
-      <DependentUpon>Explorer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FileViewer.resx">
-      <DependentUpon>FileViewer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="RawViewer.resx">
-      <DependentUpon>RawViewer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TextureViewer.resx">
-      <DependentUpon>TextureViewer.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gibbed.DeusEx3.FileFormats\Gibbed.DeusEx3.FileFormats.csproj">

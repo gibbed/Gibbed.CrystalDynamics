@@ -21,21 +21,59 @@
  */
 
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
 using System.Windows.Forms;
+using NDesk.Options;
 
 namespace Gibbed.DeusEx3.DRMEdit
 {
-    static class Program
+    internal static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
+        private static string GetExecutableName()
         {
+            return Path.GetFileName(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+        }
+
+        [STAThread]
+        public static void Main(string[] args)
+        {
+            bool showHelp = false;
+
+            var options = new OptionSet()
+            {
+                {
+                    "h|help",
+                    "show this message and exit", 
+                    v => showHelp = v != null
+                },
+            };
+
+            List<string> extras;
+
+            try
+            {
+                extras = options.Parse(args);
+            }
+            catch (OptionException e)
+            {
+                var sb = new StringBuilder();
+                sb.AppendFormat("{0}: ", GetExecutableName());
+                sb.AppendLine(e.Message);
+                sb.AppendFormat("Try `{0} --help' for more information.", GetExecutableName());
+                sb.AppendLine();
+                MessageBox.Show(
+                    sb.ToString(),
+                    GetExecutableName(),
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Explorer());
+            Application.Run(new Explorer(extras));
         }
     }
 }

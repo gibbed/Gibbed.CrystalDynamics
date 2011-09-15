@@ -33,7 +33,7 @@ namespace Gibbed.DeusEx3.FileFormats.DRM
         public byte Flags;
 
         public SectionType Type;
-        public SectionResolver Resolver = null;
+        public Resolver Resolver = null;
         public MemoryStream Data = null;
 
         public override string ToString()
