@@ -21,15 +21,23 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Gibbed.DeusEx3.DRMEdit
 {
     public partial class Explorer : Form
     {
-        public Explorer()
+        public Explorer(List<string> extras)
         {
             this.InitializeComponent();
+
+            foreach (var path in extras)
+            {
+                var editor = new FileViewer() { MdiParent = this };
+                editor.LoadResource(path);
+                editor.Show();
+            }
         }
 
         private void OnExit(object sender, EventArgs e)

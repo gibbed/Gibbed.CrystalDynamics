@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gibbed.DeusEx3.Demux", "Gib
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gibbed.DeusEx3.DRMDecompress", "Gibbed.DeusEx3.DRMDecompress\Gibbed.DeusEx3.DRMDecompress.csproj", "{669A7448-75A1-44A3-BB02-C9F96564037D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gibbed.DeusEx3.DRMUnpack", "Gibbed.DeusEx3.DRMUnpack\Gibbed.DeusEx3.DRMUnpack.csproj", "{1667BB83-E5EC-4C2D-894C-B24DF8CF154C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -155,6 +157,16 @@ Global
 		{669A7448-75A1-44A3-BB02-C9F96564037D}.Release|Mixed Platforms.Build.0 = Release|x86
 		{669A7448-75A1-44A3-BB02-C9F96564037D}.Release|x86.ActiveCfg = Release|x86
 		{669A7448-75A1-44A3-BB02-C9F96564037D}.Release|x86.Build.0 = Release|x86
+		{1667BB83-E5EC-4C2D-894C-B24DF8CF154C}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{1667BB83-E5EC-4C2D-894C-B24DF8CF154C}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{1667BB83-E5EC-4C2D-894C-B24DF8CF154C}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{1667BB83-E5EC-4C2D-894C-B24DF8CF154C}.Debug|x86.ActiveCfg = Debug|x86
+		{1667BB83-E5EC-4C2D-894C-B24DF8CF154C}.Debug|x86.Build.0 = Debug|x86
+		{1667BB83-E5EC-4C2D-894C-B24DF8CF154C}.Release|Any CPU.ActiveCfg = Release|x86
+		{1667BB83-E5EC-4C2D-894C-B24DF8CF154C}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{1667BB83-E5EC-4C2D-894C-B24DF8CF154C}.Release|Mixed Platforms.Build.0 = Release|x86
+		{1667BB83-E5EC-4C2D-894C-B24DF8CF154C}.Release|x86.ActiveCfg = Release|x86
+		{1667BB83-E5EC-4C2D-894C-B24DF8CF154C}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

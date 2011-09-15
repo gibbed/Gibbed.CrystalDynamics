@@ -48,9 +48,10 @@
     <Compile Include="Big\Locale.cs" />
     <Compile Include="CDRMFile.cs" />
     <Compile Include="DRMFile.cs" />
+    <Compile Include="DRM\ScriptSection.cs" />
     <Compile Include="DRM\Section.cs" />
     <Compile Include="DRM\SectionHeader.cs" />
-    <Compile Include="DRM\SectionResolver.cs" />
+    <Compile Include="DRM\Resolver.cs" />
     <Compile Include="DRM\SectionType.cs" />
     <Compile Include="FileExtensions.cs" />
     <Compile Include="PCD9File.cs" />
