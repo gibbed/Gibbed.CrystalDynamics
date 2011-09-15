@@ -1,4 +1,4 @@
-; 5301/16020 (33%)
+; 5347/16020 (33%)
 pc-w\audio\streams\vo\eng\det_fema\adam_jensen\as01\fema_adam_dia_as01_002.mul
 pc-w\audio\streams\vo\eng\det_fema\adam_jensen\as01\fema_adam_dia_as01_010.mul
 pc-w\audio\streams\vo\eng\det_fema\adam_jensen\as01\fema_adam_dia_as01_014.mul
@@ -381,6 +381,8 @@ pc-w\audio\streams\vo\eng\det1\adam_jensen\con_002_haas\con_002_adam_039.mul
 pc-w\audio\streams\vo\eng\det1\adam_jensen\con_002_haas\con_002_adam_056.mul
 pc-w\audio\streams\vo\eng\det1\adam_jensen\con_002_haas\con_002_adam_057.mul
 pc-w\audio\streams\vo\eng\det1\adam_jensen\con_002_haas\con_002_adam_078.mul
+pc-w\audio\streams\vo\eng\det1\adam_jensen\cp00\det1_cp00_rad_adam_002.mul
+pc-w\audio\streams\vo\eng\det1\adam_jensen\cp00a\det1_cp00a_rad_adam_001.mul
 pc-w\audio\streams\vo\eng\det1\adam_jensen\cp00b\det1_cp00b_dia_adam_002.mul
 pc-w\audio\streams\vo\eng\det1\adam_jensen\cp00b\det1_cp00b_dia_adam_004.mul
 pc-w\audio\streams\vo\eng\det1\adam_jensen\cp01\det1_cp01_rad_adam_001.mul
@@ -886,6 +888,9 @@ pc-w\audio\streams\vo\eng\det1\npcs\unique\det_christian_charest\sq02\det1_sq02_
 pc-w\audio\streams\vo\eng\det1\npcs\unique\det_christian_charest\sq02\det1_sq02_dia_chri_081.mul
 pc-w\audio\streams\vo\eng\det1\npcs\unique\det_christian_charest\sq02\det1_sq02_dia_chri_083.mul
 pc-w\audio\streams\vo\eng\det1\npcs\unique\det_clay_green\3rd_tier\det1_sq06_3tr_gree_005.mul
+pc-w\audio\streams\vo\eng\det1\npcs\unique\det_david_sarif\cp00\det1_cp00_rad_sari_001.mul
+pc-w\audio\streams\vo\eng\det1\npcs\unique\det_david_sarif\cp00\det1_cp00_rad_sari_003.mul
+pc-w\audio\streams\vo\eng\det1\npcs\unique\det_david_sarif\cp00a\det1_cp00a_rad_sari_002.mul
 pc-w\audio\streams\vo\eng\det1\npcs\unique\det_david_sarif\cp01\det1_cp01_rad_sari_002.mul
 pc-w\audio\streams\vo\eng\det1\npcs\unique\det_david_sarif\cp01\det1_cp01_rad_sari_004.mul
 pc-w\audio\streams\vo\eng\det1\npcs\unique\det_david_sarif\cp03\det1_cp03_rad_sari_004.mul
@@ -1131,6 +1136,11 @@ pc-w\audio\streams\vo\eng\det2\adam_jensen\cp06\det2_cp06_dia_adam_004.mul
 pc-w\audio\streams\vo\eng\det2\adam_jensen\cp06\det2_cp06_dia_adam_006.mul
 pc-w\audio\streams\vo\eng\det2\adam_jensen\cp06\det2_cp06_dia_adam_008.mul
 pc-w\audio\streams\vo\eng\det2\adam_jensen\cp06\det2_cp06_dia_adam_010.mul
+pc-w\audio\streams\vo\eng\det2\adam_jensen\cp07\det2_cp07_rad_adam_001.mul
+pc-w\audio\streams\vo\eng\det2\adam_jensen\cp07\det2_cp07_rad_adam_005.mul
+pc-w\audio\streams\vo\eng\det2\adam_jensen\cp07\det2_cp07_rad_adam_007.mul
+pc-w\audio\streams\vo\eng\det2\adam_jensen\cp07\det2_cp07_rad_adam_009.mul
+pc-w\audio\streams\vo\eng\det2\adam_jensen\cp07\det2_cp07_rad_adam_011.mul
 pc-w\audio\streams\vo\eng\det2\adam_jensen\cp09\det2_cp09_rad_adam_001.mul
 pc-w\audio\streams\vo\eng\det2\adam_jensen\cp12\det2_cp12_rad_adam_001.mul
 pc-w\audio\streams\vo\eng\det2\adam_jensen\cp12\det2_cp12_rad_adam_003.mul
@@ -3338,6 +3348,8 @@ pc-w\audio\streams\vo\eng\sarif_hq01\adam_jensen\cp00\hqin_cp00_dia_adam_031.mul
 pc-w\audio\streams\vo\eng\sarif_hq01\adam_jensen\cp00\hqin_cp00_dia_adam_032.mul
 pc-w\audio\streams\vo\eng\sarif_hq01\adam_jensen\cp00\hqin_cp00_dia_adam_035.mul
 pc-w\audio\streams\vo\eng\sarif_hq01\adam_jensen\cp00\hqin_cp00_dia_adam_037.mul
+pc-w\audio\streams\vo\eng\sarif_hq01\adam_jensen\cp00\hqin_cp00_dia_adam_039.mul
+pc-w\audio\streams\vo\eng\sarif_hq01\adam_jensen\cp00\hqin_cp00_dia_adam_041.mul
 pc-w\audio\streams\vo\eng\sarif_hq01\adam_jensen\cp00\hqin_cp00_dia_adam_044.mul
 pc-w\audio\streams\vo\eng\sarif_hq01\adam_jensen\cp01\hqin_cp01_dia_adam_002.mul
 pc-w\audio\streams\vo\eng\sarif_hq01\adam_jensen\cp01\hqin_cp01_dia_adam_004.mul
@@ -3446,6 +3458,7 @@ pc-w\audio\streams\vo\eng\sarif_hq01\npcs\securityguards\wsecguard02\3rd_tier\hq
 pc-w\audio\streams\vo\eng\sarif_hq01\npcs\securityguards\wsecguard02\3rd_tier\hq01_wsecguard02_3tr_sarifsec_004.mul
 pc-w\audio\streams\vo\eng\sarif_hq01\npcs\spec_op\mb01\ohd10\hq01_bspecop01_dia_ohd10_001.mul
 pc-w\audio\streams\vo\eng\sarif_hq01\npcs\spec_op\mw01\ohd10\hq01_wspecop01_dia_ohd10_002.mul
+pc-w\audio\streams\vo\eng\sarif_hq01\npcs\spec_op\mw02\ohd09\hq01_wspecop02_dia_ohd09_002.mul
 pc-w\audio\streams\vo\eng\sarif_hq01\npcs\unique\det_athene_margoulis\cp01\hqin_cp01_dia_athe_065.mul
 pc-w\audio\streams\vo\eng\sarif_hq01\npcs\unique\det_athene_margoulis\cp01\hqin_cp01_dia_athe_086.mul
 pc-w\audio\streams\vo\eng\sarif_hq01\npcs\unique\det_david_sarif\3rd_tier\hqin_cp01_3tr_sari_001.mul
@@ -3495,6 +3508,8 @@ pc-w\audio\streams\vo\eng\sarif_hq01\npcs\unique\det_megan_reed\cp00\hqin_cp00_d
 pc-w\audio\streams\vo\eng\sarif_hq01\npcs\unique\det_megan_reed\cp00\hqin_cp00_dia_mega_034.mul
 pc-w\audio\streams\vo\eng\sarif_hq01\npcs\unique\det_megan_reed\cp00\hqin_cp00_dia_mega_036.mul
 pc-w\audio\streams\vo\eng\sarif_hq01\npcs\unique\det_megan_reed\cp00\hqin_cp00_dia_mega_038.mul
+pc-w\audio\streams\vo\eng\sarif_hq01\npcs\unique\det_megan_reed\cp00\hqin_cp00_dia_mega_040.mul
+pc-w\audio\streams\vo\eng\sarif_hq01\npcs\unique\det_megan_reed\cp00\hqin_cp00_dia_mega_042.mul
 pc-w\audio\streams\vo\eng\sarif_hq01\npcs\unique\det_megan_reed\cp00\hqin_cp00_dia_mega_043.mul
 pc-w\audio\streams\vo\eng\sarif_hq01\npcs\unique\det_megan_reed\cp00\hqin_cp00_dia_mega_046.mul
 pc-w\audio\streams\vo\eng\sarif_hq01\npcs\unique\det_megan_reed\cp00\hqin_cp00_dia_mega_047.mul
@@ -4100,6 +4115,8 @@ pc-w\audio\streams\vo\eng\sha1\adam_jensen\con_006\con_006_adam_007.mul
 pc-w\audio\streams\vo\eng\sha1\adam_jensen\con_006\con_006_adam_009.mul
 pc-w\audio\streams\vo\eng\sha1\adam_jensen\con_006\con_006_adam_013.mul
 pc-w\audio\streams\vo\eng\sha1\adam_jensen\con_006\con_006_adam_069.mul
+pc-w\audio\streams\vo\eng\sha1\adam_jensen\cp02a\sha1_cp02a_rad_adam_001.mul
+pc-w\audio\streams\vo\eng\sha1\adam_jensen\cp02a\sha1_cp02a_rad_adam_003.mul
 pc-w\audio\streams\vo\eng\sha1\adam_jensen\cp03\sha1_cp03_rad_adam_001.mul
 pc-w\audio\streams\vo\eng\sha1\adam_jensen\cp03\sha1_cp03_rad_adam_003.mul
 pc-w\audio\streams\vo\eng\sha1\adam_jensen\cp03\sha1_cp03_rad_adam_005.mul
@@ -4120,6 +4137,11 @@ pc-w\audio\streams\vo\eng\sha1\adam_jensen\cp07\sha1_cp07_dia_adam_017.mul
 pc-w\audio\streams\vo\eng\sha1\adam_jensen\cp07\sha1_cp07_dia_adam_020.mul
 pc-w\audio\streams\vo\eng\sha1\adam_jensen\cp12\sha1_cp12_rad_adam_002.mul
 pc-w\audio\streams\vo\eng\sha1\adam_jensen\cp12\sha1_cp12_rad_adam_004.mul
+pc-w\audio\streams\vo\eng\sha1\adam_jensen\cp12\sha1_cp12_rad_adam_007.mul
+pc-w\audio\streams\vo\eng\sha1\adam_jensen\cp12\sha1_cp12_rad_adam_009.mul
+pc-w\audio\streams\vo\eng\sha1\adam_jensen\cp12\sha1_cp12_rad_adam_011.mul
+pc-w\audio\streams\vo\eng\sha1\adam_jensen\cp12\sha1_cp12_rad_adam_012.mul
+pc-w\audio\streams\vo\eng\sha1\adam_jensen\cp12\sha1_cp12_rad_adam_014.mul
 pc-w\audio\streams\vo\eng\sha1\adam_jensen\cp13\sha1_cp13_dia_adam_002.mul
 pc-w\audio\streams\vo\eng\sha1\adam_jensen\cp14\sha1_cp14_dia_adam_016.mul
 pc-w\audio\streams\vo\eng\sha1\adam_jensen\cp14\sha1_cp14_dia_adam_018.mul
@@ -4250,6 +4272,9 @@ pc-w\audio\streams\vo\eng\sha1\adam_jensen\sq08\sha1_sq08_rad_adam_091.mul
 pc-w\audio\streams\vo\eng\sha1\adam_jensen\sq08\sha1_sq08_rad_adam_093.mul
 pc-w\audio\streams\vo\eng\sha1\adam_jensen\sq08\sha1_sq08_rad_adam_094.mul
 pc-w\audio\streams\vo\eng\sha1\adam_jensen\sq08\sha1_sq08_rad_adam_096.mul
+pc-w\audio\streams\vo\eng\sha1\adam_jensen\sq08\sha1_sq08_rad_adam_098.mul
+pc-w\audio\streams\vo\eng\sha1\adam_jensen\sq08\sha1_sq08_rad_adam_101.mul
+pc-w\audio\streams\vo\eng\sha1\adam_jensen\sq08\sha1_sq08_rad_adam_104.mul
 pc-w\audio\streams\vo\eng\sha1\adam_jensen\sq08\sha1_sq08_rad_adam_106.mul
 pc-w\audio\streams\vo\eng\sha1\adam_jensen\sq08\sha1_sq08_rad_adam_126.mul
 pc-w\audio\streams\vo\eng\sha1\adam_jensen\sq08\sha1_sq08_rad_adam_128.mul
@@ -4724,6 +4749,7 @@ pc-w\audio\streams\vo\eng\sha1\npcs\unique\sha1_diamond_chan\sq03\sha1_sq03_ohd_
 pc-w\audio\streams\vo\eng\sha1\npcs\unique\sha1_edgar_lee\overheard\sq03\sha1_sq03_ohd_egda_004.mul
 pc-w\audio\streams\vo\eng\sha1\npcs\unique\sha1_edgar_lee\overheard\sq03\sha1_sq03_ohd_egda_006.mul
 pc-w\audio\streams\vo\eng\sha1\npcs\unique\sha1_edgar_lee\overheard\sq03\sha1_sq03_ohd_egda_008.mul
+pc-w\audio\streams\vo\eng\sha1\npcs\unique\sha1_faridah_malik\cp02a\sha1_cp02a_rad_mali_002.mul
 pc-w\audio\streams\vo\eng\sha1\npcs\unique\sha1_faridah_malik\cp03\sha1_cp03_rad_mali_002.mul
 pc-w\audio\streams\vo\eng\sha1\npcs\unique\sha1_faridah_malik\cp03\sha1_cp03_rad_mali_004.mul
 pc-w\audio\streams\vo\eng\sha1\npcs\unique\sha1_faridah_malik\cp04\sha1_cp04_rad_mali_001.mul
@@ -4775,6 +4801,11 @@ pc-w\audio\streams\vo\eng\sha1\npcs\unique\sha1_faridah_malik\sq08\sha1_sq08_rad
 pc-w\audio\streams\vo\eng\sha1\npcs\unique\sha1_faridah_malik\sq08\sha1_sq08_rad_mali_092.mul
 pc-w\audio\streams\vo\eng\sha1\npcs\unique\sha1_faridah_malik\sq08\sha1_sq08_rad_mali_095.mul
 pc-w\audio\streams\vo\eng\sha1\npcs\unique\sha1_faridah_malik\sq08\sha1_sq08_rad_mali_097.mul
+pc-w\audio\streams\vo\eng\sha1\npcs\unique\sha1_faridah_malik\sq08\sha1_sq08_rad_mali_099.mul
+pc-w\audio\streams\vo\eng\sha1\npcs\unique\sha1_faridah_malik\sq08\sha1_sq08_rad_mali_100.mul
+pc-w\audio\streams\vo\eng\sha1\npcs\unique\sha1_faridah_malik\sq08\sha1_sq08_rad_mali_102.mul
+pc-w\audio\streams\vo\eng\sha1\npcs\unique\sha1_faridah_malik\sq08\sha1_sq08_rad_mali_103.mul
+pc-w\audio\streams\vo\eng\sha1\npcs\unique\sha1_faridah_malik\sq08\sha1_sq08_rad_mali_105.mul
 pc-w\audio\streams\vo\eng\sha1\npcs\unique\sha1_faridah_malik\sq08\sha1_sq08_rad_mali_107.mul
 pc-w\audio\streams\vo\eng\sha1\npcs\unique\sha1_faridah_malik\sq08\sha1_sq08_rad_mali_125.mul
 pc-w\audio\streams\vo\eng\sha1\npcs\unique\sha1_faridah_malik\sq08\sha1_sq08_rad_mali_127.mul
@@ -4900,6 +4931,9 @@ pc-w\audio\streams\vo\eng\sha2\adam_jensen\cp02\sha2_cp02_rad_adam_001.mul
 pc-w\audio\streams\vo\eng\sha2\adam_jensen\cp02\sha2_cp02_rad_adam_003.mul
 pc-w\audio\streams\vo\eng\sha2\adam_jensen\cp02\sha2_cp02_rad_adam_005.mul
 pc-w\audio\streams\vo\eng\sha2\adam_jensen\cp03\sha2_cp03_rad_adam_002.mul
+pc-w\audio\streams\vo\eng\sha2\adam_jensen\cp04\sha2_cp04_rad_adam_002.mul
+pc-w\audio\streams\vo\eng\sha2\adam_jensen\cp04\sha2_cp04_rad_adam_004.mul
+pc-w\audio\streams\vo\eng\sha2\adam_jensen\cp05a\sha2_cp05a_rad_adam_002.mul
 pc-w\audio\streams\vo\eng\sha2\adam_jensen\cp05a\sha2_cp05a_rad_adam_004.mul
 pc-w\audio\streams\vo\eng\sha2\adam_jensen\cp05a\sha2_cp05a_rad_adam_006.mul
 pc-w\audio\streams\vo\eng\sha2\adam_jensen\cp07\sha2_cp07_cut_adam_011.mul
@@ -4958,6 +4992,7 @@ pc-w\audio\streams\vo\eng\sha2\adam_jensen\sq01\sha2_sq01_dia_adam_051.mul
 pc-w\audio\streams\vo\eng\sha2\adam_jensen\sq01\sha2_sq01_dia_adam_059.mul
 pc-w\audio\streams\vo\eng\sha2\adam_jensen\sq01\sha2_sq01_dia_adam_061.mul
 pc-w\audio\streams\vo\eng\sha2\adam_jensen\sq01\sha2_sq01_rad_adam_002.mul
+pc-w\audio\streams\vo\eng\sha2\adam_jensen\sq01\sha2_sq01_rad_adam_005.mul
 pc-w\audio\streams\vo\eng\sha2\adam_jensen\sq01\sha2_sq01_rad_adam_007.mul
 pc-w\audio\streams\vo\eng\sha2\adam_jensen\sq01\sha2_sq01_rad_adam_009.mul
 pc-w\audio\streams\vo\eng\sha2\adam_jensen\sq04\sha2_sq04_dia_adam_002.mul
@@ -4995,6 +5030,8 @@ pc-w\audio\streams\vo\eng\sha2\adam_jensen\sq04\sha2_sq04_dia_adam_112.mul
 pc-w\audio\streams\vo\eng\sha2\adam_jensen\sq04\sha2_sq04_dia_adam_114.mul
 pc-w\audio\streams\vo\eng\sha2\adam_jensen\sq04\sha2_sq04_dia_adam_119.mul
 pc-w\audio\streams\vo\eng\sha2\adam_jensen\sq04\sha2_sq04_dia_adam_125.mul
+pc-w\audio\streams\vo\eng\sha2\adam_jensen\sq04\sha2_sq04_rad_adam_002.mul
+pc-w\audio\streams\vo\eng\sha2\adam_jensen\sq04\sha2_sq04_rad_adam_004.mul
 pc-w\audio\streams\vo\eng\sha2\npcs\civilians\fa01\3tr\sha2_fa01_3tr_story_003.mul
 pc-w\audio\streams\vo\eng\sha2\npcs\civilians\fa01\3tr\sha2_fa01_3tr_story_004.mul
 pc-w\audio\streams\vo\eng\sha2\npcs\civilians\fa01\ohd11\sha2_fa01_dia_ohd11_001.mul
@@ -5078,9 +5115,14 @@ pc-w\audio\streams\vo\eng\sha2\npcs\unique\sha2_faridah_malik\cp02\sha2_cp02_rad
 pc-w\audio\streams\vo\eng\sha2\npcs\unique\sha2_faridah_malik\cp02\sha2_cp02_rad_mali_004.mul
 pc-w\audio\streams\vo\eng\sha2\npcs\unique\sha2_faridah_malik\cp02\sha2_cp02_rad_mali_006.mul
 pc-w\audio\streams\vo\eng\sha2\npcs\unique\sha2_faridah_malik\cp03\sha2_cp03_rad_mali_001.mul
+pc-w\audio\streams\vo\eng\sha2\npcs\unique\sha2_faridah_malik\cp04a\sha2_cp04a_rad_mali_001.mul
+pc-w\audio\streams\vo\eng\sha2\npcs\unique\sha2_faridah_malik\cp04a\sha2_cp04a_rad_mali_003.mul
+pc-w\audio\streams\vo\eng\sha2\npcs\unique\sha2_faridah_malik\cp04a\sha2_cp04a_rad_mali_003a.mul
 pc-w\audio\streams\vo\eng\sha2\npcs\unique\sha2_hugh_darrow\sq01\sha2_sq01_rad_darr_001.mul
+pc-w\audio\streams\vo\eng\sha2\npcs\unique\sha2_hugh_darrow\sq01\sha2_sq01_rad_darr_003.mul
 pc-w\audio\streams\vo\eng\sha2\npcs\unique\sha2_hugh_darrow\sq01\sha2_sq01_rad_darr_003a.mul
 pc-w\audio\streams\vo\eng\sha2\npcs\unique\sha2_hugh_darrow\sq01\sha2_sq01_rad_darr_004.mul
+pc-w\audio\streams\vo\eng\sha2\npcs\unique\sha2_hugh_darrow\sq01\sha2_sq01_rad_darr_006.mul
 pc-w\audio\streams\vo\eng\sha2\npcs\unique\sha2_hugh_darrow\sq01\sha2_sq01_rad_darr_008.mul
 pc-w\audio\streams\vo\eng\sha2\npcs\unique\sha2_hugh_darrow\sq01\sha2_sq01_rad_darr_010.mul
 pc-w\audio\streams\vo\eng\sha2\npcs\unique\sha2_mengyao\sq01\sha2_meng_occ_enticer_001.mul
@@ -5121,7 +5163,11 @@ pc-w\audio\streams\vo\eng\sha2\npcs\unique\sha2_mike_zelazny\sq04\sha2_sq04_dia_
 pc-w\audio\streams\vo\eng\sha2\npcs\unique\sha2_mike_zelazny\sq04\sha2_sq04_dia_zela_115.mul
 pc-w\audio\streams\vo\eng\sha2\npcs\unique\sha2_mike_zelazny\sq04\sha2_sq04_dia_zela_120.mul
 pc-w\audio\streams\vo\eng\sha2\npcs\unique\sha2_mike_zelazny\sq04\sha2_sq04_dia_zela_127.mul
+pc-w\audio\streams\vo\eng\sha2\npcs\unique\sha2_mike_zelazny\sq04\sha2_sq04_rad_zela_001.mul
+pc-w\audio\streams\vo\eng\sha2\npcs\unique\sha2_mike_zelazny\sq04\sha2_sq04_rad_zela_003.mul
+pc-w\audio\streams\vo\eng\sha2\npcs\unique\sha2_mike_zelazny\sq04\sha2_sq04_rad_zela_005.mul
 pc-w\audio\streams\vo\eng\sha2\npcs\unique\sha2_pritchard\cp05a\sha2_cp05a_rad_prit_001.mul
+pc-w\audio\streams\vo\eng\sha2\npcs\unique\sha2_pritchard\cp05a\sha2_cp05a_rad_prit_003.mul
 pc-w\audio\streams\vo\eng\sha2\npcs\unique\sha2_pritchard\cp05a\sha2_cp05a_rad_prit_005.mul
 pc-w\audio\streams\vo\eng\sha2\npcs\unique\sha2_pritchard\cp05a\sha2_cp05a_rad_prit_007.mul
 pc-w\audio\streams\vo\eng\sha2\npcs\unique\sha2_pritchard\cp08\sha2_cp08_rad_prit_001.mul
