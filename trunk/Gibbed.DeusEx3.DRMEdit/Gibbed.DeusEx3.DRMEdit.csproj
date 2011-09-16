@@ -67,7 +67,7 @@
     <Compile Include="RawViewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RawViewer.designer.cs">
+    <Compile Include="RawViewer.Designer.cs">
       <DependentUpon>RawViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="TextureViewer.cs">
