@@ -38,6 +38,22 @@ namespace Gibbed.DeusEx3.DRMEdit
             this.InitializeComponent();
             this.DoubleBuffered = true;
             this.hintLabel.Text = "";
+
+            /* This following block is for Mono-build compatability
+             * (ie, compiling this code via Mono and running via .NET)
+             * 
+             * Mono developers are asstwats:
+             *   https://bugzilla.novell.com/show_bug.cgi?id=641826
+             * 
+             * So, instead of using the ImageListStreamer directly, we'll
+             * load images from resources.
+             */
+            this.typeImageList.Images.Clear();
+            this.typeImageList.Images.Add("Unknown", new System.Drawing.Bitmap(16, 16));
+            this.typeImageList.Images.Add("__DRM", SectionTypeImages.__DRM);
+            this.typeImageList.Images.Add("RenderResource", SectionTypeImages.RenderResource);
+            this.typeImageList.Images.Add("Script", SectionTypeImages.Script);
+            this.typeImageList.Images.Add("Wave", SectionTypeImages.Wave);
         }
 
         public void LoadResource(string path)

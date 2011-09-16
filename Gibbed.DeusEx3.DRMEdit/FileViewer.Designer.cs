@@ -77,13 +77,9 @@ namespace Gibbed.DeusEx3.DRMEdit
             // 
             // typeImageList
             // 
-            this.typeImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("typeImageList.ImageStream")));
+            this.typeImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.typeImageList.ImageSize = new System.Drawing.Size(16, 16);
             this.typeImageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.typeImageList.Images.SetKeyName(0, "Unknown");
-            this.typeImageList.Images.SetKeyName(1, "__DRM");
-            this.typeImageList.Images.SetKeyName(2, "RenderResource");
-            this.typeImageList.Images.SetKeyName(3, "Script");
-            this.typeImageList.Images.SetKeyName(4, "Wave");
             // 
             // toolStrip
             // 

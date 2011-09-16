@@ -70,6 +70,11 @@
     <Compile Include="RawViewer.Designer.cs">
       <DependentUpon>RawViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="SectionTypeImages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SectionTypeImages.resx</DependentUpon>
+    </Compile>
     <Compile Include="TextureViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +99,10 @@
     </Compile>
     <EmbeddedResource Include="RawViewer.resx">
       <DependentUpon>RawViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SectionTypeImages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SectionTypeImages.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="TextureViewer.resx">
       <DependentUpon>TextureViewer.cs</DependentUpon>
@@ -125,6 +134,18 @@
       <Project>{C98A6CD6-9422-4B35-8B7A-F520D75534D1}</Project>
       <Name>NDesk.Options</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image-sunset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\script-binary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
