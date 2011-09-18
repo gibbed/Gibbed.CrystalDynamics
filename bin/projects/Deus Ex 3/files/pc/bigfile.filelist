@@ -1,4 +1,4 @@
-; 15962/15974 (99%)
+; 15964/15974 (99%)
 pc-w\alarm.drm
 pc-w\alarm_dispatcher.drm
 pc-w\alarm_light.drm
@@ -3113,6 +3113,7 @@ pc-w\human_player.drm
 pc-w\hyron_alarm_light_a.drm
 pc-w\hyron_alarm_light_b.drm
 pc-w\hyron_alarm_light_c.drm
+pc-w\image\cursor.raw
 pc-w\imf\imf_architecture\imf_buildings\imf_detroit\building_contemporain_2_backside\building_contemporain_2_backside.drm
 pc-w\imf\imf_architecture\imf_buildings\imf_detroit\building_contemporain_2_custom\building_contemporain_2_custom.drm
 pc-w\imf\imf_architecture\imf_buildings\imf_detroit\building_gas_station_redux_a\building_gas_station_redux_a.drm
@@ -15834,6 +15835,7 @@ pc-w\tutorialvolume.drm
 pc-w\tym_button_poolroom_a.drm
 pc-w\tym_crane_robot_b.drm
 pc-w\tym_worker_train_a.drm
+pc-w\unitlist.txt
 pc-w\unlocking_device_equip.drm
 pc-w\unlocking_device_world.drm
 pc-w\upper_tai_yong_sky_a.drm
