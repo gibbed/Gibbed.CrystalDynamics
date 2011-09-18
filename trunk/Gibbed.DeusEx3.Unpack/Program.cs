@@ -70,7 +70,7 @@ namespace Gibbed.DeusEx3.Unpack
                     v => showHelp = v != null
                 },
                 {
-                    "p|project",
+                    "p|project=",
                     "override current project",
                     v => currentProject = v
                 },
