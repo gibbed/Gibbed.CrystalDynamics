@@ -45,6 +45,7 @@ namespace Gibbed.DeusEx3.Unpack
             bool extractUnknowns = true;
             bool overwriteFiles = false;
             bool verbose = true;
+            string currentProject = null;
 
             var options = new OptionSet()
             {
@@ -67,6 +68,11 @@ namespace Gibbed.DeusEx3.Unpack
                     "h|help",
                     "show this message and exit", 
                     v => showHelp = v != null
+                },
+                {
+                    "p|project",
+                    "override current project",
+                    v => currentProject = v
                 },
             };
 
@@ -99,7 +105,7 @@ namespace Gibbed.DeusEx3.Unpack
             string inputPath = extras[0];
             string outputPath = extras.Count > 1 ? extras[1] : Path.ChangeExtension(inputPath, null) + "_unpack";
 
-            var manager = ProjectData.Manager.Load();
+            var manager = ProjectData.Manager.Load(currentProject);
             if (manager.ActiveProject == null)
             {
                 Console.WriteLine("Warning: no active project loaded.");
