@@ -58,6 +58,7 @@ namespace RebuildFileLists
         public static void Main(string[] args)
         {
             bool showHelp = false;
+            string currentProject = null;
 
             var options = new OptionSet()
             {
@@ -65,6 +66,11 @@ namespace RebuildFileLists
                     "h|help",
                     "show this message and exit", 
                     v => showHelp = v != null
+                },
+                {
+                    "p|project=",
+                    "override current project",
+                    v => currentProject = v
                 },
             };
 
@@ -93,7 +99,7 @@ namespace RebuildFileLists
 
             Console.WriteLine("Loading project...");
 
-            var manager = ProjectData.Manager.Load();
+            var manager = ProjectData.Manager.Load(currentProject);
             if (manager.ActiveProject == null)
             {
                 Console.WriteLine("Nothing to do: no active project loaded.");
