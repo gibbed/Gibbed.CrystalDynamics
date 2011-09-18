@@ -50,7 +50,7 @@ namespace RebuildFileLists
             var baseName = inputPath.Substring(installPath.Length + 1);
 
             string outputPath;
-            outputPath = Path.Combine("files", Path.Combine("pc", baseName));
+            outputPath = Path.Combine("files", baseName);
             outputPath = Path.ChangeExtension(outputPath, ".filelist");
             return outputPath;
         }
