@@ -25,14 +25,100 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using Gibbed.IO;
 using Gibbed.DeusEx3.FileFormats;
-
+using SectionType = Gibbed.DeusEx3.FileFormats.DRM.SectionType;
 namespace Test
 {
     internal class Program
     {
         public static void Main(string[] args)
         {
+            /*
+            using (var input = File.OpenRead(@"T:\DXHR\bigfile\default\pc-w\art\texture_library\diffuse\asphalt_a_d_diffuse.drm"))
+            {
+                using (var output = File.Create("asphalt_a_d_diffuse.udrm"))
+                {
+                    using (var data = CDRMFile.Decompress(input))
+                    {
+                        output.WriteFromStream(data, data.Length);
+                    }
+                }
+            }
+
+            //using (var input = File.OpenRead("globaldlc.drm"))
+            using (var input = File.OpenRead(@"T:\DXHR\bigfile\default\pc-w\art\texture_library\diffuse\asphalt_a_d_diffuse.drm"))
+            {
+                var drm = new DRMFile();
+                drm.Deserialize(input);
+            }
+            */
+
+            long? largest = null;
+            foreach (var inputPath in Directory.GetFiles(@"T:\DXHR\bugfile", "*.drm", SearchOption.AllDirectories))
+            {
+                Console.WriteLine(inputPath);
+
+                using (var input = File.OpenRead(inputPath))
+                {
+                    var drm = new DRMFile();
+                    drm.Deserialize(input);
+
+                    var candidates = drm.Sections
+                        .Where(e => e.Type == SectionType.Script && e.Data != null);
+                    if (candidates.Count() > 0)
+                    {
+                        if (largest.HasValue == false)
+                        {
+                            largest = candidates.Min(e => e.Data.Length);
+                        }
+                        else
+                        {
+                            largest = Math.Min(largest.Value, candidates.Min(e => e.Data.Length));
+                        }
+                    }
+                }
+            }
+
+            Console.WriteLine("{0}", largest);
+
+            /*
+            var paths = new List<string>();
+
+            foreach (var inputPath in Directory.GetFiles(@"T:\DXHR\bugfile", "*.drm", SearchOption.AllDirectories))
+            {
+                Console.WriteLine(inputPath);
+
+                using (var input = File.OpenRead(inputPath))
+                {
+                    var drm = new DRMFile();
+                    drm.Deserialize(input);
+
+                    foreach (var path in drm.Unknown08s)
+                    {
+                        if (paths.Contains(path) == false)
+                        {
+                            paths.Add(path);
+                        }
+                    }
+
+                    foreach (var path in drm.Unknown04s)
+                    {
+                        if (paths.Contains(path) == false)
+                        {
+                            paths.Add(path);
+                        }
+                    }
+                }
+            }
+
+            Console.WriteLine("-----");
+            paths.Sort();
+            foreach (var path in paths)
+            {
+                Console.WriteLine(path);
+            }
+            */
         }
     }
 }
