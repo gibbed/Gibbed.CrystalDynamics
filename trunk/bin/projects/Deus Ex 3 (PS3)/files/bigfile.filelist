@@ -1,4 +1,4 @@
-; 16763/16775 (99%)
+; 16774/16775 (99%)
 ps3-w\audio\streams\ambience\ambientriotloopfiltered-02.mul
 ps3-w\audio\streams\ambience\ambientriotloopfiltered-industries.mul
 ps3-w\audio\streams\ambience\faketaggartconference.mul
@@ -16366,6 +16366,17 @@ ps3-w\design_database\videos\cinematics\final_cinematics\cut_21_end_3_darrow_amb
 ps3-w\design_database\videos\cinematics\final_cinematics\cut_21_end_6_sarif_ambivalent\dxme203_final.usm
 ps3-w\design_database\videos\cinematics\final_cinematics\cut_21_end_9_taggart_ambivalent\dxme303_final.usm
 ps3-w\design_database\videos\cinematics\final_cinematics\cut_22_epilogue\epilogue.usm
+ps3-w\design_database\videos\cinematics\tutorial\dx3_advancedhackingtutorial\dx3_advancedhackingtutorial_ps3.usm
+ps3-w\design_database\videos\cinematics\tutorial\dx3_augmentationstutorial\dx3_augmentationstutorial_ps3.usm
+ps3-w\design_database\videos\cinematics\tutorial\dx3_combattutorial\dx3_combattutorial_ps3.usm
+ps3-w\design_database\videos\cinematics\tutorial\dx3_guardstutorial\dx3_guardstutorial_ps3.usm
+ps3-w\design_database\videos\cinematics\tutorial\dx3_hackingtutorial\dx3_hackingtutorial_ps3.usm
+ps3-w\design_database\videos\cinematics\tutorial\dx3_menustutorial\dx3_menustutorial_ps3.usm
+ps3-w\design_database\videos\cinematics\tutorial\dx3_movingobjectstutorial\dx3_movingobjectstutorial_ps3.usm
+ps3-w\design_database\videos\cinematics\tutorial\dx3_navigationtutorial\dx3_navigationtutorial_ps3.usm
+ps3-w\design_database\videos\cinematics\tutorial\dx3_objectiveactivations\dx3_objectivesactivationtutorial_ps3.usm
+ps3-w\design_database\videos\cinematics\tutorial\dx3_securitysystemstutorial\dx3_securitysystemstutorial_ps3.usm
+ps3-w\design_database\videos\cinematics\tutorial\dx3_stealthtutorial\dx3_stealthtutorial_ps3.usm
 ps3-w\music\det_adams_apt_rooftop_ambience\det_adams_apt_rooftop_ambience.mul
 ps3-w\music\det_adams_apt_rooftop_ambience\det_adams_apt_rooftop_ambience.mus
 ps3-w\music\det_adams_apt_rooftop_ambience\det_adams_apt_rooftop_ambience.sam
