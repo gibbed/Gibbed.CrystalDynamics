@@ -68,6 +68,7 @@ namespace Gibbed.DeusEx3.DRMEdit
                 rez.Deserialize(input);
                 this.FileData = rez;
 
+                /*
                 foreach (var section in rez.Sections)
                 {
                     if (section.Resolver == null)
@@ -93,6 +94,7 @@ namespace Gibbed.DeusEx3.DRMEdit
                         }
                     }
                 }
+                */
             }
 
             this.BuildTree();
