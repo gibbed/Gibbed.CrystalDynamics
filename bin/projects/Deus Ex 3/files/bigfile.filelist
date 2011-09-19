@@ -1,4 +1,4 @@
-; 15964/15974 (99%)
+; 15965/15974 (99%)
 pc-w\alarm.drm
 pc-w\alarm_dispatcher.drm
 pc-w\alarm_light.drm
@@ -159,6 +159,7 @@ pc-w\art\cinematics\cinstream\cut_fem_01_choplanding_start.drm
 pc-w\art\cinematics\cinstream\cut_fem_01_choplanding_start.mul
 pc-w\art\cinematics\cinstream\cut_fem_04_choptakeoff_exit.drm
 pc-w\art\cinematics\cinstream\cut_fem_04_choptakeoff_exit.mul
+pc-w\art\cinematics\cinstream\cut_gameintrotest.mul
 pc-w\art\cinematics\cinstream\cut_ind_02_choptakeoff_exit.drm
 pc-w\art\cinematics\cinstream\cut_ind_02_choptakeoff_exit.mul
 pc-w\art\cinematics\cinstream\cut_jap_01_choplanding_start.drm
