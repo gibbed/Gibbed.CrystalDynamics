@@ -1,4 +1,4 @@
-; 21915/21989 (99%)
+; 21917/21989 (99%)
 xenon-w\alarm_dispatcher.drm
 xenon-w\alarm_panel_a.drm
 xenon-w\animation\animlibs\human.drm
@@ -2587,6 +2587,7 @@ xenon-w\audio\streams\vo\eng\det1\public_address\limb_clinic\det1_limb_env_page0
 xenon-w\audio\streams\vo\eng\det1\public_address\limb_clinic\det1_limb_env_page03.mul
 xenon-w\audio\streams\vo\eng\det1\public_address\limb_clinic\det1_limb_env_page04.mul
 xenon-w\audio\streams\vo\eng\det1\public_address\limb_clinic\env_a002_limb_001.mul
+xenon-w\audio\streams\vo\eng\det1\public_address\limb_clinic\env_a002_limb_002.mul
 xenon-w\audio\streams\vo\eng\det1\public_address\police_station_pages\det1_policestation_env_page01.mul
 xenon-w\audio\streams\vo\eng\det1\public_address\police_station_pages\det1_policestation_env_page010.mul
 xenon-w\audio\streams\vo\eng\det1\public_address\police_station_pages\det1_policestation_env_page02.mul
@@ -10141,6 +10142,7 @@ xenon-w\audio\streams\vo\eng\global_barks\npcs\unique\taggart\barks\uni_tagg_brk
 xenon-w\audio\streams\vo\eng\global_barks\npcs\unique\taggart\barks\uni_tagg_brk_playerinteractalerted_001.mul
 xenon-w\audio\streams\vo\eng\global_barks\npcs\unique\taggart\barks\uni_tagg_brk_wakeup_001.mul
 xenon-w\audio\streams\vo\eng\global_barks\npcs\unique\taggart\uni_tagg_gun_001.mul
+xenon-w\audio\streams\vo\eng\global_barks\npcs\unique\taggart\uni_taggart_postchaos_001.mul
 xenon-w\audio\streams\vo\eng\global_barks\npcs\unique\tong_si_hung\uni_tong_brk_damageballistic_001.mul
 xenon-w\audio\streams\vo\eng\global_barks\npcs\unique\tong_si_hung\uni_tong_brk_damagephysical_001.mul
 xenon-w\audio\streams\vo\eng\global_barks\npcs\unique\tong_si_hung\uni_tong_brk_gundrawn_001.mul
