@@ -1,4 +1,4 @@
-; 15991/16020 (99%)
+; 16018/16020 (99%)
 pc-w\audio\streams\vo\eng\det_fema\adam_jensen\as01\fema_adam_dia_as01_002.mul
 pc-w\audio\streams\vo\eng\det_fema\adam_jensen\as01\fema_adam_dia_as01_004.mul
 pc-w\audio\streams\vo\eng\det_fema\adam_jensen\as01\fema_adam_dia_as01_008.mul
@@ -9178,6 +9178,33 @@ pc-w\audio\streams\vo\eng\global_barks\npcs\unique\josie_thorpe\uni_josie_gun_00
 pc-w\audio\streams\vo\eng\global_barks\npcs\unique\klugman\det1_klug_brk_heargun_001.mul
 pc-w\audio\streams\vo\eng\global_barks\npcs\unique\klugman\det1_klug_brk_heargun_002.mul
 pc-w\audio\streams\vo\eng\global_barks\npcs\unique\klugman\det1_klug_brk_heargun_003.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_hong_gun_001.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_alertcop_001.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_audiomajorweaponfiring_001.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_audiominor_001.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_collisionminorobject_001.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_cower_001.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_cower_002.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_cower_003.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_damageballistic_001.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_damageballistic_002.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_damageconcussion_002.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_damagedeathbig_001.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_damagedeathsmall_001.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_damagefire_001.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_damagegas_001.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_damagephysical_001.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_flee_001.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_flee_002.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_grenade_001.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_grenade_001b.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_playeraimingme_001.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_playerdrawweapon_001.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_playerinteractalerted_001.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_visualmajordeadbody_001.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_visualmajorweaponfiring_002.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_wakeup_001.mul
+pc-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_wakeupfriend_001.mul
 pc-w\audio\streams\vo\eng\global_barks\npcs\unique\letitia\uni_leti_gun_001.mul
 pc-w\audio\streams\vo\eng\global_barks\npcs\unique\marcovic\barks\det1_marco_brk_aimingme_01.mul
 pc-w\audio\streams\vo\eng\global_barks\npcs\unique\marcovic\barks\det1_marco_brk_cower_01.mul
