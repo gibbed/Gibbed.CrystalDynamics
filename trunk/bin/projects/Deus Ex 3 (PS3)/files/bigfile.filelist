@@ -1,4 +1,4 @@
-; 16761/16775 (99%)
+; 16763/16775 (99%)
 ps3-w\audio\streams\ambience\ambientriotloopfiltered-02.mul
 ps3-w\audio\streams\ambience\ambientriotloopfiltered-industries.mul
 ps3-w\audio\streams\ambience\faketaggartconference.mul
@@ -2471,6 +2471,7 @@ ps3-w\audio\streams\vo\eng\det1\public_address\limb_clinic\det1_limb_env_page02.
 ps3-w\audio\streams\vo\eng\det1\public_address\limb_clinic\det1_limb_env_page03.mul
 ps3-w\audio\streams\vo\eng\det1\public_address\limb_clinic\det1_limb_env_page04.mul
 ps3-w\audio\streams\vo\eng\det1\public_address\limb_clinic\env_a002_limb_001.mul
+ps3-w\audio\streams\vo\eng\det1\public_address\limb_clinic\env_a002_limb_002.mul
 ps3-w\audio\streams\vo\eng\det1\public_address\police_station_pages\det1_policestation_env_page01.mul
 ps3-w\audio\streams\vo\eng\det1\public_address\police_station_pages\det1_policestation_env_page010.mul
 ps3-w\audio\streams\vo\eng\det1\public_address\police_station_pages\det1_policestation_env_page02.mul
@@ -10026,6 +10027,7 @@ ps3-w\audio\streams\vo\eng\global_barks\npcs\unique\taggart\barks\uni_tagg_brk_p
 ps3-w\audio\streams\vo\eng\global_barks\npcs\unique\taggart\barks\uni_tagg_brk_playerinteractalerted_001.mul
 ps3-w\audio\streams\vo\eng\global_barks\npcs\unique\taggart\barks\uni_tagg_brk_wakeup_001.mul
 ps3-w\audio\streams\vo\eng\global_barks\npcs\unique\taggart\uni_tagg_gun_001.mul
+ps3-w\audio\streams\vo\eng\global_barks\npcs\unique\taggart\uni_taggart_postchaos_001.mul
 ps3-w\audio\streams\vo\eng\global_barks\npcs\unique\tong_si_hung\uni_tong_brk_damageballistic_001.mul
 ps3-w\audio\streams\vo\eng\global_barks\npcs\unique\tong_si_hung\uni_tong_brk_damagephysical_001.mul
 ps3-w\audio\streams\vo\eng\global_barks\npcs\unique\tong_si_hung\uni_tong_brk_gundrawn_001.mul
