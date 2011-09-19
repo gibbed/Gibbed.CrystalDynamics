@@ -1,4 +1,4 @@
-; 11578/13400 (86%)
+; 11579/13400 (86%)
 ps3-w\alarm.drm
 ps3-w\alarm_dispatcher.drm
 ps3-w\alarm_light.drm
@@ -159,6 +159,7 @@ ps3-w\art\cinematics\cinstream\cut_fem_01_choplanding_start.drm
 ps3-w\art\cinematics\cinstream\cut_fem_01_choplanding_start.mul
 ps3-w\art\cinematics\cinstream\cut_fem_04_choptakeoff_exit.drm
 ps3-w\art\cinematics\cinstream\cut_fem_04_choptakeoff_exit.mul
+ps3-w\art\cinematics\cinstream\cut_gameintrotest.mul
 ps3-w\art\cinematics\cinstream\cut_ind_02_choptakeoff_exit.drm
 ps3-w\art\cinematics\cinstream\cut_ind_02_choptakeoff_exit.mul
 ps3-w\art\cinematics\cinstream\cut_jap_01_choplanding_start.drm
