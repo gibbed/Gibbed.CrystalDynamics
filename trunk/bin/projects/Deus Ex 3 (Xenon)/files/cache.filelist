@@ -1,4 +1,4 @@
-; 8183/8184 (99%)
+; 8174/8184 (99%)
 xenon-w\alarm.drm
 xenon-w\alarm_light.drm
 xenon-w\alc_beer_bottle_a.drm
@@ -1117,6 +1117,7 @@ xenon-w\design_database\kitsystems\male_officeworker_white_a.drm
 xenon-w\design_database\kitsystems\male_officeworker_white_b.drm
 xenon-w\design_database\kitsystems\male_punk_black_b.drm
 xenon-w\design_database\kitsystems\male_punk_white_b.drm
+xenon-w\design_database\savedgamethumbnail\default\defaultthumbnail.drm
 xenon-w\design_database\savedgamethumbnail\newsavedgame\defaultnewsavedgame.drm
 xenon-w\design_database\savedgamethumbnail\savedgames\adamsapartment.drm
 xenon-w\design_database\savedgamethumbnail\savedgames\capsulehotel.drm
@@ -4642,6 +4643,7 @@ xenon-w\imf\imf_props\imf_lighting\neon_caps_a\neon_caps_a.drm
 xenon-w\imf\imf_props\imf_lighting\neon_caps_b\neon_caps_b.drm
 xenon-w\imf\imf_props\imf_lighting\the_hive_ceilinglight_a\the_hive_ceilinglight_a.drm
 xenon-w\imf\imf_props\imf_lighting\tong_office_light_ceiling\tong_office_light_ceiling.drm
+xenon-w\imf\imf_props\imf_limbclinic\limb_bleu panel_sign\limb_bleu panel_sign.drm
 xenon-w\imf\imf_props\imf_limbclinic\limb_clinic_entrance\limb_clinic_entrance.drm
 xenon-w\imf\imf_props\imf_limbclinic\limb_clinic_vitre_acceuil\limb_clinic_vitre_acceuil.drm
 xenon-w\imf\imf_props\imf_limbclinic\limb_panel\limb_panel.drm
@@ -5373,6 +5375,7 @@ xenon-w\level0_secretarea.drm
 xenon-w\level1_secretarea.drm
 xenon-w\level2_secretarea.drm
 xenon-w\level3_secretarea.drm
+xenon-w\local\locals.bin
 xenon-w\logicactionresource_database.drm
 xenon-w\logicinput_database.drm
 xenon-w\lower_dynamicads_a.drm
@@ -8170,4 +8173,3 @@ xenon-w\weapon_stungun_world.drm
 xenon-w\weapon_tranquilizergun_ammo_world.drm
 xenon-w\weapon_tranquilizergun_specialupgrade_world.drm
 xenon-w\wheeler14_modelbox_volume.drm
-xenon-w\local\locals.bin
