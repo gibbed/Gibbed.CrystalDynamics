@@ -42,7 +42,7 @@ namespace Gibbed.DeusEx3.Unpack
         public static void Main(string[] args)
         {
             bool showHelp = false;
-            bool extractUnknowns = true;
+            bool? extractUnknowns = null;
             bool overwriteFiles = false;
             bool verbose = true;
             string currentProject = null;
@@ -57,7 +57,12 @@ namespace Gibbed.DeusEx3.Unpack
                 {
                     "nu|no-unknowns",
                     "don't extract unknown files",
-                    v => extractUnknowns = v == null
+                    v => extractUnknowns = v != null ? false : extractUnknowns
+                },
+                {
+                    "ou|only-unknowns",
+                    "only extract unknown files",
+                    v => extractUnknowns = v != null ? true : extractUnknowns
                 },
                 {
                     "v|verbose",
@@ -151,7 +156,8 @@ namespace Gibbed.DeusEx3.Unpack
                         string name = hashes[entry.NameHash];
                         if (name == null)
                         {
-                            if (extractUnknowns == false)
+                            if (extractUnknowns.HasValue == true &&
+                                extractUnknowns.Value == false)
                             {
                                 continue;
                             }
@@ -196,6 +202,12 @@ namespace Gibbed.DeusEx3.Unpack
                         }
                         else
                         {
+                            if (extractUnknowns.HasValue == true &&
+                                extractUnknowns.Value == true)
+                            {
+                                continue;
+                            }
+
                             name = name.Replace("/", "\\");
                             if (name.StartsWith("\\") == true)
                             {
