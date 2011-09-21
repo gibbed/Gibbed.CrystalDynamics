@@ -1,4 +1,4 @@
-; 21917/21989 (99%)
+; 21923/21994 (99%)
 xenon-w\alarm_dispatcher.drm
 xenon-w\alarm_panel_a.drm
 xenon-w\animation\animlibs\human.drm
@@ -62,6 +62,7 @@ xenon-w\art\cinematics\cinstream\cut_a006_meetingdrmarcovic.mul
 xenon-w\art\cinematics\cinstream\cut_d002_themole.mul
 xenon-w\art\cinematics\cinstream\cut_fem_01_choplanding_start.mul
 xenon-w\art\cinematics\cinstream\cut_fem_04_choptakeoff_exit.mul
+xenon-w\art\cinematics\cinstream\cut_gameintrotest.mul
 xenon-w\art\cinematics\cinstream\cut_ind_02_choptakeoff_exit.mul
 xenon-w\art\cinematics\cinstream\cut_jap_01_choplanding_start.mul
 xenon-w\art\cinematics\cinstream\cut_jap_04_choptakeoff_exit.mul
@@ -5204,6 +5205,7 @@ xenon-w\audio\streams\vo\eng\global_barks\npcs\police\mw02\barks\uni_wcop02_brk_
 xenon-w\audio\streams\vo\eng\global_barks\npcs\police\mw02\barks\uni_wcop02_brk_whileinvestigateaudiomajorresponse_001.mul
 xenon-w\audio\streams\vo\eng\global_barks\npcs\police\mw02\barks\uni_wcop02_brk_whileinvestigateaudiominor_001.mul
 xenon-w\audio\streams\vo\eng\global_barks\npcs\police\mw02\barks\uni_wcop02_brk_whileinvestigateaudiominorresponse_001.mul
+xenon-w\audio\streams\vo\eng\global_barks\npcs\police\mw02\barks\uni_wcop02_brk_whileinvestigatecollisionmajor_001.mul
 xenon-w\audio\streams\vo\eng\global_barks\npcs\police\mw02\barks\uni_wcop02_brk_whileinvestigatecollisionmajorresponse_001.mul
 xenon-w\audio\streams\vo\eng\global_barks\npcs\police\mw02\barks\uni_wcop02_brk_whileinvestigatevisualmajor_001.mul
 xenon-w\audio\streams\vo\eng\global_barks\npcs\police\mw02\barks\uni_wcop02_brk_whileinvestigatevisualmajorresponse_001.mul
@@ -9591,7 +9593,6 @@ xenon-w\audio\streams\vo\eng\global_barks\npcs\unique\josie_thorpe\uni_josie_gun
 xenon-w\audio\streams\vo\eng\global_barks\npcs\unique\klugman\det1_klug_brk_heargun_001.mul
 xenon-w\audio\streams\vo\eng\global_barks\npcs\unique\klugman\det1_klug_brk_heargun_002.mul
 xenon-w\audio\streams\vo\eng\global_barks\npcs\unique\klugman\det1_klug_brk_heargun_003.mul
-xenon-w\audio\streams\vo\eng\global_barks\npcs\unique\letitia\uni_leti_gun_001.mul
 xenon-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_hong_gun_001.mul
 xenon-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_alertcop_001.mul
 xenon-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_audiomajorweaponfiring_001.mul
@@ -9619,6 +9620,7 @@ xenon-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_vis
 xenon-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_visualmajorweaponfiring_002.mul
 xenon-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_wakeup_001.mul
 xenon-w\audio\streams\vo\eng\global_barks\npcs\unique\lee hong\uni_lhong_brk_wakeupfriend_001.mul
+xenon-w\audio\streams\vo\eng\global_barks\npcs\unique\letitia\uni_leti_gun_001.mul
 xenon-w\audio\streams\vo\eng\global_barks\npcs\unique\marcovic\barks\det1_marco_brk_aimingme_01.mul
 xenon-w\audio\streams\vo\eng\global_barks\npcs\unique\marcovic\barks\det1_marco_brk_cower_01.mul
 xenon-w\audio\streams\vo\eng\global_barks\npcs\unique\marcovic\barks\det1_marco_brk_deathlg_01.mul
@@ -12274,6 +12276,7 @@ xenon-w\audio\streams\vo\eng\panchaea\npcs\unique\pan_computer\barks\pan_compute
 xenon-w\audio\streams\vo\eng\panchaea\npcs\unique\pan_computer\barks\pan_computer_brk_sentry_001.mul
 xenon-w\audio\streams\vo\eng\panchaea\npcs\unique\pan_computer\barks\pan_computer_brk_zpoddamage1_001.mul
 xenon-w\audio\streams\vo\eng\panchaea\npcs\unique\pan_computer\barks\pan_computer_brk_zpoddamage2_001.mul
+xenon-w\audio\streams\vo\eng\panchaea\npcs\unique\pan_computer\barks\soundterminator.mul
 xenon-w\audio\streams\vo\eng\panchaea\npcs\unique\pan_david_sarif\as02\pan_as02_cp06_3tr_sari_001.mul
 xenon-w\audio\streams\vo\eng\panchaea\npcs\unique\pan_david_sarif\as02\pan_as02_cp06_3tr_sari_002.mul
 xenon-w\audio\streams\vo\eng\panchaea\npcs\unique\pan_david_sarif\as02\pan_as02_cp06_dia_sari_002.mul
@@ -12715,6 +12718,7 @@ xenon-w\audio\streams\vo\eng\sarif_hq01\npcs\unique\det_david_sarif\cp01\hqin_cp
 xenon-w\audio\streams\vo\eng\sarif_hq01\npcs\unique\det_david_sarif\cp01\hqin_cp01_dia_sari_089.mul
 xenon-w\audio\streams\vo\eng\sarif_hq01\npcs\unique\det_david_sarif\cp05\hq01_cp05_rad_sari_001.mul
 xenon-w\audio\streams\vo\eng\sarif_hq01\npcs\unique\det_david_sarif\cp05\hq01_cp05_rad_sari_003.mul
+xenon-w\audio\streams\vo\eng\sarif_hq01\npcs\unique\det_david_sarif\cp05\hq01_cp05_rad_sari_005_alt.mul
 xenon-w\audio\streams\vo\eng\sarif_hq01\npcs\unique\det_david_sarif\cp05a\hq01_cp05a_rad_sari_001.mul
 xenon-w\audio\streams\vo\eng\sarif_hq01\npcs\unique\det_david_sarif\cp05a\hq01_cp05a_rad_sari_002.mul
 xenon-w\audio\streams\vo\eng\sarif_hq01\npcs\unique\det_david_sarif\cp05a\hq01_cp05a_rad_sari_003.mul
@@ -13569,6 +13573,7 @@ xenon-w\audio\streams\vo\eng\sarif_hq04\npcs\civilians\fw01\3rd_tier\hq04_fw01_3
 xenon-w\audio\streams\vo\eng\sarif_hq04\npcs\civilians\fw01\3rd_tier\hq04_fw01_3tr_general_002.mul
 xenon-w\audio\streams\vo\eng\sarif_hq04\npcs\civilians\fw01\3rd_tier\hq04_fw01_3tr_general_003.mul
 xenon-w\audio\streams\vo\eng\sarif_hq04\npcs\civilians\fw01\3rd_tier\hq04_fw01_3tr_general_004.mul
+xenon-w\audio\streams\vo\eng\sarif_hq04\npcs\civilians\fw01\3rd_tier\hq04_fw01_3tr_ohd01_001.mul
 xenon-w\audio\streams\vo\eng\sarif_hq04\npcs\civilians\fw01\3rd_tier\hq04_fw01_3tr_ohd01_002.mul
 xenon-w\audio\streams\vo\eng\sarif_hq04\npcs\civilians\fw01\3rd_tier\hq04_fw01_3tr_ohd03_001.mul
 xenon-w\audio\streams\vo\eng\sarif_hq04\npcs\civilians\fw01\3rd_tier\hq04_fw01_3tr_ohd03_002.mul
@@ -15811,6 +15816,7 @@ xenon-w\audio\streams\vo\eng\sha2\npcs\civilians\ma02\ohd01\sha2_ma02_dia_ohd01_
 xenon-w\audio\streams\vo\eng\sha2\npcs\civilians\ma02\ohd01\sha2_ma02_dia_ohd01_006.mul
 xenon-w\audio\streams\vo\eng\sha2\npcs\civilians\mb01\3tr\sha2_mb01_3tr_ohd08_001.mul
 xenon-w\audio\streams\vo\eng\sha2\npcs\civilians\mb01\3tr\sha2_mb01_3tr_ohd08_002.mul
+xenon-w\audio\streams\vo\eng\sha2\npcs\civilians\mb01\3tr\sha2_mb01_3tr_story_001.mul
 xenon-w\audio\streams\vo\eng\sha2\npcs\civilians\mb01\3tr\sha2_mb01_3tr_story_002.mul
 xenon-w\audio\streams\vo\eng\sha2\npcs\civilians\mb01\3tr\sha2_mb01_3tr_storylimb_001.mul
 xenon-w\audio\streams\vo\eng\sha2\npcs\civilians\mb01\3tr\sha2_mb01_3tr_storylimb_002.mul
@@ -16730,12 +16736,12 @@ xenon-w\design_database\kitsystems\female_scientist_asian_a.drm
 xenon-w\design_database\kitsystems\female_scientist_asian_b.drm
 xenon-w\design_database\kitsystems\male_punk_white_a.drm
 xenon-w\design_database\loadingscreen\constructionsite\constructionsite001.drm
+xenon-w\design_database\loadingscreen\default\echoesoficarus.drm
 xenon-w\design_database\loadingscreen\detroit\adamsapartment\adamsapartment001.drm
 xenon-w\design_database\loadingscreen\detroit\detroit001.drm
 xenon-w\design_database\loadingscreen\detroit\detroit002.drm
 xenon-w\design_database\loadingscreen\detroit\detroit003.drm
 xenon-w\design_database\loadingscreen\detroit\detroit004.drm
-xenon-w\design_database\loadingscreen\echoesoficarus.drm
 xenon-w\design_database\loadingscreen\femacamp\femacamp001.drm
 xenon-w\design_database\loadingscreen\hengsha\hensha001.drm
 xenon-w\design_database\loadingscreen\hengsha\hensha002.drm
@@ -21755,7 +21761,7 @@ xenon-w\streamgroups\sin_omega_exterior_entrance.drm
 xenon-w\streamgroups\sin_omega_exterior_entrance_storage.drm
 xenon-w\streamgroups\sin_omega_exterior_main_courtyard.drm
 xenon-w\streamgroups\sin_omega_exterior_restricted_area.drm
-xenon-w\streamgroups\sin_omega_lab_biomec_biomec	lab.drm</entry>																		
+xenon-w\streamgroups\sin_omega_lab_biomec_biomec lab.drm
 xenon-w\streamgroups\sin_omega_lab_biomec_corridor.drm
 xenon-w\streamgroups\sin_omega_lab_biomec_corridor_ss.drm
 xenon-w\streamgroups\sin_omega_lab_biomec_entrance.drm
