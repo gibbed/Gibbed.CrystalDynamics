@@ -1,4 +1,4 @@
-; 21981/21994 (99%)
+; 21982/21994 (99%)
 xenon-w\alarm_dispatcher.drm
 xenon-w\alarm_panel_a.drm
 xenon-w\animation\animlibs\human.drm
@@ -18718,6 +18718,7 @@ xenon-w\imf\imf_props\imf_furniture\imf_bed\bed_double_b\bed_double_b.drm
 xenon-w\imf\imf_props\imf_furniture\imf_bed\bed_hospital_a\bed_hospital_a.drm
 xenon-w\imf\imf_props\imf_furniture\imf_bed\bed_single_a\bed_single_a.drm
 xenon-w\imf\imf_props\imf_furniture\imf_bed\bed_single_b\bed_single_b.drm
+xenon-w\imf\imf_props\imf_furniture\imf_bed\bed_zhao_a\bed_zhao_a.drm
 xenon-w\imf\imf_props\imf_furniture\imf_bed\couch_old_a\couch_old_a.drm
 xenon-w\imf\imf_props\imf_furniture\imf_bed\mattress_a\mattress_a.drm
 xenon-w\imf\imf_props\imf_furniture\imf_bed\mattress_old_a\mattress_old_a.drm

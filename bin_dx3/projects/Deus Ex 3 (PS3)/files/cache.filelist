@@ -1,4 +1,4 @@
-; 13377/13400 (99%)
+; 13378/13400 (99%)
 ps3-w\alarm.drm
 ps3-w\alarm_dispatcher.drm
 ps3-w\alarm_light.drm
@@ -6169,6 +6169,7 @@ ps3-w\imf\imf_props\imf_furniture\imf_bed\bed_double_b\bed_double_b.drm
 ps3-w\imf\imf_props\imf_furniture\imf_bed\bed_hospital_a\bed_hospital_a.drm
 ps3-w\imf\imf_props\imf_furniture\imf_bed\bed_single_a\bed_single_a.drm
 ps3-w\imf\imf_props\imf_furniture\imf_bed\bed_single_b\bed_single_b.drm
+ps3-w\imf\imf_props\imf_furniture\imf_bed\bed_zhao_a\bed_zhao_a.drm
 ps3-w\imf\imf_props\imf_furniture\imf_bed\couch_old_a\couch_old_a.drm
 ps3-w\imf\imf_props\imf_furniture\imf_bed\mattress_a\mattress_a.drm
 ps3-w\imf\imf_props\imf_furniture\imf_bed\mattress_old_a\mattress_old_a.drm

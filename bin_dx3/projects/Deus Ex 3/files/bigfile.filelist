@@ -1,4 +1,4 @@
-; 15965/15974 (99%)
+; 15966/15974 (99%)
 pc-w\alarm.drm
 pc-w\alarm_dispatcher.drm
 pc-w\alarm_light.drm
@@ -6530,6 +6530,7 @@ pc-w\imf\imf_props\imf_furniture\imf_bed\bed_double_b\bed_double_b.drm
 pc-w\imf\imf_props\imf_furniture\imf_bed\bed_hospital_a\bed_hospital_a.drm
 pc-w\imf\imf_props\imf_furniture\imf_bed\bed_single_a\bed_single_a.drm
 pc-w\imf\imf_props\imf_furniture\imf_bed\bed_single_b\bed_single_b.drm
+pc-w\imf\imf_props\imf_furniture\imf_bed\bed_zhao_a\bed_zhao_a.drm
 pc-w\imf\imf_props\imf_furniture\imf_bed\couch_old_a\couch_old_a.drm
 pc-w\imf\imf_props\imf_furniture\imf_bed\mattress_a\mattress_a.drm
 pc-w\imf\imf_props\imf_furniture\imf_bed\mattress_old_a\mattress_old_a.drm
