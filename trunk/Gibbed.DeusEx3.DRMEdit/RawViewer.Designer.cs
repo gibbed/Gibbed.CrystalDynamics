@@ -112,6 +112,7 @@ namespace Gibbed.DeusEx3.DRMEdit
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 25);
             this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer1.Panel1
             // 
@@ -120,8 +121,8 @@ namespace Gibbed.DeusEx3.DRMEdit
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(640, 215);
-            this.splitContainer1.SplitterDistance = 400;
+            this.splitContainer1.Size = new System.Drawing.Size(640, 367);
+            this.splitContainer1.SplitterDistance = 200;
             this.splitContainer1.TabIndex = 4;
             // 
             // hexBox
@@ -136,7 +137,7 @@ namespace Gibbed.DeusEx3.DRMEdit
             this.hexBox.Name = "hexBox";
             this.hexBox.ReadOnly = true;
             this.hexBox.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hexBox.Size = new System.Drawing.Size(400, 215);
+            this.hexBox.Size = new System.Drawing.Size(640, 200);
             this.hexBox.StringViewVisible = true;
             this.hexBox.TabIndex = 3;
             this.hexBox.UseFixedBytesPerLine = true;
@@ -150,7 +151,7 @@ namespace Gibbed.DeusEx3.DRMEdit
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(236, 215);
+            this.tabControl1.Size = new System.Drawing.Size(640, 163);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -158,7 +159,7 @@ namespace Gibbed.DeusEx3.DRMEdit
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(228, 189);
+            this.tabPage1.Size = new System.Drawing.Size(632, 137);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -168,7 +169,7 @@ namespace Gibbed.DeusEx3.DRMEdit
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(192, 74);
+            this.tabPage2.Size = new System.Drawing.Size(228, 189);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -177,7 +178,7 @@ namespace Gibbed.DeusEx3.DRMEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 240);
+            this.ClientSize = new System.Drawing.Size(640, 392);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.toolStrip);
             this.Name = "RawViewer";
