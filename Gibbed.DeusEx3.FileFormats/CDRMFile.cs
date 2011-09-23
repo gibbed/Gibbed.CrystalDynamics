@@ -49,15 +49,43 @@ namespace Gibbed.DeusEx3.FileFormats
             }
 
             var version = input.ReadValueU32(true);
-            if (version != 2 && version.Swap() != 2)
+
+            if (version != 0 &&
+                version != 2 && version.Swap() != 2)
             {
                 throw new FormatException();
             }
 
-            var littleEndian = version == 2;
-            var count = input.ReadValueU32(littleEndian);
-            var padding = input.ReadValueU32(littleEndian);
+            bool littleEndian;
+            uint count;
+            uint padding;
 
+            if (version == 0)
+            {
+                count = input.ReadValueU32(true);
+                
+                if (count > 0x7FFFFF)
+                {
+                    count = count.Swap();
+                    littleEndian = false;
+                }
+                else
+                {
+                    littleEndian = true;
+                }
+
+                input.ReadValueU32(littleEndian);
+
+                padding = (uint)(basePosition + 16 + (count * 8));
+                padding = padding.Align(16) - padding;
+            }
+            else
+            {
+                littleEndian = version == 2;
+                count = input.ReadValueU32(littleEndian);
+                padding = input.ReadValueU32(littleEndian);
+            }
+            
             var startOfData = basePosition + 16 + (count * 8) + padding;
 
             var blocks = new Block[count];
@@ -80,10 +108,13 @@ namespace Gibbed.DeusEx3.FileFormats
             }
 
             var output = new MemoryStream();
+            
             long offset = 0;
             foreach (var block in blocks)
             {
-                using (var buffer = input.ReadToMemoryStream(block.CompressedSize.Align(16)))
+                var nextPosition = input.Position + block.CompressedSize.Align(16);
+
+                using (var buffer = input.ReadToMemoryStream(block.CompressedSize))
                 {
                     if (block.Type == 1)
                     {
@@ -108,6 +139,8 @@ namespace Gibbed.DeusEx3.FileFormats
                         throw new FormatException();
                     }
                 }
+
+                input.Seek(nextPosition, SeekOrigin.Begin);
             }
 
             output.Position = 0;
