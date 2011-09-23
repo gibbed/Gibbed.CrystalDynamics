@@ -19,7 +19,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\</OutputPath>
+    <OutputPath>..\bin_dx3\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -47,6 +47,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Gibbed.CrystalDynamics.FileFormats\Gibbed.CrystalDynamics.FileFormats.csproj">
+      <Project>{2F2E00FA-694C-4A3D-BC83-710D35426782}</Project>
+      <Name>Gibbed.CrystalDynamics.FileFormats</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gibbed.DeusEx3.FileFormats\Gibbed.DeusEx3.FileFormats.csproj">
       <Project>{1164E433-3016-4687-8C4B-D772CB3B42C5}</Project>
       <Name>Gibbed.DeusEx3.FileFormats</Name>

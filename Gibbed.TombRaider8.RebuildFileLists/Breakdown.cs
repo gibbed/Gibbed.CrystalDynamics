@@ -20,30 +20,36 @@
  *    distribution.
  */
 
-namespace Gibbed.DeusEx3.FileFormats
-{
-    public static class StringHelpers
-    {
-        public static uint HashFileName(this string input)
-        {
-            uint hash = 0xFFFFFFFFu;
-            for (int i = 0; i < input.Length; i++)
-            {
-                hash ^= (uint)input[i] << 24;
+using System;
 
-                for (int j = 0; j < 8; j++)
+namespace Gibbed.TombRaider8.RebuildFileLists
+{
+    internal class Breakdown
+    {
+        public long Known = 0;
+        public long Total = 0;
+
+        public int Percent
+        {
+            get
+            {
+                if (this.Total == 0)
                 {
-                    if ((hash & 0x80000000) != 0)
-                    {
-                        hash = (hash << 1) ^ 0x04C11DB7u;
-                    }
-                    else
-                    {
-                        hash <<= 1;
-                    }
+                    return 0;
                 }
+
+                return (int)Math.Floor((
+                    (float)this.Known /
+                    (float)this.Total) * 100.0);
             }
-            return ~hash;
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0}/{1} ({2}%)",
+                this.Known,
+                this.Total,
+                this.Percent);
         }
     }
 }

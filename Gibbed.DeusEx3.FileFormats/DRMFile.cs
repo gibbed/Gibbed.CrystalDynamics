@@ -130,10 +130,6 @@ namespace Gibbed.DeusEx3.FileFormats
                     throw new NotImplementedException();
                 }
 
-                if (section.Type == DRM.SectionType.RenderResource)
-                {
-                }
-
                 if (sectionHeader.HeaderSize > 0)
                 {
                     using (var buffer = input.ReadToMemoryStream(sectionHeader.HeaderSize))

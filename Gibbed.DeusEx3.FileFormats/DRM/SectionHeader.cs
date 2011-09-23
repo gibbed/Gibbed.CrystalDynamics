@@ -47,6 +47,11 @@ namespace Gibbed.DeusEx3.FileFormats.DRM
             }
         }
 
+        public byte UnknownFlagValue
+        {
+            get { return (byte)((this.Flags & 0x000000FE) >> 1); }
+        }
+
         public uint HeaderSize
         {
             get { return (this.Flags & 0xFFFFFF00) >> 8; }
@@ -77,6 +82,13 @@ namespace Gibbed.DeusEx3.FileFormats.DRM
 
         public override string ToString()
         {
+            return string.Format("{0:X2} {1:X4} {2:X8} {3:X8} {4:X8} : {5}",
+                this.Unknown05,
+                this.Unknown06,
+                this.Flags,
+                this.Id,
+                this.Unknown10,
+                this.Type);
             return this.Type.ToString();
         }
     }

@@ -25,9 +25,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using Gibbed.IO;
 using Gibbed.DeusEx3.FileFormats;
+using Gibbed.IO;
+using BigLocale = Gibbed.CrystalDynamics.FileFormats.Big.Locale;
 using SectionType = Gibbed.DeusEx3.FileFormats.DRM.SectionType;
+
 namespace Test
 {
     internal class Program

@@ -1,0 +1,15 @@
+<project>
+	<name>Tomb Raider 8</name>
+	<dependencies>
+		<dependency>Shared</dependency>
+	</dependencies>
+	<list_location>Tomb Raider 8</list_location>
+	<install_locations>
+		<install_location>
+			<action type="registry" key="HKEY_LOCAL_MACHINE\SOFTWARE\Crystal Dynamics\Tomb Raider: Underworld" value="InstallPath" />
+		</install_location>
+		<install_location>
+			<action type="registry" key="HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Crystal Dynamics\Tomb Raider: Underworld" value="InstallPath" />
+		</install_location>
+	</install_locations>
+</project>

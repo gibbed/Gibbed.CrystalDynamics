@@ -25,7 +25,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Xml.XPath;
-using Gibbed.DeusEx3.FileFormats;
+using Gibbed.CrystalDynamics.FileFormats;
 using Gibbed.IO;
 using NDesk.Options;
 
@@ -89,7 +89,7 @@ namespace Gibbed.DeusEx3.Pack
             }
 
             var entries = new List<MyEntry>();
-            var big = new BigFile();
+            var big = new BigFileV2();
 
             using (var input = File.Open(
                 inputPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
@@ -160,7 +160,7 @@ namespace Gibbed.DeusEx3.Pack
             uint? currentBigFile = null;
             Stream data = null;
 
-            var headerSize = (uint)BigFile.EstimateHeaderSize(entries.Count);
+            var headerSize = (uint)BigFileV1.EstimateHeaderSize(entries.Count);
             var firstOffset = headerSize / 2048;
 
             var maxBlocksPerFile = big.FileAlignment / 2048;

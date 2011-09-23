@@ -23,8 +23,10 @@
 using System;
 using System.IO;
 using Gibbed.IO;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using DRM = Gibbed.DeusEx3.FileFormats.DRM;
 
 namespace Gibbed.DeusEx3.DRMEdit
 {
@@ -67,34 +69,6 @@ namespace Gibbed.DeusEx3.DRMEdit
                 var rez = new FileFormats.DRMFile();
                 rez.Deserialize(input);
                 this.FileData = rez;
-
-                /*
-                foreach (var section in rez.Sections)
-                {
-                    if (section.Resolver == null)
-                    {
-                        continue;
-                    }
-
-                    foreach (var unknown in section.Resolver.Unknown2s)
-                    {
-                        section.Data.Seek(unknown.Unknown0, SeekOrigin.Begin);
-                        var id = section.Data.ReadValueU32();
-                        if (id == 0x00013065)
-                        {
-                        }
-                    }
-
-                    foreach (var unknown in section.Resolver.Unknown4s)
-                    {
-                        section.Data.Seek(unknown.Unknown0, SeekOrigin.Begin);
-                        var id = section.Data.ReadValueU32();
-                        if (id == 0x00013065)
-                        {
-                        }
-                    }
-                }
-                */
             }
 
             this.BuildTree();
@@ -108,6 +82,124 @@ namespace Gibbed.DeusEx3.DRMEdit
             var root = new TreeNode(Path.GetFileName(this.FilePath));
             root.ImageKey = "__DRM";
             root.SelectedImageKey = "__DRM";
+
+            /*
+            var parents = new List<DRM.Section>();
+            parents.AddRange(this.FileData.Sections);
+
+            var children = new Dictionary<DRM.Section, List<DRM.Section>>();
+
+            foreach (var section in this.FileData.Sections)
+            {
+                children[section] = new List<DRM.Section>();
+
+                if (section.Resolver == null)
+                {
+                    continue;
+                }
+
+                foreach (var resolver in section.Resolver.Unknown1s)
+                {
+                    var target = this.FileData.Sections[resolver.SectionIndex];
+
+                    if (target != section &&
+                        children[section].Contains(target) == false)
+                    {
+                        parents.Remove(target);
+                        children[section].Add(target);
+                    }
+                }
+
+                foreach (var resolver in section.Resolver.Unknown2s)
+                {
+                    section.Data.Seek(resolver.PointerOffset, SeekOrigin.Begin);
+                    var id = section.Data.ReadValueU32();
+
+                    var target = this.FileData.Sections
+                        .Single(t => t.Id == id && t.Type == (DRM.SectionType)resolver.SectionType);
+
+                    if (target != section &&
+                        children[section].Contains(target) == false)
+                    {
+                        parents.Remove(target);
+                        children[section].Add(target);
+                    }
+                }
+
+                foreach (var resolver in section.Resolver.Unknown4s)
+                {
+                    section.Data.Seek(resolver.PointerOffset, SeekOrigin.Begin);
+                    var id = section.Data.ReadValueU32();
+
+                    var target = this.FileData.Sections
+                        .Single(t => t.Id == id && t.Type == (DRM.SectionType)resolver.SectionType);
+
+                    if (target != section &&
+                        children[section].Contains(target) == false)
+                    {
+                        parents.Remove(target);
+                        children[section].Add(target);
+                    }
+                }
+            }
+
+            var queue = new Queue<KeyValuePair<DRM.Section, TreeNode>>();
+            var done = new List<DRM.Section>();
+
+            foreach (var parent in parents)
+            {
+                queue.Enqueue(new KeyValuePair<DRM.Section, TreeNode>(parent, root));
+            }
+
+            while (queue.Count > 0)
+            {
+                var kv = queue.Dequeue();
+                var section = kv.Key;
+                var parent = kv.Value;
+
+                var typeName = section.Type.ToString();
+
+                var name = section.Id.ToString("X8");
+                name += " : " + typeName;
+                name += string.Format(" [{0:X2} {1:X2} {2:X4} {3:X8}]",
+                    section.Flags,
+                    section.Unknown05,
+                    section.Unknown06,
+                    section.Unknown10);
+
+                if (section.Data != null)
+                {
+                    name += " (" + section.Data.Length.ToString() + ")";
+                }
+
+                var node = new TreeNode(name);
+
+                if (this.entryTreeView.ImageList.Images.ContainsKey(typeName) == true)
+                {
+                    node.ImageKey = typeName;
+                    node.SelectedImageKey = typeName;
+                }
+                else
+                {
+                    node.ImageKey = "";
+                    node.SelectedImageKey = "";
+                }
+
+                node.Tag = section;
+                parent.Nodes.Add(node);
+
+                if (done.Contains(section) == false &&
+                    children.ContainsKey(section) == true)
+                {
+                    foreach (var child in children[section])
+                    {
+                        queue.Enqueue(new KeyValuePair<DRM.Section, TreeNode>(child, node));
+                    }
+                }
+
+                done.Add(section);
+            }
+            */
 
             foreach (var section in this.FileData.Sections.OrderBy(s => s.Id))
             {
@@ -148,7 +240,21 @@ namespace Gibbed.DeusEx3.DRMEdit
             this.entryTreeView.EndUpdate();
         }
 
-        private void OpenSection(TreeNode node)
+        private ISectionViewer GetViewer(DRM.SectionType type, bool forceRaw)
+        {
+            if (forceRaw == true)
+            {
+                return new RawViewer() { MdiParent = this.MdiParent };
+            }
+
+            switch (type)
+            {
+                case DRM.SectionType.RenderResource: return new TextureViewer() { MdiParent = this.MdiParent };
+                default: return new RawViewer() { MdiParent = this.MdiParent };
+            }
+        }
+
+        private void OpenSection(TreeNode node, bool forceRaw)
         {
             var section = node.Tag as FileFormats.DRM.Section;
             if (section == null)
@@ -161,39 +267,19 @@ namespace Gibbed.DeusEx3.DRMEdit
                 section.Data.Seek(0, SeekOrigin.Begin);
             }
 
-            if (section.Type == FileFormats.DRM.SectionType.RenderResource)
-            {
-                var viewer = new TextureViewer()
-                {
-                    MdiParent = this.MdiParent,
-                };
-                viewer.LoadSection(section);
-                viewer.Show();
-            }
-            else
-            {
-                var viewer = new RawViewer()
-                {
-                    MdiParent = this.MdiParent,
-                };
-                viewer.LoadSection(section);
-                viewer.Show();
-            }
-            /*
-            else
-            {
-                MessageBox.Show(
-                    string.Format("Unimplemented section type ({0}).",
-                        section.Type),
-                    "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            */
+            var viewer = GetViewer(section.Type, forceRaw);
+            viewer.LoadSection(section);
+            viewer.Show();
         }
 
-        private void OnViewObject(object sender, EventArgs e)
+        private void OnViewSection(object sender, EventArgs e)
         {
-            this.OpenSection(this.entryTreeView.SelectedNode);
+            this.OpenSection(this.entryTreeView.SelectedNode, false);
+        }
+
+        private void OnViewSectionRaw(object sender, EventArgs e)
+        {
+            this.OpenSection(this.entryTreeView.SelectedNode, true);
         }
     }
 }

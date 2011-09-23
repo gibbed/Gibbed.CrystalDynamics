@@ -20,7 +20,7 @@
  *    distribution.
  */
 
-using Big = Gibbed.DeusEx3.FileFormats.Big;
+using Big = Gibbed.CrystalDynamics.FileFormats.Big;
 
 namespace Gibbed.DeusEx3.Pack
 {
