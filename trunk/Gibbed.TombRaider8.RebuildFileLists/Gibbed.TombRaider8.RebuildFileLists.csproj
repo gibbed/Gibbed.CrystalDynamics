@@ -2,27 +2,30 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1164E433-3016-4687-8C4B-D772CB3B42C5}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{6EF801A1-63D2-4197-B5FA-D6C5A0594A60}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gibbed.DeusEx3.FileFormats</RootNamespace>
-    <AssemblyName>Gibbed.DeusEx3.FileFormats</AssemblyName>
+    <RootNamespace>Gibbed.TombRaider8.RebuildFileLists</RootNamespace>
+    <AssemblyName>Gibbed.TombRaider8.RebuildFileLists</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\bin_tr8\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -31,9 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>..\other\ICSharpCode.SharpZipLib.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,22 +43,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CDRMFile.cs" />
-    <Compile Include="DRMFile.cs" />
-    <Compile Include="DRM\ScriptSection.cs" />
-    <Compile Include="DRM\Section.cs" />
-    <Compile Include="DRM\SectionHeader.cs" />
-    <Compile Include="DRM\Resolver.cs" />
-    <Compile Include="DRM\SectionType.cs" />
-    <Compile Include="PCD9File.cs" />
-    <Compile Include="PCD9\Format.cs" />
-    <Compile Include="PCD9\Mipmap.cs" />
+    <Compile Include="Breakdown.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Gibbed.IO\Gibbed.IO.csproj">
-      <Project>{047857BA-DAA3-4CA7-AFB8-A1B082B28C6A}</Project>
-      <Name>Gibbed.IO</Name>
+    <ProjectReference Include="..\Gibbed.CrystalDynamics.FileFormats\Gibbed.CrystalDynamics.FileFormats.csproj">
+      <Project>{2F2E00FA-694C-4A3D-BC83-710D35426782}</Project>
+      <Name>Gibbed.CrystalDynamics.FileFormats</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gibbed.ProjectData\Gibbed.ProjectData.csproj">
+      <Project>{F27A289E-3376-4653-89F3-D19C1ECABF33}</Project>
+      <Name>Gibbed.ProjectData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NDesk.Options\NDesk.Options.csproj">
+      <Project>{C98A6CD6-9422-4B35-8B7A-F520D75534D1}</Project>
+      <Name>NDesk.Options</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -20,7 +20,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\</OutputPath>
+    <OutputPath>..\bin_dx3\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -62,6 +62,7 @@
     <Compile Include="FileViewer.Designer.cs">
       <DependentUpon>FileViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="ISectionViewer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RawViewer.cs">
@@ -134,18 +135,6 @@
       <Project>{C98A6CD6-9422-4B35-8B7A-F520D75534D1}</Project>
       <Name>NDesk.Options</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\disc.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\image-sunset.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\script-binary.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\music.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

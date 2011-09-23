@@ -51,32 +51,23 @@ namespace Gibbed.DeusEx3.DRMEdit
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RawViewer));
-            this.hexBox = new Be.Windows.Forms.HexBox();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.loadFromFileButton = new System.Windows.Forms.ToolStripButton();
             this.saveToFileButton = new System.Windows.Forms.ToolStripButton();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.hexBox = new Be.Windows.Forms.HexBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.toolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // hexBox
-            // 
-            this.hexBox.BackColor = System.Drawing.SystemColors.Window;
-            this.hexBox.BackColorDisabled = System.Drawing.SystemColors.Control;
-            this.hexBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.hexBox.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hexBox.LineInfoForeColor = System.Drawing.Color.Empty;
-            this.hexBox.LineInfoVisible = true;
-            this.hexBox.Location = new System.Drawing.Point(0, 25);
-            this.hexBox.Name = "hexBox";
-            this.hexBox.ReadOnly = true;
-            this.hexBox.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hexBox.Size = new System.Drawing.Size(640, 215);
-            this.hexBox.StringViewVisible = true;
-            this.hexBox.TabIndex = 2;
-            this.hexBox.UseFixedBytesPerLine = true;
-            this.hexBox.VScrollBarVisible = true;
             // 
             // toolStrip
             // 
@@ -116,17 +107,88 @@ namespace Gibbed.DeusEx3.DRMEdit
             // 
             this.openFileDialog.Filter = "All Files (*.*)|*.*";
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 25);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.hexBox);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
+            this.splitContainer1.Size = new System.Drawing.Size(640, 215);
+            this.splitContainer1.SplitterDistance = 400;
+            this.splitContainer1.TabIndex = 4;
+            // 
+            // hexBox
+            // 
+            this.hexBox.BackColor = System.Drawing.SystemColors.Window;
+            this.hexBox.BackColorDisabled = System.Drawing.SystemColors.Control;
+            this.hexBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hexBox.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hexBox.LineInfoForeColor = System.Drawing.Color.Empty;
+            this.hexBox.LineInfoVisible = true;
+            this.hexBox.Location = new System.Drawing.Point(0, 0);
+            this.hexBox.Name = "hexBox";
+            this.hexBox.ReadOnly = true;
+            this.hexBox.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hexBox.Size = new System.Drawing.Size(400, 215);
+            this.hexBox.StringViewVisible = true;
+            this.hexBox.TabIndex = 3;
+            this.hexBox.UseFixedBytesPerLine = true;
+            this.hexBox.VScrollBarVisible = true;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(236, 215);
+            this.tabControl1.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(228, 189);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(192, 74);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // RawViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(640, 240);
-            this.Controls.Add(this.hexBox);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.toolStrip);
             this.Name = "RawViewer";
-            this.Text = "Raw";
+            this.Text = "Raw View";
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,11 +196,15 @@ namespace Gibbed.DeusEx3.DRMEdit
 
         #endregion
 
-        private Be.Windows.Forms.HexBox hexBox;
         private System.Windows.Forms.ToolStrip toolStrip;
         private System.Windows.Forms.ToolStripButton loadFromFileButton;
         private System.Windows.Forms.ToolStripButton saveToFileButton;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private Be.Windows.Forms.HexBox hexBox;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
     }
 }

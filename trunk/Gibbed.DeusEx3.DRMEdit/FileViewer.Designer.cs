@@ -60,6 +60,7 @@ namespace Gibbed.DeusEx3.DRMEdit
             this.viewSectionButton = new System.Windows.Forms.ToolStripButton();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.hintLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.viewSectionRawButton = new System.Windows.Forms.ToolStripButton();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -86,7 +87,8 @@ namespace Gibbed.DeusEx3.DRMEdit
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saveDRMButton,
             this.toolStripSeparator1,
-            this.viewSectionButton});
+            this.viewSectionButton,
+            this.viewSectionRawButton});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(480, 25);
@@ -112,10 +114,10 @@ namespace Gibbed.DeusEx3.DRMEdit
             this.viewSectionButton.Image = ((System.Drawing.Image)(resources.GetObject("viewSectionButton.Image")));
             this.viewSectionButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.viewSectionButton.Name = "viewSectionButton";
-            this.viewSectionButton.Size = new System.Drawing.Size(90, 22);
-            this.viewSectionButton.Text = "View Object";
+            this.viewSectionButton.Size = new System.Drawing.Size(94, 22);
+            this.viewSectionButton.Text = "View Section";
             this.viewSectionButton.ToolTipText = "View Section";
-            this.viewSectionButton.Click += new System.EventHandler(this.OnViewObject);
+            this.viewSectionButton.Click += new System.EventHandler(this.OnViewSection);
             // 
             // statusStrip
             // 
@@ -132,6 +134,16 @@ namespace Gibbed.DeusEx3.DRMEdit
             this.hintLabel.Name = "hintLabel";
             this.hintLabel.Size = new System.Drawing.Size(30, 17);
             this.hintLabel.Text = "Hint";
+            // 
+            // viewSectionRawButton
+            // 
+            this.viewSectionRawButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.viewSectionRawButton.Image = ((System.Drawing.Image)(resources.GetObject("viewSectionRawButton.Image")));
+            this.viewSectionRawButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.viewSectionRawButton.Name = "viewSectionRawButton";
+            this.viewSectionRawButton.Size = new System.Drawing.Size(23, 22);
+            this.viewSectionRawButton.Text = "View Section as Raw data";
+            this.viewSectionRawButton.Click += new System.EventHandler(this.OnViewSectionRaw);
             // 
             // FileViewer
             // 
@@ -162,5 +174,6 @@ namespace Gibbed.DeusEx3.DRMEdit
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel hintLabel;
         private System.Windows.Forms.ImageList typeImageList;
+        private System.Windows.Forms.ToolStripButton viewSectionRawButton;
     }
 }

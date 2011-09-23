@@ -27,9 +27,9 @@ using System.Linq;
 using System.Text;
 using Gibbed.IO;
 
-namespace Gibbed.DeusEx3.FileFormats
+namespace Gibbed.CrystalDynamics.FileFormats
 {
-    public class BigFile
+    public class BigFileV2
     {
         public bool LittleEndian;
         public uint FileAlignment;
@@ -57,7 +57,7 @@ namespace Gibbed.DeusEx3.FileFormats
             var entries = this.Entries
                 .OrderBy(e => e.Size)
                 .OrderBy(e => e.NameHash);
-            
+
             foreach (var entry in entries)
             {
                 output.WriteValueU32(entry.NameHash, this.LittleEndian);
@@ -92,7 +92,7 @@ namespace Gibbed.DeusEx3.FileFormats
             this.BasePath = input.ReadString(64, true, Encoding.ASCII);
 
             var count = input.ReadValueU32(this.LittleEndian);
-            
+
             var hashes = new uint[count];
             for (uint i = 0; i < count; i++)
             {

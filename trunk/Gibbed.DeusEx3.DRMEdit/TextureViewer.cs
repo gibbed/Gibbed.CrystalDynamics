@@ -28,7 +28,7 @@ using System.Windows.Forms;
 
 namespace Gibbed.DeusEx3.DRMEdit
 {
-    public partial class TextureViewer : Form
+    public partial class TextureViewer : Form, ISectionViewer
     {
         public FileFormats.PCD9File Texture;
 

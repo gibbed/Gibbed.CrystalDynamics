@@ -30,7 +30,7 @@ using Gibbed.IO;
 using NDesk.Options;
 using Big = Gibbed.CrystalDynamics.FileFormats.Big;
 
-namespace Gibbed.DeusEx3.Unpack
+namespace Gibbed.TombRaider8.Unpack
 {
     internal class Program
     {
@@ -116,7 +116,7 @@ namespace Gibbed.DeusEx3.Unpack
                 Console.WriteLine("Warning: no active project loaded.");
             }
 
-            var big = new BigFileV2();
+            var big = new BigFileV1();
             using (var input = File.OpenRead(inputPath))
             {
                 big.Deserialize(input);
@@ -138,7 +138,6 @@ namespace Gibbed.DeusEx3.Unpack
                 xml.WriteStartDocument();
                 xml.WriteStartElement("files");
                 xml.WriteAttributeString("endian", big.LittleEndian == true ? "little" : "big");
-                xml.WriteAttributeString("basepath", big.BasePath);
                 xml.WriteAttributeString("alignment", big.FileAlignment.ToString("X8"));
 
                 Stream data = null;
@@ -192,7 +191,8 @@ namespace Gibbed.DeusEx3.Unpack
                                         entry.Size, guess.Length));
                                 }
 
-                                extension = FileExtensions.Detect(guess, Math.Min(guess.Length, read));
+                                extension = FileExtensions.Detect(
+                                    guess, Math.Min(guess.Length, read));
                             }
 
                             name = entry.NameHash.ToString("X8");

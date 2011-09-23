@@ -23,12 +23,11 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using Gibbed.DeusEx3.FileFormats;
 using System.Linq;
+using Gibbed.CrystalDynamics.FileFormats;
 using NDesk.Options;
-using ProjectData = Gibbed.ProjectData;
 
-namespace RebuildFileLists
+namespace Gibbed.DeusEx3.RebuildFileLists
 {
     internal class Program
     {
@@ -151,7 +150,7 @@ namespace RebuildFileLists
 
                 outputPaths.Add(outputPath);
 
-                var big = new BigFile();
+                var big = new BigFileV2();
 
                 if (File.Exists(inputPath + ".bak") == true)
                 {

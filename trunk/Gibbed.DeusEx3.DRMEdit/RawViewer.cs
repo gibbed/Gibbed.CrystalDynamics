@@ -27,7 +27,7 @@ using Be.Windows.Forms;
 
 namespace Gibbed.DeusEx3.DRMEdit
 {
-    public partial class RawViewer : Form
+    public partial class RawViewer : Form, ISectionViewer
     {
         public byte[] Data;
 
@@ -48,7 +48,7 @@ namespace Gibbed.DeusEx3.DRMEdit
 
         private void UpdatePreview()
         {
-            this.hexBox.ByteProvider = new DynamicByteProvider((byte[])this.Data.Clone());
+            this.hexBox.ByteProvider = new DynamicByteProvider(this.Data);
         }
 
         private void OnSaveToFile(object sender, EventArgs e)

@@ -1,0 +1,15 @@
+; 14/3218 (0%)
+\tr8\pc-w\objectlist.txt
+pc-w\dispatcher.drm
+pc-w\generalbank.drm
+pc-w\globalaniminfo.drm
+pc-w\globaldebuginfo.drm
+pc-w\globalsoundinfo.drm
+pc-w\image\cursor.raw
+pc-w\padshock\padshocklib.tfb
+pc-w\particle.drm
+pc-w\player.drm
+pc-w\scenario_database.drm
+pc-w\triggerplane.drm
+pc-w\triggervolume.drm
+pc-w\watervolume.drm

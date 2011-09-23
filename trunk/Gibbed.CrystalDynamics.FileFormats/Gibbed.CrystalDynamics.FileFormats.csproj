@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1164E433-3016-4687-8C4B-D772CB3B42C5}</ProjectGuid>
+    <ProjectGuid>{2F2E00FA-694C-4A3D-BC83-710D35426782}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gibbed.DeusEx3.FileFormats</RootNamespace>
-    <AssemblyName>Gibbed.DeusEx3.FileFormats</AssemblyName>
+    <RootNamespace>Gibbed.CrystalDynamics.FileFormats</RootNamespace>
+    <AssemblyName>Gibbed.CrystalDynamics.FileFormats</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,9 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>..\other\ICSharpCode.SharpZipLib.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,17 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CDRMFile.cs" />
-    <Compile Include="DRMFile.cs" />
-    <Compile Include="DRM\ScriptSection.cs" />
-    <Compile Include="DRM\Section.cs" />
-    <Compile Include="DRM\SectionHeader.cs" />
-    <Compile Include="DRM\Resolver.cs" />
-    <Compile Include="DRM\SectionType.cs" />
-    <Compile Include="PCD9File.cs" />
-    <Compile Include="PCD9\Format.cs" />
-    <Compile Include="PCD9\Mipmap.cs" />
+    <Compile Include="BigFileV1.cs" />
+    <Compile Include="BigFileV2.cs" />
+    <Compile Include="Big\Entry.cs" />
+    <Compile Include="Big\Locale.cs" />
+    <Compile Include="FileExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gibbed.IO\Gibbed.IO.csproj">
@@ -61,6 +54,7 @@
       <Name>Gibbed.IO</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

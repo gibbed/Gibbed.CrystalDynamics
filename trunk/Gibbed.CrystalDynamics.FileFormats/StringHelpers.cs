@@ -20,28 +20,30 @@
  *    distribution.
  */
 
-using System;
-
-namespace Gibbed.DeusEx3.FileFormats.Big
+namespace Gibbed.CrystalDynamics.FileFormats
 {
-    [Flags]
-    public enum Locale : uint
+    public static class StringHelpers
     {
-        Default = 0xFFFFFFFF,
-        UnusedFlags = 0xFFFFE000,
-        UnusedLanguages = 0x00001D60,
-        English = 1 << 0,
-        French = 1 << 1,
-        German = 1 << 2,
-        Italian = 1 << 3,
-        Spanish = 1 << 4,
-        Japanese = 1 << 5,
-        Portugese = 1 << 6,
-        Polish = 1 << 7,
-        EnglishUK = 1 << 8,
-        Russian = 1 << 9,
-        Czech = 1 << 10,
-        Dutch = 1 << 11,
-        Hungarian = 1 << 12,
+        public static uint HashFileName(this string input)
+        {
+            uint hash = 0xFFFFFFFFu;
+            for (int i = 0; i < input.Length; i++)
+            {
+                hash ^= (uint)input[i] << 24;
+
+                for (int j = 0; j < 8; j++)
+                {
+                    if ((hash & 0x80000000) != 0)
+                    {
+                        hash = (hash << 1) ^ 0x04C11DB7u;
+                    }
+                    else
+                    {
+                        hash <<= 1;
+                    }
+                }
+            }
+            return ~hash;
+        }
     }
 }

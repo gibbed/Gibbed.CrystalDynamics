@@ -22,7 +22,7 @@
 
 using System;
 
-namespace RebuildFileLists
+namespace Gibbed.DeusEx3.RebuildFileLists
 {
     internal class Breakdown
     {

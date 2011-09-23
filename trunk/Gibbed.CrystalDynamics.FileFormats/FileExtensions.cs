@@ -23,7 +23,7 @@
 using System;
 using Gibbed.IO;
 
-namespace Gibbed.DeusEx3.FileFormats
+namespace Gibbed.CrystalDynamics.FileFormats
 {
     public static class FileExtensions
     {
@@ -52,6 +52,15 @@ namespace Gibbed.DeusEx3.FileFormats
             {
                 return "usm";
             }
+            if (
+                read >= 4 &&
+                guess[0] == 0x89 &&
+                guess[1] == 'P' &&
+                guess[2] == 'N' &&
+                guess[3] == 'G')
+            {
+                return "png";
+            }
             else if (
                 read >= 4 &&
                 guess[0] == 'F' &&
@@ -69,6 +78,15 @@ namespace Gibbed.DeusEx3.FileFormats
             {
                 return "mus";
             }
+            else if (
+                read >= 4 &&
+                guess[0] == 0x21 &&
+                guess[1] == 'W' &&
+                guess[2] == 'A' &&
+                guess[3] == 'R')
+            {
+                return "raw";
+            }
 
             // sound data
             if (read >= 4)
@@ -77,7 +95,11 @@ namespace Gibbed.DeusEx3.FileFormats
 
                 if (sampleRate == 22050 || sampleRate.Swap() == 22050 ||
                     sampleRate == 44100 || sampleRate.Swap() == 44100 ||
-                    sampleRate == 48000 || sampleRate.Swap() == 48000)
+                    sampleRate == 48000 || sampleRate.Swap() == 48000 ||
+
+                    (sampleRate >= 43900 && sampleRate <= 44300) ||
+                    (sampleRate >= 31000 && sampleRate <= 32200)
+                    )
                 {
                     return "mul";
                 }

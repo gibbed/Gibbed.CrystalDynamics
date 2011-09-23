@@ -29,8 +29,11 @@ namespace Gibbed.DeusEx3.FileFormats.DRM
 {
     public class Resolver
     {
-        public List<Unknown0Resolver> Unknown0s = new List<Unknown0Resolver>();
-        public List<Unknown1Resolver> Unknown1s = new List<Unknown1Resolver>();
+        public List<LocalDataResolver> LocalDataResolvers
+            = new List<LocalDataResolver>();
+        public List<RemoteDataResolver> RemoteDataResolvers
+            = new List<RemoteDataResolver>();
+
         public List<Unknown2Resolver> Unknown2s = new List<Unknown2Resolver>();
         public List<uint> Unknown3s = new List<uint>();
         public List<Unknown4Resolver> Unknown4s = new List<Unknown4Resolver>();
@@ -48,20 +51,20 @@ namespace Gibbed.DeusEx3.FileFormats.DRM
             var count3 = input.ReadValueU32(littleEndian);
             var count4 = input.ReadValueU32(littleEndian);
 
-            this.Unknown0s.Clear();
+            this.LocalDataResolvers.Clear();
             for (uint i = 0; i < count0; i++)
             {
-                var unknown = new Unknown0Resolver();
+                var unknown = new LocalDataResolver();
                 unknown.Deserialize(input);
-                this.Unknown0s.Add(unknown);
+                this.LocalDataResolvers.Add(unknown);
             }
 
-            this.Unknown1s.Clear();
+            this.RemoteDataResolvers.Clear();
             for (uint i = 0; i < count1; i++)
             {
-                var unknown = new Unknown1Resolver();
+                var unknown = new RemoteDataResolver();
                 unknown.Deserialize(input);
-                this.Unknown1s.Add(unknown);
+                this.RemoteDataResolvers.Add(unknown);
             }
 
             this.Unknown2s.Clear();
@@ -75,6 +78,7 @@ namespace Gibbed.DeusEx3.FileFormats.DRM
             this.Unknown3s.Clear();
             for (uint i = 0; i < count3; i++)
             {
+                throw new NotSupportedException();
                 var a = input.ReadValueU32();
                 this.Unknown3s.Add(a);
             }
@@ -88,95 +92,98 @@ namespace Gibbed.DeusEx3.FileFormats.DRM
             }
         }
 
-        public class Unknown0Resolver
+        public class LocalDataResolver
         {
-            public uint Unknown0;
-            public uint Unknown1;
+            public uint PointerOffset;
+            public uint DataOffset;
 
             public void Deserialize(Stream input)
             {
-                // ((key & 0xFFFFFFFF00000000) >> 32) = dest data
-                // ((key & 0x00000000FFFFFFFF) >>  0) = source data
-                // updates pointer at data[key] to &data[value]
+                // ((value & 0xFFFFFFFF00000000) >> 32) = pointer offset
+                // ((value & 0x00000000FFFFFFFF) >>  0) = data offset
+                // buffer[pointer] = &buffer[data]
 
-                this.Unknown0 = input.ReadValueU32();
-                this.Unknown1 = input.ReadValueU32();
+                this.PointerOffset = input.ReadValueU32();
+                this.DataOffset = input.ReadValueU32();
             }
 
             public override string ToString()
             {
                 return string.Format("{0:X4} {1:X8}",
-                    this.Unknown0,
-                    this.Unknown1);
+                    this.PointerOffset,
+                    this.DataOffset);
             }
         }
 
-        public class Unknown1Resolver
+        public class RemoteDataResolver
         {
-            public ushort Unknown0;
-            public uint Unknown1;
-            public uint Unknown2;
+            public ushort SectionIndex;
+            public uint PointerOffset;
+            public uint DataOffset;
 
             public void Deserialize(Stream input)
             {
-                // ((key & 0x0000000000003FFF) >>  0)     = source section index
-                // ((key & 0x0000003FFFFFC000) >> 14) * 4 = data dest
-                // ((key & 0xFFFFFFC000000000) >> 38) ?   = ???
-                
+                // ((value & 0x0000000000003FFF) >>  0)     = section index
+                // ((value & 0x0000003FFFFFC000) >> 14) * 4 = pointer offset
+                // ((value & 0xFFFFFFC000000000) >> 38)     = data offset
+                // buffer[pointer] = &sections[index].buffer[data]
+
                 var value = input.ReadValueU64();
-                this.Unknown0 = (ushort)((value & 0x0000000000003FFF) >> 0);
-                this.Unknown1 = (uint)(((value & 0x0000003FFFFFC000) >> 14) * 4);
-                this.Unknown2 = (uint)(((value & 0xFFFFFFC000000000) >> 38));
+                this.SectionIndex = (ushort)((value & 0x0000000000003FFF) >> 0);
+                this.PointerOffset = (uint)(((value & 0x0000003FFFFFC000) >> 14) * 4);
+                this.DataOffset = (uint)(((value & 0xFFFFFFC000000000) >> 38));
             }
 
             public override string ToString()
             {
                 return string.Format("{0:X4} {1:X8} {2:X8}",
-                    this.Unknown0,
-                    this.Unknown1,
-                    this.Unknown2);
+                    this.SectionIndex,
+                    this.PointerOffset,
+                    this.DataOffset);
             }
         }
 
         public class Unknown2Resolver
         {
-            public uint Unknown0;
-            public byte Unknown1;
+            public uint PointerOffset;
+            public byte SectionType;
 
             public void Deserialize(Stream input)
             {
-                // ((key & 0x01FFFFFF) >>  0) * 4 = data dest
-                // ((key & 0xFE000000) >> 25)     = section type
-                // updates pointer at dest by finding the section with the hash at data dest with the type specified
+                // ((value & 0x01FFFFFF) >>  0) * 4 = data dest
+                // ((value & 0xFE000000) >> 25)     = section type
+                // buffer[pointer] = sections
+                //   .Where(s.id == buffer[pointer] && s.type == type)
                 var value = input.ReadValueU32();
-                this.Unknown0 = (uint)(((value & 0x01FFFFFF) >> 0) * 4);
-                this.Unknown1 = (byte)((value & 0xFE000000) >> 25);
+                this.PointerOffset = (uint)(((value & 0x01FFFFFF) >> 0) * 4);
+                this.SectionType = (byte)((value & 0xFE000000) >> 25);
             }
 
             public override string ToString()
             {
-                return string.Format("{0:X8} : {1}", this.Unknown0, (SectionType)this.Unknown1);
+                return string.Format("{0:X8} : {1}", this.PointerOffset, (SectionType)this.SectionType);
             }
         }
 
         public class Unknown4Resolver
         {
-            public uint Unknown0;
-            public byte Unknown1;
+            public uint PointerOffset;
+            public byte SectionType;
 
             public void Deserialize(Stream input)
             {
-                // ((key & 0x01FFFFFF) >>  0) * 4 = data dest
-                // ((key & 0xFE000000) >> 25)     = section type
-                // updates pointer at dest by finding the section with the hash at data dest with the type specified
+                // ((value & 0x01FFFFFF) >>  0) * 4 = data dest
+                // ((value & 0xFE000000) >> 25)     = section type
+                // buffer[pointer] = sections
+                //   .Where(s.id == buffer[pointer] && s.type == type)
                 var value = input.ReadValueU32();
-                this.Unknown0 = (uint)(((value & 0x01FFFFFF) >> 0) * 4);
-                this.Unknown1 = (byte)((value & 0xFE000000) >> 25);
+                this.PointerOffset = (uint)(((value & 0x01FFFFFF) >> 0) * 4);
+                this.SectionType = (byte)((value & 0xFE000000) >> 25);
             }
 
             public override string ToString()
             {
-                return string.Format("{0:X8} : {1}", this.Unknown0, (SectionType)this.Unknown1);
+                return string.Format("{0:X8} : {1}", this.PointerOffset, (SectionType)this.SectionType);
             }
         }
     }
