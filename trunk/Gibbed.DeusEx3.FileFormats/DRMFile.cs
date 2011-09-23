@@ -56,13 +56,21 @@ namespace Gibbed.DeusEx3.FileFormats
             }
 
             var version = input.ReadValueU32();
-            if (version != 21 && version.Swap() != 21)
+            if (version != 19 && version.Swap() != 19 &&
+                version != 21 && version.Swap() != 21)
             {
                 throw new FormatException();
             }
 
-            this.LittleEndian = version == 21;
+            this.LittleEndian =
+                version == 19 ||
+                version == 21;
             this.Version = this.LittleEndian == true ? version : version.Swap();
+
+            if (this.Version == 19)
+            {
+                throw new NotSupportedException();
+            }
 
             var unknown04_Size = input.ReadValueU32(this.LittleEndian);
             var unknown08_Size = input.ReadValueU32(this.LittleEndian);
