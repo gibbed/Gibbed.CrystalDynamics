@@ -46,6 +46,7 @@ namespace Gibbed.TombRaider8.Unpack
             bool overwriteFiles = false;
             bool verbose = true;
             string currentProject = null;
+            bool littleEndian = true;
 
             var options = new OptionSet()
             {
@@ -63,6 +64,16 @@ namespace Gibbed.TombRaider8.Unpack
                     "ou|only-unknowns",
                     "only extract unknown files",
                     v => extractUnknowns = v != null ? true : extractUnknowns
+                },
+                {
+                    "l|little-endian",
+                    "operate in little-endian mode",
+                    v => littleEndian = v != null ? true : littleEndian
+                },
+                {
+                    "b|big-endian",
+                    "operate in big-endian mode",
+                    v => littleEndian = v != null ? false : littleEndian
                 },
                 {
                     "v|verbose",
@@ -117,6 +128,8 @@ namespace Gibbed.TombRaider8.Unpack
             }
 
             var big = new BigFileV1();
+            big.LittleEndian = littleEndian;
+
             using (var input = File.OpenRead(inputPath))
             {
                 big.Deserialize(input);
