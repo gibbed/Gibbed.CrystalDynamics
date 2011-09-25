@@ -1,0 +1,12 @@
+<project>
+	<name>Tomb Raider Anniversary (PS3)</name>
+	<dependencies>
+		<dependency>Shared</dependency>
+	</dependencies>
+	<list_location>Tomb Raider Anniversary (PS3)</list_location>
+	<install_locations>
+		<install_location>
+			<action type="path">T:\TRA\console\ps3</action>
+		</install_location>
+	</install_locations>
+</project>
