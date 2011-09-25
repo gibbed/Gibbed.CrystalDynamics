@@ -1,0 +1,12 @@
+<project>
+	<name>Tomb Raider 8 (Xenon)</name>
+	<dependencies>
+		<dependency>Shared</dependency>
+	</dependencies>
+	<list_location>Tomb Raider 8 (Xenon)</list_location>
+	<install_locations>
+		<install_location>
+			<action type="path">T:\TRU\console\xenon</action>
+		</install_location>
+	</install_locations>
+</project>
