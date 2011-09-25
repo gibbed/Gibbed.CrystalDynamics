@@ -1,0 +1,30 @@
+<project>
+	<name>Tomb Raider Anniversary</name>
+	<dependencies>
+		<dependency>Shared</dependency>
+	</dependencies>
+	<list_location>Tomb Raider Anniversary</list_location>
+	<settings>
+		<setting name="bigfile_alignment">157286400</setting>
+	</settings>
+	<install_locations>
+		<install_location>
+			<action type="registry" key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Steam App 8000" value="InstallLocation" />
+		</install_location>
+		<install_location>
+			<action type="registry" key="HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Steam App 8000" value="InstallLocation" />
+		</install_location>
+		<install_location>
+			<action type="registry" key="HKEY_LOCAL_MACHINE\SOFTWARE\Valve\Steam" value="InstallPath" />
+			<action type="combine">steamapps</action>
+			<action type="combine">common</action>
+			<action type="combine">tomb raider anniversary</action>
+		</install_location>
+		<install_location>
+			<action type="registry" key="HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam" value="InstallPath" />
+			<action type="combine">steamapps</action>
+			<action type="combine">common</action>
+			<action type="combine">tomb raider anniversary</action>
+		</install_location>
+	</install_locations>
+</project>
