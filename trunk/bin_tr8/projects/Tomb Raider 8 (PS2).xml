@@ -1,0 +1,12 @@
+<project>
+	<name>Tomb Raider 8 (PS2)</name>
+	<dependencies>
+		<dependency>Shared</dependency>
+	</dependencies>
+	<list_location>Tomb Raider 8 (PS2)</list_location>
+	<install_locations>
+		<install_location>
+			<action type="path">T:\TRU\console\ps2</action>
+		</install_location>
+	</install_locations>
+</project>
