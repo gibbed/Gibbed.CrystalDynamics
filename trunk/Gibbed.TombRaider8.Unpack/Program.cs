@@ -129,6 +129,7 @@ namespace Gibbed.TombRaider8.Unpack
 
             var big = new BigFileV1();
             big.LittleEndian = littleEndian;
+            big.FileAlignment = manager.GetSetting<uint>("bigfile_alignment", 0x7FF00000);
 
             using (var input = File.OpenRead(inputPath))
             {
