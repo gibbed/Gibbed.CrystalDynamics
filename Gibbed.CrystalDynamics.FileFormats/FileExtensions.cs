@@ -88,12 +88,25 @@ namespace Gibbed.CrystalDynamics.FileFormats
                 return "raw";
             }
 
+            if (read >= 4)
+            {
+                var version = BitConverter.ToUInt32(guess, 0);
+
+                if (version == 14 || version.Swap() == 14 ||
+                    version == 19 || version.Swap() == 19 ||
+                    version == 21 || version.Swap() == 21)
+                {
+                    return "drm";
+                }
+            }
+
             // sound data
             if (read >= 4)
             {
                 var sampleRate = BitConverter.ToUInt32(guess, 0);
 
                 if (sampleRate == 22050 || sampleRate.Swap() == 22050 ||
+                    sampleRate == 36000 || sampleRate.Swap() == 36000 || 
                     sampleRate == 44100 || sampleRate.Swap() == 44100 ||
                     sampleRate == 48000 || sampleRate.Swap() == 48000 ||
 

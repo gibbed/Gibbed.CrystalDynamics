@@ -166,6 +166,31 @@ namespace Gibbed.TombRaider.Unpack
                     {
                         current++;
 
+                        var entryBigFile = entry.Offset / maxBlocksPerFile;
+                        var entryOffset = (entry.Offset % maxBlocksPerFile) * 2048;
+
+                        if (currentBigFile.HasValue == false ||
+                            currentBigFile.Value != entryBigFile)
+                        {
+                            if (data != null)
+                            {
+                                data.Close();
+                                data = null;
+                            }
+
+                            currentBigFile = entryBigFile;
+
+                            var bigPath = Path.ChangeExtension(inputPath,
+                                "." + currentBigFile.Value.ToString().PadLeft(3, '0'));
+
+                            if (verbose == true)
+                            {
+                                Console.WriteLine(bigPath);
+                            }
+
+                            data = File.OpenRead(bigPath);
+                        }
+
                         string name = hashes[entry.NameHash];
                         if (name == null)
                         {
@@ -183,23 +208,6 @@ namespace Gibbed.TombRaider.Unpack
 
                                 if (entry.Size > 0)
                                 {
-                                    var entryBigFile = entry.Offset / maxBlocksPerFile;
-                                    var entryOffset = (entry.Offset % maxBlocksPerFile) * 2048;
-
-                                    if (currentBigFile.HasValue == false ||
-                                        currentBigFile.Value != entryBigFile)
-                                    {
-                                        if (data != null)
-                                        {
-                                            data.Close();
-                                            data = null;
-                                        }
-
-                                        currentBigFile = entryBigFile;
-                                        data = File.OpenRead(Path.ChangeExtension(inputPath,
-                                            "." + currentBigFile.ToString().PadLeft(3, '0')));
-                                    }
-
                                     data.Seek(entryOffset, SeekOrigin.Begin);
                                     read = data.Read(guess, 0, (int)Math.Min(
                                         entry.Size, guess.Length));
@@ -272,23 +280,6 @@ namespace Gibbed.TombRaider.Unpack
                         {
                             if (entry.Size > 0)
                             {
-                                var entryBigFile = entry.Offset / maxBlocksPerFile;
-                                var entryOffset = (entry.Offset % maxBlocksPerFile) * 2048;
-
-                                if (currentBigFile.HasValue == false ||
-                                    currentBigFile.Value != entryBigFile)
-                                {
-                                    if (data != null)
-                                    {
-                                        data.Close();
-                                        data = null;
-                                    }
-
-                                    currentBigFile = entryBigFile;
-                                    data = File.OpenRead(Path.ChangeExtension(inputPath,
-                                        "." + currentBigFile.Value.ToString().PadLeft(3, '0')));
-                                }
-
                                 data.Seek(entryOffset, SeekOrigin.Begin);
                                 output.WriteFromStream(data, entry.Size);
                             }
