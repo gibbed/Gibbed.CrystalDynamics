@@ -22,7 +22,7 @@
 
 using System;
 
-namespace Gibbed.TombRaider8.RebuildFileLists
+namespace Gibbed.TombRaider.RebuildFileLists
 {
     internal class Breakdown
     {

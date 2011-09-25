@@ -30,7 +30,7 @@ using Gibbed.IO;
 using NDesk.Options;
 using Big = Gibbed.CrystalDynamics.FileFormats.Big;
 
-namespace Gibbed.TombRaider8.Unpack
+namespace Gibbed.TombRaider.Unpack
 {
     internal class Program
     {

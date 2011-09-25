@@ -26,11 +26,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Gibbed.TombRaider8.Unpack")]
+[assembly: AssemblyTitle("Gibbed.TombRaider.Unpack")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Gibbed.TombRaider8.Unpack")]
+[assembly: AssemblyProduct("Gibbed.TombRaider.Unpack")]
 [assembly: AssemblyCopyright("Copyright © Gibbed 2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
