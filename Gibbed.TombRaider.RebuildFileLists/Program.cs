@@ -27,7 +27,7 @@ using System.Linq;
 using Gibbed.CrystalDynamics.FileFormats;
 using NDesk.Options;
 
-namespace Gibbed.TombRaider8.RebuildFileLists
+namespace Gibbed.TombRaider.RebuildFileLists
 {
     internal class Program
     {
