@@ -49,7 +49,7 @@ namespace Gibbed.CrystalDynamics.FileFormats
             output.WriteValueS32(this.Entries.Count, this.LittleEndian);
 
             var entries = this.Entries
-                .OrderBy(e => e.Size)
+                .OrderBy(e => e.UncompressedSize)
                 .OrderBy(e => e.NameHash);
 
             foreach (var entry in entries)
@@ -59,10 +59,10 @@ namespace Gibbed.CrystalDynamics.FileFormats
 
             foreach (var entry in entries)
             {
-                output.WriteValueU32(entry.Size, this.LittleEndian);
+                output.WriteValueU32(entry.UncompressedSize, this.LittleEndian);
                 output.WriteValueU32(entry.Offset, this.LittleEndian);
                 output.WriteValueU32(entry.Locale, this.LittleEndian);
-                output.WriteValueU32(entry.Unknown4, this.LittleEndian);
+                output.WriteValueU32(entry.CompressedSize, this.LittleEndian);
             }
         }
 
@@ -81,16 +81,11 @@ namespace Gibbed.CrystalDynamics.FileFormats
             {
                 var entry = new Big.Entry();
                 entry.NameHash = hashes[i];
-                entry.Size = input.ReadValueU32(this.LittleEndian);
+                entry.UncompressedSize = input.ReadValueU32(this.LittleEndian);
                 entry.Offset = input.ReadValueU32(this.LittleEndian);
                 entry.Locale = input.ReadValueU32(this.LittleEndian);
-                entry.Unknown4 = input.ReadValueU32(this.LittleEndian);
+                entry.CompressedSize = input.ReadValueU32(this.LittleEndian);
                 this.Entries.Add(entry);
-
-                if (entry.Unknown4 != 0)
-                {
-                    throw new NotSupportedException();
-                }
             }
         }
     }

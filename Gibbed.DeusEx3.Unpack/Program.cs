@@ -193,11 +193,11 @@ namespace Gibbed.DeusEx3.Unpack
                                 var guess = new byte[64];
                                 int read = 0;
 
-                                if (entry.Size > 0)
+                                if (entry.UncompressedSize > 0)
                                 {
                                     data.Seek(entryOffset, SeekOrigin.Begin);
                                     read = data.Read(guess, 0, (int)Math.Min(
-                                        entry.Size, guess.Length));
+                                        entry.UncompressedSize, guess.Length));
                                 }
 
                                 extension = FileExtensions.Detect(guess, Math.Min(guess.Length, read));
@@ -264,10 +264,10 @@ namespace Gibbed.DeusEx3.Unpack
 
                         using (var output = File.Create(entryPath))
                         {
-                            if (entry.Size > 0)
+                            if (entry.UncompressedSize > 0)
                             {
                                 data.Seek(entryOffset, SeekOrigin.Begin);
-                                output.WriteFromStream(data, entry.Size);
+                                output.WriteFromStream(data, entry.UncompressedSize);
                             }
                         }
                     }

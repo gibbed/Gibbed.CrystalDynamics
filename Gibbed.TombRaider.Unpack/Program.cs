@@ -29,6 +29,7 @@ using Gibbed.CrystalDynamics.FileFormats;
 using Gibbed.IO;
 using NDesk.Options;
 using Big = Gibbed.CrystalDynamics.FileFormats.Big;
+using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
 
 namespace Gibbed.TombRaider.Unpack
 {
@@ -37,6 +38,62 @@ namespace Gibbed.TombRaider.Unpack
         private static string GetExecutableName()
         {
             return Path.GetFileName(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+        }
+
+        private static bool Is000(string path)
+        {
+            if (path == null)
+            {
+                throw new ArgumentNullException("path");
+            }
+
+            var extension = Path.GetExtension(path);
+            
+            if (extension != null)
+            {
+                extension = extension.ToLowerInvariant();
+
+                if (extension == ".pc-w" ||
+                    extension == ".ps2-w" ||
+                    extension == ".ps3-w" ||
+                    extension == ".xenon-w" ||
+                    extension == ".wii-w")
+                {
+                    path = Path.ChangeExtension(path, null);
+                }
+            }
+
+            return Path.GetExtension(path) == ".000";
+        }
+
+        private static string GetBasePath(string path, out string suffix)
+        {
+            if (path == null)
+            {
+                throw new ArgumentNullException("path");
+            }
+
+            suffix = "";
+
+            var extension = Path.GetExtension(path);
+
+            if (extension != null)
+            {
+                extension = extension.ToLowerInvariant();
+
+                if (extension == ".pc-w" ||
+                    extension == ".ps2-w" ||
+                    extension == ".ps3-w" ||
+                    extension == ".psp-w" ||
+                    extension == ".xenon-w" ||
+                    extension == ".wii-w")
+                {
+                    suffix = extension;
+                    path = Path.ChangeExtension(path, null);
+                }
+            }
+
+            return Path.ChangeExtension(path, null);
         }
 
         public static void Main(string[] args)
@@ -109,7 +166,7 @@ namespace Gibbed.TombRaider.Unpack
             if (extras.Count < 1 ||
                 extras.Count > 2 ||
                 showHelp == true ||
-                Path.GetExtension(extras[0]) != ".000")
+                Is000(extras[0]) == false)
             {
                 Console.WriteLine("Usage: {0} [OPTIONS]+ input_file.000 [output_dir]", GetExecutableName());
                 Console.WriteLine();
@@ -121,6 +178,9 @@ namespace Gibbed.TombRaider.Unpack
             string inputPath = extras[0];
             string outputPath = extras.Count > 1 ? extras[1] : Path.ChangeExtension(inputPath, null) + "_unpack";
 
+            string bigPathSuffix;
+            var bigPathBase = GetBasePath(inputPath, out bigPathSuffix);
+
             var manager = ProjectData.Manager.Load(currentProject);
             if (manager.ActiveProject == null)
             {
@@ -130,11 +190,20 @@ namespace Gibbed.TombRaider.Unpack
             var big = new BigFileV1();
             big.LittleEndian = littleEndian;
             big.FileAlignment = manager.GetSetting<uint>("bigfile_alignment", 0x7FF00000);
+            var compressionType = manager.GetSetting<CompressionType>("compression_type", CompressionType.None);
 
             using (var input = File.OpenRead(inputPath))
             {
                 big.Deserialize(input);
             }
+
+            if (big.Entries.Any(e => e.CompressedSize != 0) == true &&
+                compressionType == CompressionType.None)
+            {
+                throw new InvalidOperationException("compressed entries not supported");
+            }
+
+            var test = big.Entries.Where(e => e.CompressedSize != 0).ToArray();
 
             var hashes = manager.LoadLists(
                 "*.filelist",
@@ -180,8 +249,10 @@ namespace Gibbed.TombRaider.Unpack
 
                             currentBigFile = entryBigFile;
 
-                            var bigPath = Path.ChangeExtension(inputPath,
-                                "." + currentBigFile.Value.ToString().PadLeft(3, '0'));
+                            var bigPath = string.Format("{0}.{1}{2}",
+                                bigPathBase,
+                                currentBigFile.Value.ToString().PadLeft(3, '0'),
+                                bigPathSuffix);
 
                             if (verbose == true)
                             {
@@ -206,11 +277,29 @@ namespace Gibbed.TombRaider.Unpack
                                 var guess = new byte[64];
                                 int read = 0;
 
-                                if (entry.Size > 0)
+                                if (entry.UncompressedSize > 0)
                                 {
-                                    data.Seek(entryOffset, SeekOrigin.Begin);
-                                    read = data.Read(guess, 0, (int)Math.Min(
-                                        entry.Size, guess.Length));
+                                    if (entry.CompressedSize != 0)
+                                    {
+                                        data.Seek(entryOffset, SeekOrigin.Begin);
+
+                                        if (compressionType == CompressionType.Zlib)
+                                        {
+                                            var zlib = new InflaterInputStream(data);
+                                            read = zlib.Read(guess, 0, (int)Math.Min(
+                                                entry.UncompressedSize, guess.Length));
+                                        }
+                                        else
+                                        {
+                                            throw new NotSupportedException();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        data.Seek(entryOffset, SeekOrigin.Begin);
+                                        read = data.Read(guess, 0, (int)Math.Min(
+                                            entry.UncompressedSize, guess.Length));
+                                    }
                                 }
 
                                 extension = FileExtensions.Detect(
@@ -278,10 +367,30 @@ namespace Gibbed.TombRaider.Unpack
 
                         using (var output = File.Create(entryPath))
                         {
-                            if (entry.Size > 0)
+                            if (entry.UncompressedSize > 0)
                             {
-                                data.Seek(entryOffset, SeekOrigin.Begin);
-                                output.WriteFromStream(data, entry.Size);
+                                if (entry.CompressedSize != 0)
+                                {
+                                    data.Seek(entryOffset, SeekOrigin.Begin);
+
+                                    if (compressionType == CompressionType.Zlib)
+                                    {
+                                        using (var temp = data.ReadToMemoryStream(entry.CompressedSize))
+                                        {
+                                            var zlib = new InflaterInputStream(temp);
+                                            output.WriteFromStream(zlib, entry.UncompressedSize);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        throw new NotSupportedException();
+                                    }
+                                }
+                                else
+                                {
+                                    data.Seek(entryOffset, SeekOrigin.Begin);
+                                    output.WriteFromStream(data, entry.UncompressedSize);
+                                }
                             }
                         }
                     }

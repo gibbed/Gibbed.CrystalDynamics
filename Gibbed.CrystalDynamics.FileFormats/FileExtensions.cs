@@ -104,14 +104,19 @@ namespace Gibbed.CrystalDynamics.FileFormats
             if (read >= 4)
             {
                 var sampleRate = BitConverter.ToUInt32(guess, 0);
+                var swappedRate = sampleRate.Swap();
 
-                if (sampleRate == 22050 || sampleRate.Swap() == 22050 ||
-                    sampleRate == 36000 || sampleRate.Swap() == 36000 || 
-                    sampleRate == 44100 || sampleRate.Swap() == 44100 ||
-                    sampleRate == 48000 || sampleRate.Swap() == 48000 ||
+                if (sampleRate == 22050 || swappedRate == 22050 ||
+                    sampleRate == 32000 || swappedRate == 32000 ||
+                    sampleRate == 36000 || swappedRate == 36000 ||
+                    sampleRate == 44100 || swappedRate == 44100 ||
+                    sampleRate == 48000 || swappedRate == 48000 ||
 
                     (sampleRate >= 43900 && sampleRate <= 44300) ||
-                    (sampleRate >= 31000 && sampleRate <= 32200)
+                    (swappedRate >= 43900 && swappedRate <= 44300) ||
+                    
+                    (sampleRate >= 31000 && sampleRate <= 32200) ||
+                    (swappedRate >= 31000 && swappedRate <= 32200)
                     )
                 {
                     return "mul";
