@@ -1,0 +1,12 @@
+<project>
+	<name>Lara Croft and the Guardian of Light (Xenon)</name>
+	<dependencies>
+		<dependency>Shared</dependency>
+	</dependencies>
+	<list_location>Lara Croft and the Guardian of Light (Xenon)</list_location>
+	<install_locations>
+		<install_location>
+			<action type="path">T:\TRD\console\xenon</action>
+		</install_location>
+	</install_locations>
+</project>
