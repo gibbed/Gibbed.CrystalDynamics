@@ -148,10 +148,10 @@ namespace Gibbed.DeusEx3.Pack
                     entries.Add(new MyEntry()
                     {
                         NameHash = uint.Parse(_hash, NumberStyles.AllowHexSpecifier),
-                        Size = 0,
+                        UncompressedSize = 0,
                         Offset = 0,
                         Locale = uint.Parse(_locale, NumberStyles.AllowHexSpecifier),
-                        Unknown4 = 0,
+                        CompressedSize = 0,
                         Path = path,
                     });
                 }
@@ -214,7 +214,7 @@ namespace Gibbed.DeusEx3.Pack
                     data.Seek(localOffset * 2048, SeekOrigin.Begin);
                     data.WriteFromStream(input, length);
 
-                    entry.Size = length;
+                    entry.UncompressedSize = length;
                     entry.Offset = globalOffset + localOffset;
                     big.Entries.Add(entry);
 

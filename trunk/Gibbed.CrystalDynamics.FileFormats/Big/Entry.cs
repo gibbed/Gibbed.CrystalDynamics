@@ -8,7 +8,7 @@ namespace Gibbed.CrystalDynamics.FileFormats.Big
     public class Entry
     {
         public uint NameHash;
-        public uint Size;
+        public uint UncompressedSize;
         public uint Offset;
 
         /// <summary>
@@ -20,7 +20,7 @@ namespace Gibbed.CrystalDynamics.FileFormats.Big
         /// </summary>
         public uint Locale;
 
-        public uint Unknown4;
+        public uint CompressedSize;
 
         public override string ToString()
         {
@@ -28,7 +28,7 @@ namespace Gibbed.CrystalDynamics.FileFormats.Big
                 this.NameHash,
                 this.Locale,
                 this.Offset,
-                this.Size);
+                this.UncompressedSize);
         }
     }
 }
