@@ -27,9 +27,9 @@ using System.Linq;
 using System.Xml;
 using Gibbed.CrystalDynamics.FileFormats;
 using Gibbed.IO;
+using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
 using NDesk.Options;
 using Big = Gibbed.CrystalDynamics.FileFormats.Big;
-using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
 
 namespace Gibbed.TombRaider.Unpack
 {
