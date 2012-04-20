@@ -20,7 +20,7 @@
  *    distribution.
  */
 
- qnamespace Gibbed.TombRaider.Unpack
+ namespace Gibbed.TombRaider.Unpack
 {
     public enum CompressionType
     {
