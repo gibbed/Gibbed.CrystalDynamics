@@ -132,7 +132,7 @@ namespace Gibbed.DeusEx3.Demux
                     Console.WriteLine("sample rate = {0}", header.SampleRate);
                     Console.WriteLine("unknown 4 = {0:X8}", header.Unknown004);
                     Console.WriteLine("unknown 8 = {0:X8}", header.SampleCount);
-                    Console.WriteLine("channels = {1}", header.ChannelCount);
+                    Console.WriteLine("channels = {0}", header.ChannelCount);
                 }
 
                 if (crashOnUnknownData == true)
@@ -220,7 +220,7 @@ namespace Gibbed.DeusEx3.Demux
                         throw new FormatException();
                     }
 
-                    if (segmentUnknown4 != 0 ||
+                    if (/*segmentUnknown4 != 0 ||*/
                         segmentUnknown8 != 0)
                     {
                         throw new FormatException();
