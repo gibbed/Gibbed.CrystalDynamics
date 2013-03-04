@@ -47,7 +47,7 @@ namespace Gibbed.DeusEx3.Pack
             {
                 {
                     "h|help",
-                    "show this message and exit", 
+                    "show this message and exit",
                     v => showHelp = v != null
                 },
             };
@@ -109,9 +109,18 @@ namespace Gibbed.DeusEx3.Pack
                 var _endian = root.GetAttribute("endian", "");
                 switch (_endian.ToLowerInvariant())
                 {
-                    case "big": big.LittleEndian = false; break;
+                    case "big":
+                    {
+                        big.Endian = Endian.Big;
+                        break;
+                    }
+
                     case "little":
-                    default: big.LittleEndian = true; break;
+                    default:
+                    {
+                        big.Endian = Endian.Little;
+                        break;
+                    }
                 }
 
                 big.BasePath = root.GetAttribute("basepath", "") ?? "PC-W";
@@ -164,7 +173,7 @@ namespace Gibbed.DeusEx3.Pack
             var firstOffset = headerSize / 2048;
 
             var maxBlocksPerFile = big.FileAlignment / 2048;
-            
+
             var globalOffset = 0u;
             var localOffset = firstOffset;
 
@@ -208,7 +217,7 @@ namespace Gibbed.DeusEx3.Pack
 
                         currentBigFile = entryBigFile;
                         data = File.Create(Path.ChangeExtension(outputPath,
-                            "." + currentBigFile.Value.ToString().PadLeft(3, '0')));
+                                                                "." + currentBigFile.Value.ToString().PadLeft(3, '0')));
                     }
 
                     data.Seek(localOffset * 2048, SeekOrigin.Begin);
@@ -228,7 +237,7 @@ namespace Gibbed.DeusEx3.Pack
             }
 
             using (var output = File.OpenWrite(Path.ChangeExtension(outputPath,
-                        ".000")))
+                                                                    ".000")))
             {
                 big.Serialize(output);
             }

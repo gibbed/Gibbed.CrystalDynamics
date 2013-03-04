@@ -20,6 +20,7 @@
  *    distribution.
  */
 
+using Gibbed.IO;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -58,30 +59,14 @@ namespace Gibbed.TombRaider.RebuildFileLists
         {
             bool showHelp = false;
             string currentProject = null;
-            bool littleEndian = true;
+            var endian = Endian.Little;
 
             var options = new OptionSet()
             {
-                {
-                    "h|help",
-                    "show this message and exit", 
-                    v => showHelp = v != null
-                },
-                {
-                    "l|little-endian",
-                    "operate in little-endian mode",
-                    v => littleEndian = v != null ? true : littleEndian
-                },
-                {
-                    "b|big-endian",
-                    "operate in big-endian mode",
-                    v => littleEndian = v != null ? false : littleEndian
-                },
-                {
-                    "p|project=",
-                    "override current project",
-                    v => currentProject = v
-                },
+                { "h|help", "show this message and exit", v => showHelp = v != null },
+                { "l|little-endian", "operate in little-endian mode", v => endian = v != null ? Endian.Little : endian },
+                { "b|big-endian", "operate in big-endian mode", v => endian = v != null ? Endian.Big : endian },
+                { "p|project=", "override current project", v => currentProject = v },
             };
 
             List<string> extras;
@@ -117,10 +102,9 @@ namespace Gibbed.TombRaider.RebuildFileLists
             }
 
             var project = manager.ActiveProject;
-            var hashes = manager.LoadLists(
-                "*.filelist",
-                s => s.HashFileName(),
-                s => s.ToLowerInvariant());
+            var hashes = manager.LoadLists("*.filelist",
+                                           s => s.HashFileName(),
+                                           s => s.ToLowerInvariant());
 
             var installPath = project.InstallPath;
             var listsPath = project.ListsPath;
@@ -164,7 +148,7 @@ namespace Gibbed.TombRaider.RebuildFileLists
                 outputPaths.Add(outputPath);
 
                 var big = new BigFileV1();
-                big.LittleEndian = littleEndian;
+                big.Endian = endian;
                 big.FileAlignment = fileAlignment;
 
                 if (File.Exists(inputPath + ".bak") == true)
