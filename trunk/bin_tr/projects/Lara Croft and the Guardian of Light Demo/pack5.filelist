@@ -1,4 +1,4 @@
-; 113/113 (100%)
+; 110/112 (99%)
 \trd\pc-w\objectlist.txt
 \trd\pc-w\objlist.dat
 \trd\pc-w\unitlist.txt
@@ -73,8 +73,6 @@ pc-w\cinstream\igm_fish_xolotl_summons_rk.drm
 pc-w\cinstream\igm_fish_xolotl_summons_rk.mul
 pc-w\cinstream\igm_fish_xolotl_summons_sp_rk.drm
 pc-w\cinstream\igm_fish_xolotl_summons_sp_rk.mul
-pc-w\cinstream\igm_outside_temple_rk.drm
-pc-w\cinstream\igm_outside_temple_rk.mul
 pc-w\cinstream\igm_time_running_out_rk.drm
 pc-w\cinstream\igm_time_running_out_rk.mul
 pc-w\cinstream\igm_time_running_out_sp_rk.drm

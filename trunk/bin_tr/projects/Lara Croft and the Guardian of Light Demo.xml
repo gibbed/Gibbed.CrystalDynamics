@@ -1,15 +1,15 @@
 <project>
-	<name>Lara Croft and the Guardian of Light</name>
+	<name>Lara Croft and the Guardian of Light Demo</name>
 	<dependencies>
 		<dependency>Shared</dependency>
 	</dependencies>
-	<list_location>Lara Croft and the Guardian of Light</list_location>
+	<list_location>Lara Croft and the Guardian of Light Demo</list_location>
 	<install_locations>
 		<install_location>
-			<action type="registry" key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Steam App 35130" value="InstallLocation" />
+			<action type="registry" key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Steam App 35150" value="InstallLocation" />
 		</install_location>
 		<install_location>
-			<action type="registry" key="HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Steam App 35130" value="InstallLocation" />
+			<action type="registry" key="HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Steam App 35150" value="InstallLocation" />
 		</install_location>
 		<install_location>
 			<action type="registry" key="HKEY_LOCAL_MACHINE\SOFTWARE\Valve\Steam" value="InstallPath" />
