@@ -6,7 +6,7 @@
 	<list_location>Tomb Raider 7 (PSP)</list_location>
 	<install_locations>
 		<install_location>
-			<action type="path">T:\TRL\console\psp</action>
+			<action type="path">X:\TRL</action>
 		</install_location>
 	</install_locations>
 </project>

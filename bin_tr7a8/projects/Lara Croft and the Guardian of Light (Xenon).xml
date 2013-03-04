@@ -6,7 +6,7 @@
 	<list_location>Lara Croft and the Guardian of Light (Xenon)</list_location>
 	<install_locations>
 		<install_location>
-			<action type="path">T:\TRD\console\xenon</action>
+			<action type="path">X:\TRD</action>
 		</install_location>
 	</install_locations>
 </project>
