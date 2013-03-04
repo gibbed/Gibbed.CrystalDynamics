@@ -1,4 +1,4 @@
-; 1085/1086 (99%)
+; 1060/1086 (97%)
 \trd\game\pc\shaderlib\shaderusage_arrow_shrine.bin
 \trd\game\pc\shaderlib\shaderusage_bossfight_lava_trex.bin
 \trd\game\pc\shaderlib\shaderusage_bossfight_trex.bin
@@ -308,21 +308,14 @@ pc-w\audio\streams\vo\enemy\trex\trx_roar_25.mul
 pc-w\audio\streams\vo\enemy\trex\trx_roar_27.mul
 pc-w\audio\streams\vo\enemy\trex\trx_screech_01.mul
 pc-w\audio\streams\vo\lara\c_lara_020_bombs_c_020.mul
-pc-w\audio\streams\vo\lara\i_lara_explanations_01.mul
-pc-w\audio\streams\vo\lara\i_lara_explanations_02.mul
-pc-w\audio\streams\vo\lara\i_lara_explanations_03.mul
 pc-w\audio\streams\vo\lara\i_lara_map_01.mul
 pc-w\audio\streams\vo\lara\i_lara_map_02.mul
 pc-w\audio\streams\vo\lara\i_lara_map_03.mul
 pc-w\audio\streams\vo\lara\i_lara_map_04.mul
-pc-w\audio\streams\vo\lara\i_lara_multi_01_01.mul
 pc-w\audio\streams\vo\lara\i_lara_multi_08_02.mul
 pc-w\audio\streams\vo\lara\i_lara_specific_01.mul
 pc-w\audio\streams\vo\lara\i_lara_specific_03.mul
-pc-w\audio\streams\vo\lara\i_lara_specific_04.mul
-pc-w\audio\streams\vo\lara\i_lara_specific_06.mul
 pc-w\audio\streams\vo\lara\lara_scream_01.mul
-pc-w\audio\streams\vo\totec\c_tot_020_bombs_s_010.mul
 pc-w\audio\streams\vo\totec\i_tot_move_04_01.mul
 pc-w\audio\streams\vo\totec\i_tot_move_04_02.mul
 pc-w\audio\streams\vo\totec\i_tot_move_04_03.mul
@@ -334,22 +327,6 @@ pc-w\audio\streams\vo\totec\i_tot_specific_02.mul
 pc-w\audio\streams\vo\totec\i_tot_specific_05.mul
 pc-w\audio\streams\vo\xolotl\b_xol_anoyed_megaverb_st_01.mul
 pc-w\audio\streams\vo\xolotl\b_xol_evil_laugh_03_megaverb_st_01.mul
-pc-w\audio\streams\vo\xolotl\i_xol_070_trex_freedom_c_010.mul
-pc-w\audio\streams\vo\xolotl\i_xol_multi_01.mul
-pc-w\audio\streams\vo\xolotl\i_xol_multi_02.mul
-pc-w\audio\streams\vo\xolotl\i_xol_multi_03.mul
-pc-w\audio\streams\vo\xolotl\i_xol_multi_04.mul
-pc-w\audio\streams\vo\xolotl\i_xol_multi_05.mul
-pc-w\audio\streams\vo\xolotl\i_xol_multi_07.mul
-pc-w\audio\streams\vo\xolotl\i_xol_specific_01.mul
-pc-w\audio\streams\vo\xolotl\i_xol_specific_02.mul
-pc-w\audio\streams\vo\xolotl\i_xol_specific_03.mul
-pc-w\audio\streams\vo\xolotl\i_xol_specific_06.mul
-pc-w\audio\streams\vo\xolotl\i_xol_specific_07.mul
-pc-w\audio\streams\vo\xolotl\i_xol_specific_08.mul
-pc-w\audio\streams\vo\xolotl\i_xol_specific_09.mul
-pc-w\audio\streams\vo\xolotl\i_xol_specific_10.mul
-pc-w\audio\streams\vo\xolotl\i_xol_specific_12.mul
 pc-w\bend_dead_lowpolybush.drm
 pc-w\bend_iso_broadleaf.drm
 pc-w\bend_jungle_youngpalm_a.drm
@@ -423,8 +400,6 @@ pc-w\cinstream\igm_fish_xolotl_summons.drm
 pc-w\cinstream\igm_fish_xolotl_summons.mul
 pc-w\cinstream\igm_fish_xolotl_summons_sp.drm
 pc-w\cinstream\igm_fish_xolotl_summons_sp.mul
-pc-w\cinstream\igm_outside_temple.drm
-pc-w\cinstream\igm_outside_temple.mul
 pc-w\cinstream\igm_time_running_out.drm
 pc-w\cinstream\igm_time_running_out.mul
 pc-w\cinstream\igm_time_running_out_sp.drm
