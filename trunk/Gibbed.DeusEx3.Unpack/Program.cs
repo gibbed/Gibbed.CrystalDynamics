@@ -71,7 +71,7 @@ namespace Gibbed.DeusEx3.Unpack
                 },
                 {
                     "h|help",
-                    "show this message and exit", 
+                    "show this message and exit",
                     v => showHelp = v != null
                 },
                 {
@@ -137,7 +137,7 @@ namespace Gibbed.DeusEx3.Unpack
             {
                 xml.WriteStartDocument();
                 xml.WriteStartElement("files");
-                xml.WriteAttributeString("endian", big.LittleEndian == true ? "little" : "big");
+                xml.WriteAttributeString("endian", big.Endian.ToString().ToLowerInvariant());
                 xml.WriteAttributeString("basepath", big.BasePath);
                 xml.WriteAttributeString("alignment", big.FileAlignment.ToString("X8"));
 
@@ -168,7 +168,7 @@ namespace Gibbed.DeusEx3.Unpack
                             currentBigFile = entryBigFile;
 
                             var bigPath = Path.ChangeExtension(inputPath,
-                                "." + currentBigFile.Value.ToString().PadLeft(3, '0'));
+                                                               "." + currentBigFile.Value.ToString().PadLeft(3, '0'));
 
                             if (verbose == true)
                             {
@@ -196,8 +196,10 @@ namespace Gibbed.DeusEx3.Unpack
                                 if (entry.UncompressedSize > 0)
                                 {
                                     data.Seek(entryOffset, SeekOrigin.Begin);
-                                    read = data.Read(guess, 0, (int)Math.Min(
-                                        entry.UncompressedSize, guess.Length));
+                                    read = data.Read(guess,
+                                                     0,
+                                                     (int)Math.Min(
+                                                         entry.UncompressedSize, guess.Length));
                                 }
 
                                 extension = FileExtensions.Detect(guess, Math.Min(guess.Length, read));
@@ -239,8 +241,8 @@ namespace Gibbed.DeusEx3.Unpack
                             lastLocale.Value != entry.Locale)
                         {
                             xml.WriteComment(string.Format(" {0} = {1} ",
-                                entry.Locale.ToString("X8"),
-                                ((Big.Locale)entry.Locale)));
+                                                           entry.Locale.ToString("X8"),
+                                                           ((Big.Locale)entry.Locale)));
                             lastLocale = entry.Locale;
                         }
 
@@ -259,7 +261,9 @@ namespace Gibbed.DeusEx3.Unpack
                         if (verbose == true)
                         {
                             Console.WriteLine("[{0}/{1}] {2}",
-                                current, total, name);
+                                              current,
+                                              total,
+                                              name);
                         }
 
                         using (var output = File.Create(entryPath))

@@ -21,6 +21,7 @@
  */
 
 using System;
+using System.Globalization;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -48,7 +49,7 @@ namespace Gibbed.TombRaider.Unpack
             }
 
             var extension = Path.GetExtension(path);
-            
+
             if (extension != null)
             {
                 extension = extension.ToLowerInvariant();
@@ -103,50 +104,24 @@ namespace Gibbed.TombRaider.Unpack
             bool overwriteFiles = false;
             bool verbose = true;
             string currentProject = null;
-            bool littleEndian = true;
+            var endian = Endian.Little;
 
             var options = new OptionSet()
             {
+                { "o|overwrite", "overwrite existing files", v => overwriteFiles = v != null },
                 {
-                    "o|overwrite",
-                    "overwrite existing files",
-                    v => overwriteFiles = v != null
-                },
-                {
-                    "nu|no-unknowns",
-                    "don't extract unknown files",
+                    "nu|no-unknowns", "don't extract unknown files",
                     v => extractUnknowns = v != null ? false : extractUnknowns
                 },
                 {
-                    "ou|only-unknowns",
-                    "only extract unknown files",
+                    "ou|only-unknowns", "only extract unknown files",
                     v => extractUnknowns = v != null ? true : extractUnknowns
                 },
-                {
-                    "l|little-endian",
-                    "operate in little-endian mode",
-                    v => littleEndian = v != null ? true : littleEndian
-                },
-                {
-                    "b|big-endian",
-                    "operate in big-endian mode",
-                    v => littleEndian = v != null ? false : littleEndian
-                },
-                {
-                    "v|verbose",
-                    "be verbose",
-                    v => verbose = v != null
-                },
-                {
-                    "h|help",
-                    "show this message and exit", 
-                    v => showHelp = v != null
-                },
-                {
-                    "p|project=",
-                    "override current project",
-                    v => currentProject = v
-                },
+                { "l|little-endian", "operate in little-endian mode", v => endian = v != null ? Endian.Little : endian },
+                { "b|big-endian", "operate in big-endian mode", v => endian = v != null ? Endian.Big : endian },
+                { "v|verbose", "be verbose", v => verbose = v != null },
+                { "h|help", "show this message and exit", v => showHelp = v != null },
+                { "p|project=", "override current project", v => currentProject = v },
             };
 
             List<string> extras;
@@ -175,8 +150,8 @@ namespace Gibbed.TombRaider.Unpack
                 return;
             }
 
-            string inputPath = extras[0];
-            string outputPath = extras.Count > 1 ? extras[1] : Path.ChangeExtension(inputPath, null) + "_unpack";
+            var inputPath = extras[0];
+            var outputPath = extras.Count > 1 ? extras[1] : Path.ChangeExtension(inputPath, null) + "_unpack";
 
             string bigPathSuffix;
             var bigPathBase = GetBasePath(inputPath, out bigPathSuffix);
@@ -188,9 +163,9 @@ namespace Gibbed.TombRaider.Unpack
             }
 
             var big = new BigFileV1();
-            big.LittleEndian = littleEndian;
+            big.Endian = endian;
             big.FileAlignment = manager.GetSetting<uint>("bigfile_alignment", 0x7FF00000);
-            var compressionType = manager.GetSetting<CompressionType>("compression_type", CompressionType.None);
+            var compressionType = manager.GetSetting("compression_type", CompressionType.None);
 
             using (var input = File.OpenRead(inputPath))
             {
@@ -203,12 +178,9 @@ namespace Gibbed.TombRaider.Unpack
                 throw new InvalidOperationException("compressed entries not supported");
             }
 
-            var test = big.Entries.Where(e => e.CompressedSize != 0).ToArray();
-
-            var hashes = manager.LoadLists(
-                "*.filelist",
-                s => s.HashFileName(),
-                s => s.ToLowerInvariant());
+            var hashes = manager.LoadLists("*.filelist",
+                                           s => s.HashFileName(),
+                                           s => s.ToLowerInvariant());
 
             Directory.CreateDirectory(outputPath);
 
@@ -220,7 +192,7 @@ namespace Gibbed.TombRaider.Unpack
             {
                 xml.WriteStartDocument();
                 xml.WriteStartElement("files");
-                xml.WriteAttributeString("endian", big.LittleEndian == true ? "little" : "big");
+                xml.WriteAttributeString("endian", big.Endian.ToString().ToLowerInvariant());
                 xml.WriteAttributeString("alignment", big.FileAlignment.ToString("X8"));
 
                 Stream data = null;
@@ -250,9 +222,9 @@ namespace Gibbed.TombRaider.Unpack
                             currentBigFile = entryBigFile;
 
                             var bigPath = string.Format("{0}.{1}{2}",
-                                bigPathBase,
-                                currentBigFile.Value.ToString().PadLeft(3, '0'),
-                                bigPathSuffix);
+                                                        bigPathBase,
+                                                        currentBigFile.Value.ToString().PadLeft(3, '0'),
+                                                        bigPathSuffix);
 
                             if (verbose == true)
                             {
@@ -286,8 +258,10 @@ namespace Gibbed.TombRaider.Unpack
                                         if (compressionType == CompressionType.Zlib)
                                         {
                                             var zlib = new InflaterInputStream(data);
-                                            read = zlib.Read(guess, 0, (int)Math.Min(
-                                                entry.UncompressedSize, guess.Length));
+                                            read = zlib.Read(guess,
+                                                             0,
+                                                             (int)Math.Min(
+                                                                 entry.UncompressedSize, guess.Length));
                                         }
                                         else
                                         {
@@ -297,8 +271,10 @@ namespace Gibbed.TombRaider.Unpack
                                     else
                                     {
                                         data.Seek(entryOffset, SeekOrigin.Begin);
-                                        read = data.Read(guess, 0, (int)Math.Min(
-                                            entry.UncompressedSize, guess.Length));
+                                        read = data.Read(guess,
+                                                         0,
+                                                         (int)Math.Min(
+                                                             entry.UncompressedSize, guess.Length));
                                     }
                                 }
 
@@ -342,8 +318,8 @@ namespace Gibbed.TombRaider.Unpack
                             lastLocale.Value != entry.Locale)
                         {
                             xml.WriteComment(string.Format(" {0} = {1} ",
-                                entry.Locale.ToString("X8"),
-                                ((Big.Locale)entry.Locale)));
+                                                           entry.Locale.ToString("X8"),
+                                                           ((Big.Locale)entry.Locale)));
                             lastLocale = entry.Locale;
                         }
 
@@ -362,7 +338,9 @@ namespace Gibbed.TombRaider.Unpack
                         if (verbose == true)
                         {
                             Console.WriteLine("[{0}/{1}] {2}",
-                                current, total, name);
+                                              current,
+                                              total,
+                                              name);
                         }
 
                         using (var output = File.Create(entryPath))
