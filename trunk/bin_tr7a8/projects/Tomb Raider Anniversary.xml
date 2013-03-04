@@ -5,7 +5,8 @@
 	</dependencies>
 	<list_location>Tomb Raider Anniversary</list_location>
 	<settings>
-		<setting name="bigfile_alignment">157286400</setting>
+		<setting name="archive_endianness">Little</setting>
+		<setting name="archive_alignment">157286400</setting>
 	</settings>
 	<install_locations>
 		<install_location>
