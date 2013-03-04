@@ -161,7 +161,7 @@ namespace Gibbed.TombRaider.Unpack
                 Console.WriteLine("Warning: no active project loaded.");
             }
 
-            var big = new ArchiveFileV1();
+            var big = new BigArchiveFileV1();
             big.Endian = endian;
             big.FileAlignment = manager.GetSetting<uint>("bigfile_alignment", 0x7FF00000);
             var compressionType = manager.GetSetting("compression_type", CompressionType.None);

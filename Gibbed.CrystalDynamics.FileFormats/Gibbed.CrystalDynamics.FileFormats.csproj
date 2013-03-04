@@ -40,8 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArchiveFileV1.cs" />
-    <Compile Include="ArchiveFileV2.cs" />
+    <Compile Include="BigArchiveFileV1.cs" />
+    <Compile Include="BigArchiveFileV2.cs" />
     <Compile Include="ArchiveLocale.cs" />
     <Compile Include="FileExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -53,9 +53,7 @@
       <Name>Gibbed.IO</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Big\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -24,7 +24,7 @@ using Gibbed.CrystalDynamics.FileFormats;
 
 namespace Gibbed.DeusEx3.Pack
 {
-    internal class MyEntry : ArchiveFileV2.Entry
+    internal class MyEntry : BigArchiveFileV2.Entry
     {
         public string Path;
     }

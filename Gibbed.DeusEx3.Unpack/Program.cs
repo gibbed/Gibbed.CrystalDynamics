@@ -115,7 +115,7 @@ namespace Gibbed.DeusEx3.Unpack
                 Console.WriteLine("Warning: no active project loaded.");
             }
 
-            var big = new ArchiveFileV2();
+            var big = new BigArchiveFileV2();
             using (var input = File.OpenRead(inputPath))
             {
                 big.Deserialize(input);

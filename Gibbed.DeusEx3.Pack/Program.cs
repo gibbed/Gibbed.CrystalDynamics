@@ -89,7 +89,7 @@ namespace Gibbed.DeusEx3.Pack
             }
 
             var entries = new List<MyEntry>();
-            var big = new ArchiveFileV2();
+            var big = new BigArchiveFileV2();
 
             using (var input = File.Open(
                 inputPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
@@ -169,7 +169,7 @@ namespace Gibbed.DeusEx3.Pack
             uint? currentBigFile = null;
             Stream data = null;
 
-            var headerSize = (uint)ArchiveFileV1.EstimateHeaderSize(entries.Count);
+            var headerSize = (uint)BigArchiveFileV1.EstimateHeaderSize(entries.Count);
             var firstOffset = headerSize / 2048;
 
             var maxBlocksPerFile = big.FileAlignment / 2048;
