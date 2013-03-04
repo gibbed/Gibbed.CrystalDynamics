@@ -150,7 +150,7 @@ namespace Gibbed.DeusEx3.RebuildFileLists
 
                 outputPaths.Add(outputPath);
 
-                var big = new BigFileV2();
+                var big = new ArchiveFileV2();
 
                 if (File.Exists(inputPath + ".bak") == true)
                 {

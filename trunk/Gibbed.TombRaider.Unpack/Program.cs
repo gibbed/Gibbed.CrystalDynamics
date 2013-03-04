@@ -30,7 +30,6 @@ using Gibbed.CrystalDynamics.FileFormats;
 using Gibbed.IO;
 using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
 using NDesk.Options;
-using Big = Gibbed.CrystalDynamics.FileFormats.Big;
 
 namespace Gibbed.TombRaider.Unpack
 {
@@ -162,7 +161,7 @@ namespace Gibbed.TombRaider.Unpack
                 Console.WriteLine("Warning: no active project loaded.");
             }
 
-            var big = new BigFileV1();
+            var big = new ArchiveFileV1();
             big.Endian = endian;
             big.FileAlignment = manager.GetSetting<uint>("bigfile_alignment", 0x7FF00000);
             var compressionType = manager.GetSetting("compression_type", CompressionType.None);
@@ -319,7 +318,7 @@ namespace Gibbed.TombRaider.Unpack
                         {
                             xml.WriteComment(string.Format(" {0} = {1} ",
                                                            entry.Locale.ToString("X8"),
-                                                           ((Big.Locale)entry.Locale)));
+                                                           ((ArchiveLocale)entry.Locale)));
                             lastLocale = entry.Locale;
                         }
 
