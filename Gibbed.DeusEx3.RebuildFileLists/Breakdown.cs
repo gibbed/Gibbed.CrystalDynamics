@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2011 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2013 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -38,18 +38,17 @@ namespace Gibbed.DeusEx3.RebuildFileLists
                     return 0;
                 }
 
-                return (int)Math.Floor((
-                    (float)this.Known /
-                    (float)this.Total) * 100.0);
+                return (int)Math.Floor(((float)this.Known /
+                                        this.Total) * 100.0);
             }
         }
 
         public override string ToString()
         {
             return string.Format("{0}/{1} ({2}%)",
-                this.Known,
-                this.Total,
-                this.Percent);
+                                 this.Known,
+                                 this.Total,
+                                 this.Percent);
         }
     }
 }

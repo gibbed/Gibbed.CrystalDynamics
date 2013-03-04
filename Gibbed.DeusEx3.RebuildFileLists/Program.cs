@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2011 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2013 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -61,16 +61,8 @@ namespace Gibbed.DeusEx3.RebuildFileLists
 
             var options = new OptionSet()
             {
-                {
-                    "h|help",
-                    "show this message and exit", 
-                    v => showHelp = v != null
-                },
-                {
-                    "p|project=",
-                    "override current project",
-                    v => currentProject = v
-                },
+                { "h|help", "show this message and exit", v => showHelp = v != null },
+                { "p|project=", "override current project", v => currentProject = v },
             };
 
             List<string> extras;
@@ -106,10 +98,9 @@ namespace Gibbed.DeusEx3.RebuildFileLists
             }
 
             var project = manager.ActiveProject;
-            var hashes = manager.LoadLists(
-                "*.filelist",
-                s => s.HashFileName(),
-                s => s.ToLowerInvariant());
+            var hashes = manager.LoadLists("*.filelist",
+                                           s => s.HashFileName(),
+                                           s => s.ToLowerInvariant());
 
             var installPath = project.InstallPath;
             var listsPath = project.ListsPath;
@@ -119,7 +110,8 @@ namespace Gibbed.DeusEx3.RebuildFileLists
                 Console.WriteLine("Could not detect install path.");
                 return;
             }
-            else if (listsPath == null)
+
+            if (listsPath == null)
             {
                 Console.WriteLine("Could not detect lists path.");
                 return;

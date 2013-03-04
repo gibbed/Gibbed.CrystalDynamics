@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2011 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2013 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -43,11 +43,7 @@ namespace Gibbed.DeusEx3.DRMEdit
 
             var options = new OptionSet()
             {
-                {
-                    "h|help",
-                    "show this message and exit", 
-                    v => showHelp = v != null
-                },
+                { "h|help", "show this message and exit", v => showHelp = v != null },
             };
 
             List<string> extras;
@@ -63,11 +59,10 @@ namespace Gibbed.DeusEx3.DRMEdit
                 sb.AppendLine(e.Message);
                 sb.AppendFormat("Try `{0} --help' for more information.", GetExecutableName());
                 sb.AppendLine();
-                MessageBox.Show(
-                    sb.ToString(),
-                    GetExecutableName(),
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                MessageBox.Show(sb.ToString(),
+                                GetExecutableName(),
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
                 return;
             }
 

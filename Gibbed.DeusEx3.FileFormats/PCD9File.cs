@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2011 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2013 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -108,11 +108,11 @@ namespace Gibbed.DeusEx3.FileFormats
                     }
 
                     this.Mipmaps.Add(new PCD9.Mipmap()
-                        {
-                            Width = mipWidth,
-                            Height = mipHeight,
-                            Data = buffer,
-                        });
+                    {
+                        Width = mipWidth,
+                        Height = mipHeight,
+                        Data = buffer,
+                    });
 
                     mipWidth >>= 1;
                     mipHeight >>= 1;

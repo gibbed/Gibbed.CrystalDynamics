@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2011 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2013 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -21,7 +21,6 @@
  */
 
 using System;
-using System.Globalization;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -31,7 +30,7 @@ using Gibbed.IO;
 using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
 using NDesk.Options;
 
-namespace Gibbed.TombRaider.Unpack
+namespace Gibbed.TombRaider7.Unpack
 {
     internal class Program
     {
@@ -103,7 +102,6 @@ namespace Gibbed.TombRaider.Unpack
             bool overwriteFiles = false;
             bool verbose = true;
             string currentProject = null;
-            var endian = Endian.Little;
 
             var options = new OptionSet()
             {
@@ -116,8 +114,6 @@ namespace Gibbed.TombRaider.Unpack
                     "ou|only-unknowns", "only extract unknown files",
                     v => extractUnknowns = v != null ? true : extractUnknowns
                 },
-                { "l|little-endian", "operate in little-endian mode", v => endian = v != null ? Endian.Little : endian },
-                { "b|big-endian", "operate in big-endian mode", v => endian = v != null ? Endian.Big : endian },
                 { "v|verbose", "be verbose", v => verbose = v != null },
                 { "h|help", "show this message and exit", v => showHelp = v != null },
                 { "p|project=", "override current project", v => currentProject = v },
@@ -162,9 +158,9 @@ namespace Gibbed.TombRaider.Unpack
             }
 
             var big = new BigArchiveFileV1();
-            big.Endian = endian;
-            big.FileAlignment = manager.GetSetting<uint>("bigfile_alignment", 0x7FF00000);
-            var compressionType = manager.GetSetting("compression_type", CompressionType.None);
+            big.Endian = manager.GetSetting("archive_endianness", Endian.Little);
+            big.FileAlignment = manager.GetSetting<uint>("archive_alignment", 0x7FF00000);
+            var compressionType = manager.GetSetting("archive_compression_type", CompressionType.None);
 
             using (var input = File.OpenRead(inputPath))
             {

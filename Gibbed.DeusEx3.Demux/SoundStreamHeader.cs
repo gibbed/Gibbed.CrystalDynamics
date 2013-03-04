@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2011 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2013 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -32,26 +32,37 @@ namespace Gibbed.DeusEx3.Demux
         public int Unknown004;
         public int SampleCount;
         public int ChannelCount;
+
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
         public byte[] Unknown010;
+
         public uint Unknown020;
         public uint Unknown024;
         public uint FaceDataSize;
         public uint Unknown02C;
+
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
         public byte[] Unknown030;
+
         public float SegmentCount;
         public float Unknown03C;
+
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public byte[] Unknown040;
+
         public float Unknown044;
+
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 36)]
         public byte[] Unknown048;
+
         public float Unknown06C;
         public float Unknown070;
+
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public byte[] Unknown074;
+
         public float Unknown078;
+
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 596)]
         public byte[] Unknown07C;
 

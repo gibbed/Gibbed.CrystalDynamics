@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2011 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2013 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -20,19 +20,13 @@
  *    distribution.
  */
 
-using System;
-using System.IO;
-using Gibbed.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms;
 using DRM = Gibbed.DeusEx3.FileFormats.DRM;
 
 namespace Gibbed.DeusEx3.DRMEdit
 {
     internal interface ISectionViewer
     {
-        void LoadSection(FileFormats.DRM.Section section);
+        void LoadSection(DRM.Section section);
         void Show();
     }
 }

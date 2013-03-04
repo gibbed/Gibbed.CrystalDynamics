@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2011 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2013 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -48,36 +48,18 @@ namespace Gibbed.DeusEx3.Unpack
 
             var options = new OptionSet()
             {
+                { "o|overwrite", "overwrite existing files", v => overwriteFiles = v != null },
                 {
-                    "o|overwrite",
-                    "overwrite existing files",
-                    v => overwriteFiles = v != null
-                },
-                {
-                    "nu|no-unknowns",
-                    "don't extract unknown files",
+                    "nu|no-unknowns", "don't extract unknown files",
                     v => extractUnknowns = v != null ? false : extractUnknowns
                 },
                 {
-                    "ou|only-unknowns",
-                    "only extract unknown files",
+                    "ou|only-unknowns", "only extract unknown files",
                     v => extractUnknowns = v != null ? true : extractUnknowns
                 },
-                {
-                    "v|verbose",
-                    "be verbose",
-                    v => verbose = v != null
-                },
-                {
-                    "h|help",
-                    "show this message and exit",
-                    v => showHelp = v != null
-                },
-                {
-                    "p|project=",
-                    "override current project",
-                    v => currentProject = v
-                },
+                { "v|verbose", "be verbose", v => verbose = v != null },
+                { "h|help", "show this message and exit", v => showHelp = v != null },
+                { "p|project=", "override current project", v => currentProject = v },
             };
 
             List<string> extras;
@@ -121,10 +103,9 @@ namespace Gibbed.DeusEx3.Unpack
                 big.Deserialize(input);
             }
 
-            var hashes = manager.LoadLists(
-                "*.filelist",
-                s => s.HashFileName(),
-                s => s.ToLowerInvariant());
+            var hashes = manager.LoadLists("*.filelist",
+                                           s => s.HashFileName(),
+                                           s => s.ToLowerInvariant());
 
             Directory.CreateDirectory(outputPath);
 

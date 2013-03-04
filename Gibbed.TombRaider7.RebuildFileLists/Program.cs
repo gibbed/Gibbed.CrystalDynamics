@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2011 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2013 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -20,15 +20,15 @@
  *    distribution.
  */
 
-using Gibbed.IO;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Gibbed.CrystalDynamics.FileFormats;
+using Gibbed.IO;
 using NDesk.Options;
 
-namespace Gibbed.TombRaider.RebuildFileLists
+namespace Gibbed.TombRaider7.RebuildFileLists
 {
     internal class Program
     {

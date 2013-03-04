@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2011 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2013 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -29,11 +29,8 @@ namespace Gibbed.DeusEx3.FileFormats.DRM
 {
     public class Resolver
     {
-        public List<LocalDataResolver> LocalDataResolvers
-            = new List<LocalDataResolver>();
-        public List<RemoteDataResolver> RemoteDataResolvers
-            = new List<RemoteDataResolver>();
-
+        public List<LocalDataResolver> LocalDataResolvers = new List<LocalDataResolver>();
+        public List<RemoteDataResolver> RemoteDataResolvers = new List<RemoteDataResolver>();
         public List<Unknown2Resolver> Unknown2s = new List<Unknown2Resolver>();
         public List<uint> Unknown3s = new List<uint>();
         public List<Unknown4Resolver> Unknown4s = new List<Unknown4Resolver>();
@@ -110,8 +107,8 @@ namespace Gibbed.DeusEx3.FileFormats.DRM
             public override string ToString()
             {
                 return string.Format("{0:X4} {1:X8}",
-                    this.PointerOffset,
-                    this.DataOffset);
+                                     this.PointerOffset,
+                                     this.DataOffset);
             }
         }
 
@@ -137,9 +134,9 @@ namespace Gibbed.DeusEx3.FileFormats.DRM
             public override string ToString()
             {
                 return string.Format("{0:X4} {1:X8} {2:X8}",
-                    this.SectionIndex,
-                    this.PointerOffset,
-                    this.DataOffset);
+                                     this.SectionIndex,
+                                     this.PointerOffset,
+                                     this.DataOffset);
             }
         }
 

@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7EC6FA5E-416E-450B-9722-368B9F3103DF}</ProjectGuid>
+    <ProjectGuid>{FBEEBE81-AF3B-4B34-88EB-197D07EC381C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gibbed.TombRaider.Unpack</RootNamespace>
-    <AssemblyName>Gibbed.TombRaider.Unpack</AssemblyName>
+    <RootNamespace>Gibbed.TombRaider7.Unpack</RootNamespace>
+    <AssemblyName>Gibbed.TombRaider7.Unpack</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -19,7 +19,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin_tr\</OutputPath>
+    <OutputPath>..\bin_tr7a8d\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>

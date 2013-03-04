@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2011 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2013 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -20,11 +20,35 @@
  *    distribution.
  */
 
- namespace Gibbed.TombRaider.Unpack
+using System;
+
+namespace Gibbed.TombRaider7.RebuildFileLists
 {
-    public enum CompressionType
+    internal class Breakdown
     {
-        None,
-        Zlib,
+        public long Known = 0;
+        public long Total = 0;
+
+        public int Percent
+        {
+            get
+            {
+                if (this.Total == 0)
+                {
+                    return 0;
+                }
+
+                return (int)Math.Floor(((float)this.Known /
+                                        this.Total) * 100.0);
+            }
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0}/{1} ({2}%)",
+                                 this.Known,
+                                 this.Total,
+                                 this.Percent);
+        }
     }
 }
