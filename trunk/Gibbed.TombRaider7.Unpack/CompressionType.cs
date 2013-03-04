@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2011 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2013 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -20,22 +20,11 @@
  *    distribution.
  */
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using Gibbed.DeusEx3.FileFormats;
-using Gibbed.IO;
-using BigLocale = Gibbed.CrystalDynamics.FileFormats.Big.Locale;
-using SectionType = Gibbed.DeusEx3.FileFormats.DRM.SectionType;
-
-namespace Test
+namespace Gibbed.TombRaider7.Unpack
 {
-    internal class Program
+    public enum CompressionType
     {
-        public static void Main(string[] args)
-        {
-        }
+        None,
+        Zlib,
     }
 }

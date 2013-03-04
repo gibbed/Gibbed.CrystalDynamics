@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2011 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2013 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -38,6 +38,7 @@ namespace Gibbed.DeusEx3.FileFormats.DRM
         public uint Unknown10;
 
         private static Dictionary<byte, SectionType> ValidSectionTypes;
+
         static SectionHeader()
         {
             ValidSectionTypes = new Dictionary<byte, SectionType>();
@@ -65,7 +66,7 @@ namespace Gibbed.DeusEx3.FileFormats.DRM
         public void Deserialize(Stream input, bool littleEndian)
         {
             this.DataSize = input.ReadValueU32(littleEndian);
-            
+
             var type = input.ReadValueU8();
             if (ValidSectionTypes.ContainsKey(type) == false)
             {
@@ -83,12 +84,12 @@ namespace Gibbed.DeusEx3.FileFormats.DRM
         public override string ToString()
         {
             return string.Format("{0:X2} {1:X4} {2:X8} {3:X8} {4:X8} : {5}",
-                this.Unknown05,
-                this.Unknown06,
-                this.Flags,
-                this.Id,
-                this.Unknown10,
-                this.Type);
+                                 this.Unknown05,
+                                 this.Unknown06,
+                                 this.Flags,
+                                 this.Id,
+                                 this.Unknown10,
+                                 this.Type);
             return this.Type.ToString();
         }
     }

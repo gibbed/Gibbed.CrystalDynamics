@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2011 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2013 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -22,8 +22,6 @@
 
 using System;
 using System.IO;
-using Gibbed.IO;
-using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using DRM = Gibbed.DeusEx3.FileFormats.DRM;
@@ -208,10 +206,10 @@ namespace Gibbed.DeusEx3.DRMEdit
                 var name = section.Id.ToString("X8");
                 name += " : " + typeName;
                 name += string.Format(" [{0:X2} {1:X2} {2:X4} {3:X8}]",
-                    section.Flags,
-                    section.Unknown05,
-                    section.Unknown06,
-                    section.Unknown10);
+                                      section.Flags,
+                                      section.Unknown05,
+                                      section.Unknown06,
+                                      section.Unknown10);
 
                 if (section.Data != null)
                 {
@@ -244,13 +242,24 @@ namespace Gibbed.DeusEx3.DRMEdit
         {
             if (forceRaw == true)
             {
-                return new RawViewer() { MdiParent = this.MdiParent };
+                return new RawViewer()
+                {
+                    MdiParent = this.MdiParent
+                };
             }
 
             switch (type)
             {
-                case DRM.SectionType.RenderResource: return new TextureViewer() { MdiParent = this.MdiParent };
-                default: return new RawViewer() { MdiParent = this.MdiParent };
+                case DRM.SectionType.RenderResource:
+                    return new TextureViewer()
+                    {
+                        MdiParent = this.MdiParent
+                    };
+                default:
+                    return new RawViewer()
+                    {
+                        MdiParent = this.MdiParent
+                    };
             }
         }
 

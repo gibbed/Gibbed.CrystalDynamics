@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2011 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2013 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -46,7 +46,8 @@ namespace Gibbed.DeusEx3.DRMEdit
             this.hintLabel.Text = string.Format(
                 "{0} : {1}x{2}",
                 texture.Format,
-                texture.Width, texture.Height);
+                texture.Width,
+                texture.Height);
             //this.Text += ": " + entry.Description;
 
             this.Texture = texture;
@@ -55,7 +56,6 @@ namespace Gibbed.DeusEx3.DRMEdit
         }
 
         #region Bitmap stuff
-
         // TODO: make these less dumb
 
         private static Bitmap MakeBitmapFromTrueColor(
@@ -63,7 +63,8 @@ namespace Gibbed.DeusEx3.DRMEdit
         {
             var output = new byte[width * height * 4];
             var bitmap = new Bitmap(
-                (int)width, (int)height,
+                (int)width,
+                (int)height,
                 PixelFormat.Format32bppArgb);
 
             for (uint i = 0; i < width * height * 4; i += 4)
@@ -86,7 +87,8 @@ namespace Gibbed.DeusEx3.DRMEdit
         {
             var output = new byte[width * height * 4];
             var bitmap = new Bitmap(
-                (int)width, (int)height,
+                (int)width,
+                (int)height,
                 PixelFormat.Format32bppArgb);
 
             uint o = 0;
@@ -112,7 +114,8 @@ namespace Gibbed.DeusEx3.DRMEdit
         {
             var output = new byte[width * height * 4];
             var bitmap = new Bitmap(
-                (int)width, (int)height,
+                (int)width,
+                (int)height,
                 PixelFormat.Format32bppArgb);
 
             uint o = 0;
@@ -170,7 +173,8 @@ namespace Gibbed.DeusEx3.DRMEdit
                     {
                         data = Squish.Native.DecompressImage(
                             mip.Data,
-                            (int)mip.Width, (int)mip.Height,
+                            (int)mip.Width,
+                            (int)mip.Height,
                             Squish.Native.Flags.DXT1);
                         break;
                     }
@@ -179,7 +183,8 @@ namespace Gibbed.DeusEx3.DRMEdit
                     {
                         data = Squish.Native.DecompressImage(
                             mip.Data,
-                            (int)mip.Width, (int)mip.Height,
+                            (int)mip.Width,
+                            (int)mip.Height,
                             Squish.Native.Flags.DXT3);
                         break;
                     }
@@ -188,7 +193,8 @@ namespace Gibbed.DeusEx3.DRMEdit
                     {
                         data = Squish.Native.DecompressImage(
                             mip.Data,
-                            (int)mip.Width, (int)mip.Height,
+                            (int)mip.Width,
+                            (int)mip.Height,
                             Squish.Native.Flags.DXT5);
                         break;
                     }

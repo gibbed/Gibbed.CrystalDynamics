@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2011 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2013 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -34,7 +34,10 @@ namespace Gibbed.DeusEx3.DRMEdit
 
             foreach (var path in extras)
             {
-                var editor = new FileViewer() { MdiParent = this };
+                var editor = new FileViewer()
+                {
+                    MdiParent = this
+                };
                 editor.LoadResource(path);
                 editor.Show();
             }
@@ -82,7 +85,10 @@ namespace Gibbed.DeusEx3.DRMEdit
 
             foreach (var path in this.openDRMDialog.FileNames)
             {
-                var editor = new FileViewer() { MdiParent = this };
+                var editor = new FileViewer()
+                {
+                    MdiParent = this
+                };
                 editor.LoadResource(path);
                 editor.Show();
             }

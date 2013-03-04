@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2011 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2013 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -24,8 +24,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Gibbed.IO;
 using System.Runtime.InteropServices;
+using Gibbed.IO;
 using NDesk.Options;
 
 namespace Gibbed.DeusEx3.Demux
@@ -46,25 +46,14 @@ namespace Gibbed.DeusEx3.Demux
 
             var options = new OptionSet()
             {
+                { "o|overwrite", "overwrite existing files", v => overwriteFiles = v != null },
                 {
-                    "o|overwrite",
-                    "overwrite existing files",
-                    v => overwriteFiles = v != null
-                },
-                {
-                    "c|crash-on-unknown-data",
-                    "crash when there is unknown data detected in the header",
+                    "c|crash-on-unknown-data", "crash when there is unknown data detected in the header",
                     v => crashOnUnknownData = v != null
                 },
+                { "v|verbose", "be verbose", v => verbose = v != null },
                 {
-                    "v|verbose",
-                    "be verbose",
-                    v => verbose = v != null
-                },
-                {
-                    "h|help",
-                    "show this message and exit", 
-                    v => showHelp = v != null
+                    "h|help", "show this message and exit", v => showHelp = v != null
                 },
             };
 
@@ -207,7 +196,10 @@ namespace Gibbed.DeusEx3.Demux
                     if (verbose == true)
                     {
                         Console.WriteLine("segment : {0}, {1}, {2}, {3}",
-                            segmentType, segmentSize, segmentUnknown4, segmentUnknown8);
+                                          segmentType,
+                                          segmentSize,
+                                          segmentUnknown4,
+                                          segmentUnknown8);
                     }
 
                     // 0 = audio
@@ -220,7 +212,7 @@ namespace Gibbed.DeusEx3.Demux
                         throw new FormatException();
                     }
 
-                    if (/*segmentUnknown4 != 0 ||*/
+                    if ( /*segmentUnknown4 != 0 ||*/
                         segmentUnknown8 != 0)
                     {
                         throw new FormatException();
@@ -244,7 +236,10 @@ namespace Gibbed.DeusEx3.Demux
                             if (verbose == true)
                             {
                                 Console.WriteLine("block : {0}, {1}, {2}, {3}",
-                                    blockSize, blockStream, blockFlags, blockUnknown8);
+                                                  blockSize,
+                                                  blockStream,
+                                                  blockFlags,
+                                                  blockUnknown8);
                             }
 
                             if (blockStream >= header.ChannelCount ||

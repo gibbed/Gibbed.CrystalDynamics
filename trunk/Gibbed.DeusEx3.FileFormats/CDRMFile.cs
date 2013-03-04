@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2011 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2013 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -63,7 +63,7 @@ namespace Gibbed.DeusEx3.FileFormats
             if (version == 0)
             {
                 count = input.ReadValueU32(true);
-                
+
                 if (count > 0x7FFFFF)
                 {
                     count = count.Swap();
@@ -85,7 +85,7 @@ namespace Gibbed.DeusEx3.FileFormats
                 count = input.ReadValueU32(littleEndian);
                 padding = input.ReadValueU32(littleEndian);
             }
-            
+
             var startOfData = basePosition + 16 + (count * 8) + padding;
 
             var blocks = new Block[count];
@@ -108,7 +108,7 @@ namespace Gibbed.DeusEx3.FileFormats
             }
 
             var output = new MemoryStream();
-            
+
             long offset = 0;
             foreach (var block in blocks)
             {
