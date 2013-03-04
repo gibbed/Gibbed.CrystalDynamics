@@ -28,7 +28,6 @@ using System.Xml;
 using Gibbed.CrystalDynamics.FileFormats;
 using Gibbed.IO;
 using NDesk.Options;
-using Big = Gibbed.CrystalDynamics.FileFormats.Big;
 
 namespace Gibbed.DeusEx3.Unpack
 {
@@ -116,7 +115,7 @@ namespace Gibbed.DeusEx3.Unpack
                 Console.WriteLine("Warning: no active project loaded.");
             }
 
-            var big = new BigFileV2();
+            var big = new ArchiveFileV2();
             using (var input = File.OpenRead(inputPath))
             {
                 big.Deserialize(input);
@@ -242,7 +241,7 @@ namespace Gibbed.DeusEx3.Unpack
                         {
                             xml.WriteComment(string.Format(" {0} = {1} ",
                                                            entry.Locale.ToString("X8"),
-                                                           ((Big.Locale)entry.Locale)));
+                                                           ((ArchiveLocale)entry.Locale)));
                             lastLocale = entry.Locale;
                         }
 

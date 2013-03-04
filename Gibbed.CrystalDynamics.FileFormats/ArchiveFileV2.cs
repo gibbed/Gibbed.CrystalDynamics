@@ -29,11 +29,11 @@ using Gibbed.IO;
 
 namespace Gibbed.CrystalDynamics.FileFormats
 {
-    public class BigFileV2
+    public class ArchiveFileV2
     {
         private Endian _Endian = Endian.Little;
         private uint _FileAlignment = 0x7FF00000;
-        private readonly List<Big.Entry> _Entries = new List<Big.Entry>();
+        private readonly List<Entry> _Entries = new List<Entry>();
         private string _BasePath;
 
         public Endian Endian
@@ -48,7 +48,7 @@ namespace Gibbed.CrystalDynamics.FileFormats
             set { this._FileAlignment = value; }
         }
 
-        public List<Big.Entry> Entries
+        public List<Entry> Entries
         {
             get { return this._Entries; }
         }
@@ -135,7 +135,7 @@ namespace Gibbed.CrystalDynamics.FileFormats
             this.Entries.Clear();
             for (uint i = 0; i < count; i++)
             {
-                var entry = new Big.Entry();
+                var entry = new Entry();
                 entry.NameHash = hashes[i];
                 entry.UncompressedSize = input.ReadValueU32(endian);
                 entry.Offset = input.ReadValueU32(endian);
@@ -147,6 +147,33 @@ namespace Gibbed.CrystalDynamics.FileFormats
                 {
                     throw new NotSupportedException();
                 }
+            }
+        }
+
+        public class Entry
+        {
+            public uint NameHash;
+            public uint UncompressedSize;
+            public uint Offset;
+
+            /// <summary>
+            /// Locale is a bitmask representing what languages this resource is
+            /// valid for. 'Default' indicates all languages.
+            /// 
+            /// Typically languages that are not implemented will have their bits set
+            /// for all non-'Default' resources.
+            /// </summary>
+            public uint Locale;
+
+            public uint CompressedSize;
+
+            public override string ToString()
+            {
+                return string.Format("{0:X8}:{1:X8} @ {2} ({3} bytes)",
+                                     this.NameHash,
+                                     this.Locale,
+                                     this.Offset,
+                                     this.UncompressedSize);
             }
         }
     }

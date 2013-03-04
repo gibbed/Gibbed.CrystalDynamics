@@ -147,7 +147,7 @@ namespace Gibbed.TombRaider.RebuildFileLists
 
                 outputPaths.Add(outputPath);
 
-                var big = new BigFileV1();
+                var big = new ArchiveFileV1();
                 big.Endian = endian;
                 big.FileAlignment = fileAlignment;
 
