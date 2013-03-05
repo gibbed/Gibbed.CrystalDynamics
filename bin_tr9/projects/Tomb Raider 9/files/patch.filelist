@@ -1,4 +1,4 @@
-; 3130/3631 (86%)
+; 3141/3631 (86%)
 pc-w\ac_bendy_01_medium_shrub.drm
 pc-w\ac_bendy_cypress_hero.drm
 pc-w\ac_bendy_tortured_cypress.drm
@@ -229,6 +229,7 @@ pc-w\bh_pryable_elevator_switch_shard.drm
 pc-w\bh_scaffold_elevator.drm
 pc-w\bh_scavenger_hub_wallpanel_a.drm
 pc-w\bh_sea_mine.drm
+pc-w\bh_shrub_clump_03.drm
 pc-w\bh_sidetomb_connector_01.drm
 pc-w\bh_sidetomb_connector_02.drm
 pc-w\bh_squeeze_vent.drm
@@ -609,6 +610,7 @@ pc-w\descent_parachute_strap.drm
 pc-w\descent_precombat_fire_death_a.drm
 pc-w\descent_precombat_fire_death_b.drm
 pc-w\descent_tree_fall.drm
+pc-w\design\runnables\amelias_camp\oceanvista_pc_benchmark.drm
 pc-w\dfgenerator.drm
 pc-w\dispatcher.drm
 pc-w\doc_item_journal_book.drm
@@ -1436,6 +1438,8 @@ pc-w\lantern_bronze_ma.drm
 pc-w\lantern_bronze_ma_clutter.drm
 pc-w\lantern_small_lightable.drm
 pc-w\lara_fullblood.drm
+pc-w\lara_hairsplines.drm
+pc-w\lara_hairsplines_upsidedown.drm
 pc-w\lara_mp.drm
 pc-w\lara_mp_duplica.drm
 pc-w\lara_mp_menu.drm
@@ -2667,6 +2671,12 @@ pc-w\storm_slide_b.drm
 pc-w\storm_tt.drm
 pc-w\storm_tt_close.drm
 pc-w\storm_tt_exta.drm
+pc-w\streamlayers\cine_chaos_beach_always_visible_in_beach_hub.drm
+pc-w\streamlayers\main_menu_1_sp_mainmenu_background.drm
+pc-w\streamlayers\main_menu_1_sp_mainmenu_preload_background.drm
+pc-w\streamlayers\oceanvista_ac_entrance.drm
+pc-w\streamlayers\oceanvista_ac_vista.drm
+pc-w\streamlayers\oceanvista_hide_during_plane_outro.drm
 pc-w\survival_den_puzzleroom.drm
 pc-w\survival_den_rambotunnel.drm
 pc-w\survival_den03.drm
@@ -2676,6 +2686,7 @@ pc-w\survivor_corpse.drm
 pc-w\survivorborn_logo.drm
 pc-w\swing_rope.drm
 pc-w\sword_hilt.drm
+pc-w\symbol.ids
 pc-w\table_npc_tippable.drm
 pc-w\table_npc_tippable_blocker.drm
 pc-w\table_npc_tippable_descent.drm
