@@ -30,7 +30,7 @@ namespace Gibbed.CrystalDynamics.FileFormats
     public class BigArchiveFileV1
     {
         private Endian _Endian = Endian.Little;
-        private uint _FileAlignment = 0x7FF00000;
+        private uint _DataAlignment = 0x7FF00000;
         private readonly List<Entry> _Entries = new List<Entry>();
 
         public Endian Endian
@@ -39,10 +39,10 @@ namespace Gibbed.CrystalDynamics.FileFormats
             set { this._Endian = value; }
         }
 
-        public uint FileAlignment
+        public uint DataAlignment
         {
-            get { return this._FileAlignment; }
-            set { this._FileAlignment = value; }
+            get { return this._DataAlignment; }
+            set { this._DataAlignment = value; }
         }
 
         public List<Entry> Entries
@@ -66,8 +66,8 @@ namespace Gibbed.CrystalDynamics.FileFormats
             output.WriteValueS32(this.Entries.Count, endian);
 
             var entries = this.Entries
-                              .OrderBy(e => e.UncompressedSize)
-                              .OrderBy(e => e.NameHash);
+                              .OrderBy(e => e.NameHash)
+                              .ThenBy(e => e.UncompressedSize);
 
             foreach (var entry in entries)
             {
@@ -98,21 +98,23 @@ namespace Gibbed.CrystalDynamics.FileFormats
             this.Entries.Clear();
             for (uint i = 0; i < count; i++)
             {
-                var entry = new Entry();
-                entry.NameHash = hashes[i];
-                entry.UncompressedSize = input.ReadValueU32(endian);
-                entry.Offset = input.ReadValueU32(endian);
-                entry.Locale = input.ReadValueU32(endian);
-                entry.CompressedSize = input.ReadValueU32(endian);
+                var entry = new Entry
+                {
+                    NameHash = hashes[i],
+                    UncompressedSize = input.ReadValueU32(endian),
+                    Offset = input.ReadValueU32(endian),
+                    Locale = input.ReadValueU32(endian),
+                    CompressedSize = input.ReadValueU32(endian)
+                };
                 this.Entries.Add(entry);
             }
         }
 
         public class Entry
         {
-            public uint NameHash;
-            public uint UncompressedSize;
-            public uint Offset;
+            public uint NameHash { get; set; }
+            public uint UncompressedSize { get; set; }
+            public uint Offset { get; set; }
 
             /// <summary>
             /// Locale is a bitmask representing what languages this resource is
@@ -121,9 +123,9 @@ namespace Gibbed.CrystalDynamics.FileFormats
             /// Typically languages that are not implemented will have their bits set
             /// for all non-'Default' resources.
             /// </summary>
-            public uint Locale;
+            public uint Locale { get; set; }
 
-            public uint CompressedSize;
+            public uint CompressedSize { get; set; }
 
             public override string ToString()
             {

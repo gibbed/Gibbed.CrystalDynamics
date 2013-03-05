@@ -22,6 +22,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Xml;
@@ -157,9 +158,11 @@ namespace Gibbed.TombRaider7.Unpack
                 Console.WriteLine("Warning: no active project loaded.");
             }
 
-            var big = new BigArchiveFileV1();
-            big.Endian = manager.GetSetting("archive_endianness", Endian.Little);
-            big.FileAlignment = manager.GetSetting<uint>("archive_alignment", 0x7FF00000);
+            var big = new BigArchiveFileV1
+            {
+                Endian = manager.GetSetting("archive_endianness", Endian.Little),
+                DataAlignment = manager.GetSetting<uint>("archive_alignment", 0x7FF00000),
+            };
             var compressionType = manager.GetSetting("archive_compression_type", CompressionType.None);
 
             using (var input = File.OpenRead(inputPath))
@@ -179,8 +182,10 @@ namespace Gibbed.TombRaider7.Unpack
 
             Directory.CreateDirectory(outputPath);
 
-            var settings = new XmlWriterSettings();
-            settings.Indent = true;
+            var settings = new XmlWriterSettings()
+            {
+                Indent = true,
+            };
 
             using (var xml = XmlWriter.Create(
                 Path.Combine(outputPath, "bigfile.xml"), settings))
@@ -188,12 +193,12 @@ namespace Gibbed.TombRaider7.Unpack
                 xml.WriteStartDocument();
                 xml.WriteStartElement("files");
                 xml.WriteAttributeString("endian", big.Endian.ToString().ToLowerInvariant());
-                xml.WriteAttributeString("alignment", big.FileAlignment.ToString("X8"));
+                xml.WriteAttributeString("alignment", big.DataAlignment.ToString("X8"));
 
                 Stream data = null;
                 uint? currentBigFile = null;
                 uint? lastLocale = null;
-                var maxBlocksPerFile = big.FileAlignment / 2048;
+                var maxBlocksPerFile = big.DataAlignment / 2048;
                 {
                     long current = 0;
                     long total = big.Entries.Count;
@@ -211,14 +216,13 @@ namespace Gibbed.TombRaider7.Unpack
                             if (data != null)
                             {
                                 data.Close();
-                                data = null;
                             }
 
                             currentBigFile = entryBigFile;
 
                             var bigPath = string.Format("{0}.{1}{2}",
                                                         bigPathBase,
-                                                        currentBigFile.Value.ToString().PadLeft(3, '0'),
+                                                        currentBigFile.Value.ToString(CultureInfo.InvariantCulture).PadLeft(3, '0'),
                                                         bigPathSuffix);
 
                             if (verbose == true)
@@ -307,7 +311,12 @@ namespace Gibbed.TombRaider7.Unpack
                         }
 
                         var entryPath = Path.Combine(outputPath, name);
-                        Directory.CreateDirectory(Path.GetDirectoryName(entryPath));
+
+                        var entryParentPath = Path.GetDirectoryName(entryPath);
+                        if (string.IsNullOrEmpty(entryParentPath) == false)
+                        {
+                            Directory.CreateDirectory(entryParentPath);
+                        }
 
                         if (lastLocale.HasValue == false ||
                             lastLocale.Value != entry.Locale)

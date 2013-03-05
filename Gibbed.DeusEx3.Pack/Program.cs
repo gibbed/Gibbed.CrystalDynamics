@@ -99,12 +99,12 @@ namespace Gibbed.DeusEx3.Pack
 
                 var root = nav.SelectSingleNode("/files");
 
-                var _fileAlignment = root.GetAttribute("alignment", "");
-                if (string.IsNullOrEmpty(_fileAlignment) == true)
+                var _dataAlignment = root.GetAttribute("alignment", "");
+                if (string.IsNullOrEmpty(_dataAlignment) == true)
                 {
                     throw new FormatException("alignment cannot be null or empty");
                 }
-                big.FileAlignment = uint.Parse(_fileAlignment, NumberStyles.AllowHexSpecifier);
+                big.DataAlignment = uint.Parse(_dataAlignment, NumberStyles.AllowHexSpecifier);
 
                 var _endian = root.GetAttribute("endian", "");
                 switch (_endian.ToLowerInvariant())
@@ -172,7 +172,7 @@ namespace Gibbed.DeusEx3.Pack
             var headerSize = (uint)BigArchiveFileV1.EstimateHeaderSize(entries.Count);
             var firstOffset = headerSize / 2048;
 
-            var maxBlocksPerFile = big.FileAlignment / 2048;
+            var maxBlocksPerFile = big.DataAlignment / 2048;
 
             var globalOffset = 0u;
             var localOffset = firstOffset;

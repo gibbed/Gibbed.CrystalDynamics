@@ -34,8 +34,7 @@ namespace Gibbed.CrystalDynamics.FileFormats
                 return "null";
             }
 
-            if (
-                read >= 4 &&
+            if (read >= 4 &&
                 guess[0] == 'C' &&
                 guess[1] == 'D' &&
                 guess[2] == 'R' &&
@@ -43,8 +42,8 @@ namespace Gibbed.CrystalDynamics.FileFormats
             {
                 return "drm";
             }
-            else if (
-                read >= 4 &&
+
+            if (read >= 4 &&
                 guess[0] == 'C' &&
                 guess[1] == 'R' &&
                 guess[2] == 'I' &&
@@ -61,8 +60,8 @@ namespace Gibbed.CrystalDynamics.FileFormats
             {
                 return "png";
             }
-            else if (
-                read >= 4 &&
+
+            if (read >= 4 &&
                 guess[0] == 'F' &&
                 guess[1] == 'S' &&
                 guess[2] == 'B' &&
@@ -70,16 +69,16 @@ namespace Gibbed.CrystalDynamics.FileFormats
             {
                 return "sam";
             }
-            else if (
-                read >= 4 &&
+
+            if (read >= 4 &&
                 guess[0] == 'M' &&
                 guess[1] == 'u' &&
                 guess[2] == 's')
             {
                 return "mus";
             }
-            else if (
-                read >= 4 &&
+
+            if (read >= 4 &&
                 guess[0] == 0x21 &&
                 guess[1] == 'W' &&
                 guess[2] == 'A' &&

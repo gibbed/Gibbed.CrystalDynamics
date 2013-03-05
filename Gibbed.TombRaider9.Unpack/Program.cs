@@ -22,6 +22,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Xml;
@@ -29,13 +30,60 @@ using Gibbed.CrystalDynamics.FileFormats;
 using Gibbed.IO;
 using NDesk.Options;
 
-namespace Gibbed.DeusEx3.Unpack
+namespace Gibbed.TombRaider9.Unpack
 {
     internal class Program
     {
         private static string GetExecutableName()
         {
             return Path.GetFileName(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+        }
+
+        private static bool Is000(string path)
+        {
+            if (path == null)
+            {
+                throw new ArgumentNullException("path");
+            }
+
+            var extension = Path.GetExtension(path);
+
+            if (extension != null)
+            {
+                extension = extension.ToLowerInvariant();
+
+                if (extension == ".tiger")
+                {
+                    path = Path.ChangeExtension(path, null);
+                }
+            }
+
+            return Path.GetExtension(path) == ".000";
+        }
+
+        private static string GetBasePath(string path, out string suffix)
+        {
+            if (path == null)
+            {
+                throw new ArgumentNullException("path");
+            }
+
+            suffix = "";
+
+            var extension = Path.GetExtension(path);
+
+            if (extension != null)
+            {
+                extension = extension.ToLowerInvariant();
+
+                if (extension == ".tiger")
+                {
+                    suffix = extension;
+                    path = Path.ChangeExtension(path, null);
+                }
+            }
+
+            return Path.ChangeExtension(path, null);
         }
 
         public static void Main(string[] args)
@@ -79,17 +127,20 @@ namespace Gibbed.DeusEx3.Unpack
             if (extras.Count < 1 ||
                 extras.Count > 2 ||
                 showHelp == true ||
-                Path.GetExtension(extras[0]) != ".000")
+                Is000(extras[0]) == false)
             {
-                Console.WriteLine("Usage: {0} [OPTIONS]+ input_file.000 [output_dir]", GetExecutableName());
+                Console.WriteLine("Usage: {0} [OPTIONS]+ input_file.000.tiger [output_dir]", GetExecutableName());
                 Console.WriteLine();
                 Console.WriteLine("Options:");
                 options.WriteOptionDescriptions(Console.Out);
                 return;
             }
 
-            string inputPath = extras[0];
-            string outputPath = extras.Count > 1 ? extras[1] : Path.ChangeExtension(inputPath, null) + "_unpack";
+            var inputPath = extras[0];
+            var outputPath = extras.Count > 1 ? extras[1] : Path.ChangeExtension(inputPath, null) + "_unpack";
+
+            string bigPathSuffix;
+            var bigPathBase = GetBasePath(inputPath, out bigPathSuffix);
 
             var manager = ProjectData.Manager.Load(currentProject);
             if (manager.ActiveProject == null)
@@ -97,10 +148,10 @@ namespace Gibbed.DeusEx3.Unpack
                 Console.WriteLine("Warning: no active project loaded.");
             }
 
-            var big = new BigArchiveFileV2();
+            var archive = new TigerArchiveFile();
             using (var input = File.OpenRead(inputPath))
             {
-                big.Deserialize(input);
+                archive.Deserialize(input);
             }
 
             var hashes = manager.LoadLists("*.filelist",
@@ -109,46 +160,48 @@ namespace Gibbed.DeusEx3.Unpack
 
             Directory.CreateDirectory(outputPath);
 
-            var settings = new XmlWriterSettings();
-            settings.Indent = true;
+            var settings = new XmlWriterSettings()
+            {
+                Indent = true,
+            };
 
-            using (var xml = XmlWriter.Create(
-                Path.Combine(outputPath, "bigfile.xml"), settings))
+            var xmlPath = Path.Combine(outputPath, "tiger.xml");
+            using (var xml = XmlWriter.Create(xmlPath, settings))
             {
                 xml.WriteStartDocument();
                 xml.WriteStartElement("files");
-                xml.WriteAttributeString("endian", big.Endian.ToString().ToLowerInvariant());
-                xml.WriteAttributeString("basepath", big.BasePath);
-                xml.WriteAttributeString("alignment", big.DataAlignment.ToString("X8"));
+                xml.WriteAttributeString("endian", archive.Endian.ToString().ToLowerInvariant());
+                xml.WriteAttributeString("basepath", archive.BasePath);
+                xml.WriteAttributeString("priority", archive.Priority.ToString(CultureInfo.InvariantCulture));
 
                 Stream data = null;
-                uint? currentBigFile = null;
+                byte? currentDataIndex = null;
                 uint? lastLocale = null;
-                var maxBlocksPerFile = big.DataAlignment / 2048;
                 {
                     long current = 0;
-                    long total = big.Entries.Count;
+                    long total = archive.Entries.Count;
 
-                    foreach (var entry in big.Entries.OrderBy(e => e.Offset))
+                    foreach (var entry in archive.Entries
+                                                 .OrderBy(e => e.Offset)
+                                                 .ThenBy(e => e.DataIndex))
                     {
                         current++;
 
-                        var entryBigFile = entry.Offset / maxBlocksPerFile;
-                        var entryOffset = (entry.Offset % maxBlocksPerFile) * 2048;
-
-                        if (currentBigFile.HasValue == false ||
-                            currentBigFile.Value != entryBigFile)
+                        if (currentDataIndex.HasValue == false ||
+                            currentDataIndex.Value != entry.DataIndex)
                         {
                             if (data != null)
                             {
                                 data.Close();
-                                data = null;
                             }
 
-                            currentBigFile = entryBigFile;
+                            currentDataIndex = entry.DataIndex;
 
-                            var bigPath = Path.ChangeExtension(inputPath,
-                                                               "." + currentBigFile.Value.ToString().PadLeft(3, '0'));
+                            var bigPath = string.Format("{0}.{1}{2}",
+                                                        bigPathBase,
+                                                        currentDataIndex.Value.ToString(CultureInfo.InvariantCulture)
+                                                                        .PadLeft(3, '0'),
+                                                        bigPathSuffix);
 
                             if (verbose == true)
                             {
@@ -159,6 +212,7 @@ namespace Gibbed.DeusEx3.Unpack
                         }
 
                         string name = hashes[entry.NameHash];
+
                         if (name == null)
                         {
                             if (extractUnknowns.HasValue == true &&
@@ -173,13 +227,10 @@ namespace Gibbed.DeusEx3.Unpack
                                 var guess = new byte[64];
                                 int read = 0;
 
-                                if (entry.UncompressedSize > 0)
+                                if (entry.Size > 0)
                                 {
-                                    data.Seek(entryOffset, SeekOrigin.Begin);
-                                    read = data.Read(guess,
-                                                     0,
-                                                     (int)Math.Min(
-                                                         entry.UncompressedSize, guess.Length));
+                                    data.Seek(entry.Offset, SeekOrigin.Begin);
+                                    read = data.Read(guess, 0, (int)Math.Min(entry.Size, guess.Length));
                                 }
 
                                 extension = FileExtensions.Detect(guess, Math.Min(guess.Length, read));
@@ -215,7 +266,12 @@ namespace Gibbed.DeusEx3.Unpack
                         }
 
                         var entryPath = Path.Combine(outputPath, name);
-                        Directory.CreateDirectory(Path.GetDirectoryName(entryPath));
+
+                        var entryParentPath = Path.GetDirectoryName(entryPath);
+                        if (string.IsNullOrEmpty(entryParentPath) == false)
+                        {
+                            Directory.CreateDirectory(entryParentPath);
+                        }
 
                         if (lastLocale.HasValue == false ||
                             lastLocale.Value != entry.Locale)
@@ -229,6 +285,12 @@ namespace Gibbed.DeusEx3.Unpack
                         xml.WriteStartElement("entry");
                         xml.WriteAttributeString("hash", entry.NameHash.ToString("X8"));
                         xml.WriteAttributeString("locale", entry.Locale.ToString("X8"));
+
+                        if (entry.Priority != archive.Priority)
+                        {
+                            xml.WriteAttributeString("priority", entry.Priority.ToString(CultureInfo.InvariantCulture));
+                        }
+
                         xml.WriteValue(name);
                         xml.WriteEndElement();
 
@@ -248,10 +310,10 @@ namespace Gibbed.DeusEx3.Unpack
 
                         using (var output = File.Create(entryPath))
                         {
-                            if (entry.UncompressedSize > 0)
+                            if (entry.Size > 0)
                             {
-                                data.Seek(entryOffset, SeekOrigin.Begin);
-                                output.WriteFromStream(data, entry.UncompressedSize);
+                                data.Seek(entry.Offset, SeekOrigin.Begin);
+                                output.WriteFromStream(data, entry.Size);
                             }
                         }
                     }
