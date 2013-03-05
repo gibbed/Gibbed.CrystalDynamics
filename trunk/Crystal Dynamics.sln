@@ -43,6 +43,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gibbed.TombRaider7.RebuildF
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tomb Raider 9", "Tomb Raider 9", "{CF571255-2D90-441A-A3E1-395D69E69E90}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gibbed.TombRaider9.Unpack", "Gibbed.TombRaider9.Unpack\Gibbed.TombRaider9.Unpack.csproj", "{1A4ABC84-411F-4B90-A6D7-7936D811E8DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gibbed.TombRaider9.RebuildFileLists", "Gibbed.TombRaider9.RebuildFileLists\Gibbed.TombRaider9.RebuildFileLists.csproj", "{2AE56F2C-9AEA-4C46-99E9-CD48F968CBE1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -203,6 +207,26 @@ Global
 		{795D8BA5-54BF-48AE-A440-18F27557704E}.Release|Mixed Platforms.Build.0 = Release|x86
 		{795D8BA5-54BF-48AE-A440-18F27557704E}.Release|x86.ActiveCfg = Release|x86
 		{795D8BA5-54BF-48AE-A440-18F27557704E}.Release|x86.Build.0 = Release|x86
+		{1A4ABC84-411F-4B90-A6D7-7936D811E8DA}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{1A4ABC84-411F-4B90-A6D7-7936D811E8DA}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{1A4ABC84-411F-4B90-A6D7-7936D811E8DA}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{1A4ABC84-411F-4B90-A6D7-7936D811E8DA}.Debug|x86.ActiveCfg = Debug|x86
+		{1A4ABC84-411F-4B90-A6D7-7936D811E8DA}.Debug|x86.Build.0 = Debug|x86
+		{1A4ABC84-411F-4B90-A6D7-7936D811E8DA}.Release|Any CPU.ActiveCfg = Release|x86
+		{1A4ABC84-411F-4B90-A6D7-7936D811E8DA}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{1A4ABC84-411F-4B90-A6D7-7936D811E8DA}.Release|Mixed Platforms.Build.0 = Release|x86
+		{1A4ABC84-411F-4B90-A6D7-7936D811E8DA}.Release|x86.ActiveCfg = Release|x86
+		{1A4ABC84-411F-4B90-A6D7-7936D811E8DA}.Release|x86.Build.0 = Release|x86
+		{2AE56F2C-9AEA-4C46-99E9-CD48F968CBE1}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{2AE56F2C-9AEA-4C46-99E9-CD48F968CBE1}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{2AE56F2C-9AEA-4C46-99E9-CD48F968CBE1}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{2AE56F2C-9AEA-4C46-99E9-CD48F968CBE1}.Debug|x86.ActiveCfg = Debug|x86
+		{2AE56F2C-9AEA-4C46-99E9-CD48F968CBE1}.Debug|x86.Build.0 = Debug|x86
+		{2AE56F2C-9AEA-4C46-99E9-CD48F968CBE1}.Release|Any CPU.ActiveCfg = Release|x86
+		{2AE56F2C-9AEA-4C46-99E9-CD48F968CBE1}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{2AE56F2C-9AEA-4C46-99E9-CD48F968CBE1}.Release|Mixed Platforms.Build.0 = Release|x86
+		{2AE56F2C-9AEA-4C46-99E9-CD48F968CBE1}.Release|x86.ActiveCfg = Release|x86
+		{2AE56F2C-9AEA-4C46-99E9-CD48F968CBE1}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -226,5 +250,7 @@ Global
 		{2F2E00FA-694C-4A3D-BC83-710D35426782} = {438E6E61-E3AD-418F-9D07-7BE863BE345A}
 		{FBEEBE81-AF3B-4B34-88EB-197D07EC381C} = {A69FC2BD-934A-479C-9A1F-9D1B24B18540}
 		{795D8BA5-54BF-48AE-A440-18F27557704E} = {A69FC2BD-934A-479C-9A1F-9D1B24B18540}
+		{1A4ABC84-411F-4B90-A6D7-7936D811E8DA} = {CF571255-2D90-441A-A3E1-395D69E69E90}
+		{2AE56F2C-9AEA-4C46-99E9-CD48F968CBE1} = {CF571255-2D90-441A-A3E1-395D69E69E90}
 	EndGlobalSection
 EndGlobal

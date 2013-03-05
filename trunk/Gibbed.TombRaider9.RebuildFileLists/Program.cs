@@ -25,10 +25,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Gibbed.CrystalDynamics.FileFormats;
-using Gibbed.IO;
 using NDesk.Options;
 
-namespace Gibbed.TombRaider7.RebuildFileLists
+namespace Gibbed.TombRaider9.RebuildFileLists
 {
     internal class Program
     {
@@ -59,13 +58,10 @@ namespace Gibbed.TombRaider7.RebuildFileLists
         {
             bool showHelp = false;
             string currentProject = null;
-            var endian = Endian.Little;
 
             var options = new OptionSet()
             {
                 { "h|help", "show this message and exit", v => showHelp = v != null },
-                { "l|little-endian", "operate in little-endian mode", v => endian = v != null ? Endian.Little : endian },
-                { "b|big-endian", "operate in big-endian mode", v => endian = v != null ? Endian.Big : endian },
                 { "p|project=", "override current project", v => currentProject = v },
             };
 
@@ -123,16 +119,16 @@ namespace Gibbed.TombRaider7.RebuildFileLists
 
             Console.WriteLine("Searching for archives...");
             var inputPaths = new List<string>();
-            inputPaths.AddRange(Directory.GetFiles(installPath, "*.000", SearchOption.AllDirectories));
+            inputPaths.AddRange(Directory.GetFiles(installPath, "*.000.tiger", SearchOption.AllDirectories));
 
             var outputPaths = new List<string>();
 
-            var fileAlignment = manager.GetSetting<uint>("archive_alignment", 0x7FF00000);
+            var breakdown = new Breakdown();
 
             Console.WriteLine("Processing...");
             foreach (var inputPath in inputPaths)
             {
-                var outputPath = GetListPath(installPath, inputPath);
+                var outputPath = GetListPath(installPath, Path.ChangeExtension(inputPath, null));
                 if (outputPath == null)
                 {
                     throw new InvalidOperationException();
@@ -148,12 +144,7 @@ namespace Gibbed.TombRaider7.RebuildFileLists
 
                 outputPaths.Add(outputPath);
 
-                var big = new BigArchiveFileV1()
-                {
-                    Endian = endian,
-                    DataAlignment = fileAlignment,
-                };
-
+                var big = new TigerArchiveFile();
                 if (File.Exists(inputPath + ".bak") == true)
                 {
                     using (var input = File.OpenRead(inputPath + ".bak"))
@@ -204,6 +195,14 @@ namespace Gibbed.TombRaider7.RebuildFileLists
                         output.WriteLine(name);
                     }
                 }
+
+                breakdown.Known += localBreakdown.Known;
+                breakdown.Total += localBreakdown.Total;
+            }
+
+            using (var output = new StreamWriter(Path.Combine(Path.Combine(listsPath, "files"), "status.txt")))
+            {
+                output.WriteLine("{0}", breakdown);
             }
         }
     }
