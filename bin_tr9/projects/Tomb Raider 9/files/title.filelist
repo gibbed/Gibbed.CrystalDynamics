@@ -1,6 +1,9 @@
-; 3312/3729 (88%)
+; 3326/3729 (89%)
+local\localization\movies\attractmode.sch
+local\localization\movies\crossroads_trailer.sch
 local\localization\movies\newgameintro.sch
 local\localization\movies\sc3snippets.sch
+local\localization\movies\trfh_1_noslates.sch
 local\localization\movies\ww2sos_snippets.sch
 pc-w\ac_bendy_01_medium_shrub.drm
 pc-w\ac_bendy_cypress_hero.drm
@@ -622,9 +625,11 @@ pc-w\design\image resources\frontenddynamicimages\extras\characters\enemies\char
 pc-w\design\image resources\frontenddynamicimages\extras\characters\enemies\character_thumbnail_scav_heavy_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\enemies\character_thumbnail_stalker_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_alex_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_deck_hand.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_deck_hand_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_grim_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_jonah_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_lara.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_lara_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_reyes_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_roth_locked.drm
@@ -639,6 +644,7 @@ pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environmen
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\03_mountain_climb\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\04_mountain_village\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\05_sos\thumbnail_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\06_radiotower\thumbnail.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\06_radiotower\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\07_cliffs\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\09_chasmmonastery\thumbnail_locked.drm
@@ -652,6 +658,13 @@ pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environmen
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\17_returntoendurance\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\18_soti\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\19_queen\thumbnail_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\videos\snippet_thumbnail_decision_time.drm
+pc-w\design\image resources\frontenddynamicimages\extras\videos\snippet_thumbnail_ww2_sos.drm
+pc-w\design\image resources\frontenddynamicimages\extras\videos\thumbnail_crossroads.drm
+pc-w\design\image resources\frontenddynamicimages\extras\videos\thumbnail_final_hours_1.drm
+pc-w\design\image resources\frontenddynamicimages\extras\videos\thumbnail_final_hours_2.drm
+pc-w\design\image resources\frontenddynamicimages\extras\videos\thumbnail_final_hours_3.drm
+pc-w\design\image resources\frontenddynamicimages\extras\videos\trailer_thumbnail_turning_point.drm
 pc-w\dfgenerator.drm
 pc-w\dispatcher.drm
 pc-w\doc_item_journal_book.drm
@@ -2797,6 +2810,7 @@ pc-w\streamlayers\oceanvista_ac_exit.drm
 pc-w\streamlayers\oceanvista_ac_ocean_sams_pack_open.drm
 pc-w\streamlayers\oceanvista_ac_vista.drm
 pc-w\streamlayers\oceanvista_hide_during_plane_outro.drm
+pc-w\streamlayers\tr_06_monastery_mp_stone_platfrom_chunk_a_collision.drm
 pc-w\streamlayers\vh_cliffs_to_hub_connector_b_2nd_half_level.drm
 pc-w\streamlayers\vh_hub_to_chasm_connector_vh_facade.drm
 pc-w\streamlayers\vh_hub_to_chasm_connector_vista_mtns.drm

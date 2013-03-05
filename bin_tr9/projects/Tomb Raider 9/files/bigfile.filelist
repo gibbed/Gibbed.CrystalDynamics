@@ -1,6 +1,9 @@
-; 3995/6759 (59%)
+; 4066/6759 (60%)
+local\localization\movies\attractmode.sch
+local\localization\movies\crossroads_trailer.sch
 local\localization\movies\newgameintro.sch
 local\localization\movies\sc3snippets.sch
+local\localization\movies\trfh_1_noslates.sch
 local\localization\movies\ww2sos_snippets.sch
 pc-w\ac_bendy_01_medium_shrub.drm
 pc-w\ac_bendy_cypress_hero.drm
@@ -176,6 +179,8 @@ pc-w\audio\streams\ambient\water\drips_light_loop_02.mul
 pc-w\audio\streams\ambient\water\drips_light_loop_03.mul
 pc-w\audio\streams\ambient\water\rain_metal_heavy_loop_a_01_stream.mul
 pc-w\audio\streams\ambient\water\rain_metal_medium_loop_b_01_stream.mul
+pc-w\audio\streams\ambient\water\rain_stone_heavy_loop_c_01_stream.mul
+pc-w\audio\streams\ambient\water\rain_stone_medium_loop_a_01_stream.mul
 pc-w\audio\streams\ambient\water\rain_water_heavy_loop_a_01_stream.mul
 pc-w\audio\streams\ambient\water\water_flow_heavy_loop_c_01_stream.mul
 pc-w\audio\streams\ambient\water\wave_laps_light_loop_01.mul
@@ -206,6 +211,7 @@ pc-w\audio\streams\ambient\wind\wind_loop_01.mul
 pc-w\audio\streams\ambient\wind\wind_loop_02.mul
 pc-w\audio\streams\ambient\wind\wind_loop_03.mul
 pc-w\audio\streams\ambient\wind\wind_loop_04.mul
+pc-w\audio\streams\ambient\wind\wind_loop_05.mul
 pc-w\audio\streams\ambient\wind\wind_loop_06.mul
 pc-w\audio\streams\ambient\wind\wind_loop_07.mul
 pc-w\audio\streams\ambient\wind\wind_loop_08.mul
@@ -250,6 +256,11 @@ pc-w\audio\streams\event\village\village_01_wolf_den_scare_03.mul
 pc-w\audio\streams\event\ww2\smg_pickup_01.mul
 pc-w\audio\streams\event_triggered\den\den03_ambient_cave_in_01.mul
 pc-w\audio\streams\event_triggered\den\den03_ambient_cave_in_02.mul
+pc-w\audio\streams\mp\beach\lightning_zap_beach_01.mul
+pc-w\audio\streams\mp\beach\lightning_zap_beach_02.mul
+pc-w\audio\streams\mp\beach\lightning_zap_beach_03.mul
+pc-w\audio\streams\mp\beach\lightning_zap_beach_04.mul
+pc-w\audio\streams\mp\ui\power-up_03.mul
 pc-w\audio\streams\music\act_01\103_ac_amelias_camp\103_ac_040_bunker_gramophone_01.mul
 pc-w\audio\streams\music\act_01\103_ac_amelias_camp\103_ac_060_main_salvage_01.mul
 pc-w\audio\streams\music\act_01\104_mc_mountain_climb\104_mc_050_post_capture_loop_01.mul
@@ -321,7 +332,11 @@ pc-w\audio\streams\music\mountain_climb_75_bpm\sneaky01_stinger01_v01.mul
 pc-w\audio\streams\music\mountain_climb_75_bpm\sneaky01_stinger02_v01.mul
 pc-w\audio\streams\music\mountain_climb_90_bpm\brass_piano_mathias_sneaky01_stinger04_v01.mul
 pc-w\audio\streams\music\mountain_climb_90_bpm\sneaky02_full_90_v01_stinger_01.mul
+pc-w\audio\streams\music\mp\end_screens\lost_stinger_mp_endscreen_01.mul
+pc-w\audio\streams\music\multiplayer\death_match_music_01.mul
 pc-w\audio\streams\music\overture\full_mix_01_adventure_begins.mul
+pc-w\audio\streams\music\overture\full_mix_09_island_curse.mul
+pc-w\audio\streams\music\overture\full_mix_11_off_the_grid.mul
 pc-w\audio\streams\music\proximity_loops_no_bpm\proximity_05_v01.mul
 pc-w\audio\streams\music\puzzle_01_75_bpm\percussion_big_slow_stinger_02.mul
 pc-w\audio\streams\music\puzzle_01_75_bpm\percussion_big_slow_stinger_02a.mul
@@ -331,6 +346,7 @@ pc-w\audio\streams\music\puzzle_01_75_bpm\strings_woodwinds_lara_stinger_long_02
 pc-w\audio\streams\music\rc_wolfden_custom_no_bpm\bowed_noise_loop_01.mul
 pc-w\audio\streams\music\rc_wolfden_custom_no_bpm\low_strings_stinger_02.mul
 pc-w\audio\streams\music\rc_wolfden_custom_no_bpm\strings_loop_01.mul
+pc-w\audio\streams\music\scav_hub_01\scav_hub_1_fire_gate_combat_loop_01.mul
 pc-w\audio\streams\music\slide_of_insanity_no_bpm\01_intro_v01.mul
 pc-w\audio\streams\music\slide_of_insanity_no_bpm\02_sliding_v01.mul
 pc-w\audio\streams\music\slide_of_insanity_no_bpm\03_grabon_v01.mul
@@ -368,6 +384,7 @@ pc-w\audio\streams\music\stingers_01_no_bpm\percussion_strings_big_shock_stinger
 pc-w\audio\streams\music\stingers_01_no_bpm\planefall.mul
 pc-w\audio\streams\music\stingers_01_no_bpm\planereveal.mul
 pc-w\audio\streams\music\stingers_01_no_bpm\sidetomb_introduction_stinger_01.mul
+pc-w\audio\streams\music\stingers_01_no_bpm\stinger_dark_01.mul
 pc-w\audio\streams\music\stingers_01_no_bpm\strings_lara_somber_stinger_01.mul
 pc-w\audio\streams\music\stingers_01_no_bpm\strings_sharp_stinger_descending_01.mul
 pc-w\audio\streams\music\stingers_01_no_bpm\strings_terror_loop_01.mul
@@ -1095,9 +1112,11 @@ pc-w\design\image resources\frontenddynamicimages\extras\characters\enemies\char
 pc-w\design\image resources\frontenddynamicimages\extras\characters\enemies\character_thumbnail_scav_heavy_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\enemies\character_thumbnail_stalker_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_alex_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_deck_hand.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_deck_hand_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_grim_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_jonah_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_lara.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_lara_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_reyes_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_roth_locked.drm
@@ -1107,6 +1126,11 @@ pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\ch
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\1_characters\00_lara_croft\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\1_characters\01_sam\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\1_characters\02_endurance_officers\thumbnail_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\1_characters\03_endurance_crew\alex_bust.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\1_characters\03_endurance_crew\crew_mess_hall.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\1_characters\03_endurance_crew\group_1.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\1_characters\03_endurance_crew\jonah_bust.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\1_characters\03_endurance_crew\thumbnail.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\1_characters\03_endurance_crew\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\1_characters\04_oni_leaders\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\1_characters\05_oni\thumbnail_locked.drm
@@ -1128,6 +1152,11 @@ pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environmen
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\03_mountain_climb\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\04_mountain_village\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\05_sos\thumbnail_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\06_radiotower\01.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\06_radiotower\02.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\06_radiotower\03.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\06_radiotower\04.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\06_radiotower\thumbnail.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\06_radiotower\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\07_cliffs\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\09_chasmmonastery\thumbnail_locked.drm
@@ -1141,8 +1170,30 @@ pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environmen
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\17_returntoendurance\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\18_soti\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\19_queen\thumbnail_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\videos\snippet_thumbnail_decision_time.drm
+pc-w\design\image resources\frontenddynamicimages\extras\videos\snippet_thumbnail_ww2_sos.drm
+pc-w\design\image resources\frontenddynamicimages\extras\videos\thumbnail_crossroads.drm
+pc-w\design\image resources\frontenddynamicimages\extras\videos\thumbnail_final_hours_1.drm
+pc-w\design\image resources\frontenddynamicimages\extras\videos\thumbnail_final_hours_2.drm
+pc-w\design\image resources\frontenddynamicimages\extras\videos\thumbnail_final_hours_3.drm
+pc-w\design\image resources\frontenddynamicimages\extras\videos\trailer_thumbnail_turning_point.drm
 pc-w\design\image resources\loadingscreen\mp\featsandaccolades\prowess_feats.drm
 pc-w\design\image resources\loadingscreen\mp\featsandaccolades\prowess_setbacks.drm
+pc-w\design\image resources\loadingscreen\mp\genericbg.drm
+pc-w\design\image resources\loadingscreen\mp\hints\autodestruct.drm
+pc-w\design\image resources\loadingscreen\mp\hints\charge.drm
+pc-w\design\image resources\loadingscreen\mp\hints\crouch.drm
+pc-w\design\image resources\loadingscreen\mp\hints\dbnd_survivors.drm
+pc-w\design\image resources\loadingscreen\mp\hints\dynamite.drm
+pc-w\design\image resources\loadingscreen\mp\hints\generalloadout.drm
+pc-w\design\image resources\loadingscreen\mp\hints\pickaxe.drm
+pc-w\design\image resources\loadingscreen\mp\hints\shoulder.drm
+pc-w\design\image resources\loadingscreen\mp\hints\spawnmedkit.drm
+pc-w\design\image resources\loadingscreen\mp\hints\spawnonfriend.drm
+pc-w\design\image resources\loadingscreen\mp\hints\sprint.drm
+pc-w\design\image resources\loadingscreen\mp\hints\superweapons.drm
+pc-w\design\image resources\loadingscreen\mp\hints\survivalinstinct.drm
+pc-w\design\image resources\loadingscreen\mp\hints\throwmedkit.drm
 pc-w\design\image resources\map\basecamp_thumbnails\map_thumbnail_ac_forest.drm
 pc-w\design\image resources\map\basecamp_thumbnails\map_thumbnail_ac_main.drm
 pc-w\design\image resources\map\basecamp_thumbnails\map_thumbnail_mtn_climb_two.drm
@@ -1155,6 +1206,11 @@ pc-w\design\image resources\map\region_thumbnails\map_region_thumbnail_coastal_f
 pc-w\design\image resources\map\region_thumbnails\map_region_thumbnail_mountain_climb.drm
 pc-w\design\image resources\map\region_thumbnails\map_region_thumbnail_moutain_village.drm
 pc-w\design\image resources\map\region_thumbnails\map_region_thumbnail_wwii_sos.drm
+pc-w\design\image resources\map\region_thumbnails\multiplayer\map_region_thumbnail_tr02_beach.drm
+pc-w\design\image resources\map\region_thumbnails\multiplayer\map_region_thumbnail_tr03_shrine.drm
+pc-w\design\image resources\map\region_thumbnails\multiplayer\map_region_thumbnail_tr04_chasmbridge.drm
+pc-w\design\image resources\map\region_thumbnails\multiplayer\map_region_thumbnail_tr05_submarine.drm
+pc-w\design\image resources\map\region_thumbnails\multiplayer\map_region_thumbnail_tr06_monastery.drm
 pc-w\design\image resources\multi player\achievements\prowessicon.drm
 pc-w\design\image resources\multi player\charactericons\alex_icon.drm
 pc-w\design\image resources\multi player\charactericons\grim_icon.drm
@@ -3427,6 +3483,21 @@ pc-w\streamlayers\oceanvista_show_after_start_cine.drm
 pc-w\streamlayers\oceanvista_tree_lean_cine.drm
 pc-w\streamlayers\survival_den_puzzleroom_water_current_cage_overflow.drm
 pc-w\streamlayers\survival_den_puzzleroom_water_current_normal.drm
+pc-w\streamlayers\tr_02_ww2_beach_mode_relichunt.drm
+pc-w\streamlayers\tr_02_ww2_beach_mode_teamdeathmatch.drm
+pc-w\streamlayers\tr_03_japanese_shrine_mode_relichunt.drm
+pc-w\streamlayers\tr_03_japanese_shrine_team_spawnpoints.drm
+pc-w\streamlayers\tr_04_chasm_bridge_mode_relichunt.drm
+pc-w\streamlayers\tr_04_chasm_bridge_mp_wood_grate_colplayer.drm
+pc-w\streamlayers\tr_05_submarine_col_subdoor_closed.drm
+pc-w\streamlayers\tr_05_submarine_col_truck03_initial.drm
+pc-w\streamlayers\tr_05_submarine_mode_relichunt.drm
+pc-w\streamlayers\tr_06_monastery_mode_relichunt.drm
+pc-w\streamlayers\tr_06_monastery_mp_monastery_rockcover_chunk_collision.drm
+pc-w\streamlayers\tr_06_monastery_mp_stone_platfrom_chunk_a_collision.drm
+pc-w\streamlayers\tr_06_monastery_mp_stone_platfrom_chunk_b_collision.drm
+pc-w\streamlayers\tr_06_monastery_mp_stone_platfrom_chunk_c_collision.drm
+pc-w\streamlayers\tr_06_monastery_mp_stone_platfrom_chunk_d_collision.drm
 pc-w\streamlayers\vh_cliffs_to_hub_connector_b_1st_half_level.drm
 pc-w\streamlayers\vh_cliffs_to_hub_connector_b_2nd_half_level.drm
 pc-w\streamlayers\vh_cliffs_to_hub_connector_b_enemies.drm
