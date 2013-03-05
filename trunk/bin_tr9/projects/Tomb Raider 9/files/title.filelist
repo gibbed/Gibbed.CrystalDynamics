@@ -1,5 +1,6 @@
-; 3181/3729 (85%)
+; 3195/3729 (85%)
 local\localization\movies\newgameintro.sch
+local\localization\movies\sc3snippets.sch
 pc-w\ac_bendy_01_medium_shrub.drm
 pc-w\ac_bendy_cypress_hero.drm
 pc-w\ac_bendy_tortured_cypress.drm
@@ -630,7 +631,9 @@ pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\ch
 pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_samantha_ceremonial_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_whitman_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\00_endurance\thumbail_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\00_endurance\thumbnail.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\01_amelias_camp\thumbnail_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\02_scavenger_den\thumbnail.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\02_scavenger_den\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\03_mountain_climb\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\04_mountain_village\thumbnail_locked.drm
@@ -2710,10 +2713,21 @@ pc-w\storm_slide_b.drm
 pc-w\storm_tt.drm
 pc-w\storm_tt_close.drm
 pc-w\storm_tt_exta.drm
+pc-w\streamlayers\ac_forest_ac_forest_dump.drm
+pc-w\streamlayers\ac_forest_campsite_cine_moss.drm
+pc-w\streamlayers\ac_forest_campsite_rocks_to_stream_out_during_cine.drm
+pc-w\streamlayers\ac_forest_campsite_unprepped_for_cine.drm
+pc-w\streamlayers\ac_forest_cine_trees_rain.drm
+pc-w\streamlayers\ac_forest_cine_trees_rain_toremove.drm
+pc-w\streamlayers\ac_forest_tunnel_plug.drm
+pc-w\streamlayers\ac_forest_waterfalls.drm
 pc-w\streamlayers\cine_chaos_beach_always_visible_in_beach_hub.drm
 pc-w\streamlayers\main_menu_1_sp_mainmenu_background.drm
 pc-w\streamlayers\main_menu_1_sp_mainmenu_preload_background.drm
+pc-w\streamlayers\oceanvista_ac_center.drm
 pc-w\streamlayers\oceanvista_ac_entrance.drm
+pc-w\streamlayers\oceanvista_ac_exit.drm
+pc-w\streamlayers\oceanvista_ac_ocean_sams_pack_open.drm
 pc-w\streamlayers\oceanvista_ac_vista.drm
 pc-w\streamlayers\oceanvista_hide_during_plane_outro.drm
 pc-w\survival_den_puzzleroom.drm

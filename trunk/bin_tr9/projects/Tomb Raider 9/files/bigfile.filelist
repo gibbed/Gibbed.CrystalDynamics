@@ -1,5 +1,6 @@
-; 3245/6759 (48%)
+; 3410/6759 (50%)
 local\localization\movies\newgameintro.sch
+local\localization\movies\sc3snippets.sch
 pc-w\ac_bendy_01_medium_shrub.drm
 pc-w\ac_bendy_cypress_hero.drm
 pc-w\ac_bendy_tortured_cypress.drm
@@ -134,34 +135,127 @@ pc-w\ascent_camera_two.drm
 pc-w\ascentcamera_one.drm
 pc-w\ascentcamerarock.drm
 pc-w\ascentrockdeath.drm
+pc-w\audio\streams\ambient\drone\drone_cave_02.mul
+pc-w\audio\streams\ambient\drone\drone_cave_in_loop_01.mul
+pc-w\audio\streams\ambient\drone\drone_cave_wet_01.mul
 pc-w\audio\streams\ambient\drone\drone_metal_groan_01.mul
 pc-w\audio\streams\ambient\thunder\thunder_boom_01.mul
 pc-w\audio\streams\ambient\thunder\thunder_boom_03.mul
 pc-w\audio\streams\ambient\thunder\thunder_boom_04.mul
 pc-w\audio\streams\ambient\thunder\thunder_boom_05.mul
 pc-w\audio\streams\ambient\thunder\thunder_boom_06.mul
+pc-w\audio\streams\ambient\thunder\thunder_boom_07.mul
 pc-w\audio\streams\ambient\thunder\thunder_boom_08.mul
 pc-w\audio\streams\ambient\thunder\thunder_boom_09.mul
+pc-w\audio\streams\ambient\thunder\thunder_crack_big_01.mul
+pc-w\audio\streams\ambient\thunder\thunder_crack_short_01.mul
+pc-w\audio\streams\ambient\thunder\thunder_crack_short_02.mul
+pc-w\audio\streams\ambient\thunder\thunder_crack_short_03.mul
 pc-w\audio\streams\ambient\thunder\thunder_rumble_04.mul
+pc-w\audio\streams\ambient\thunder\thunder_rumble_05.mul
 pc-w\audio\streams\ambient\thunder\thunder_rumble_09.mul
 pc-w\audio\streams\ambient\water\drips_light_loop_01.mul
 pc-w\audio\streams\ambient\water\drips_light_loop_02.mul
+pc-w\audio\streams\ambient\water\drips_light_loop_03.mul
+pc-w\audio\streams\ambient\water\rain_metal_heavy_loop_a_01_stream.mul
 pc-w\audio\streams\ambient\water\rain_water_heavy_loop_a_01_stream.mul
 pc-w\audio\streams\ambient\water\water_flow_heavy_loop_c_01_stream.mul
 pc-w\audio\streams\ambient\water\wave_laps_light_loop_01.mul
+pc-w\audio\streams\ambient\water\wave_laps_light_loop_04.mul
+pc-w\audio\streams\ambient\water\wave_laps_light_loop_08.mul
 pc-w\audio\streams\ambient\wind\wind_high_light_loop_01.mul
 pc-w\audio\streams\ambient\wind\wind_high_light_loop_02.mul
+pc-w\audio\streams\ambient\wind\wind_loop_23.mul
 pc-w\audio\streams\ambient\wind\wind_mid_medium_loop_02.mul
 pc-w\audio\streams\ambient\wind\wind_mid_medium_loop_02_mono.mul
 pc-w\audio\streams\ambient\wind\wind_mid_medium_loop_03.mul
 pc-w\audio\streams\ambient\wind\wind_mid_medium_loop_03_mono.mul
+pc-w\audio\streams\character\animal\wolf\wolf_howl_b_01.mul
+pc-w\audio\streams\event\den\den_scavenger_scratch_01.mul
+pc-w\audio\streams\event_triggered\den\den03_ambient_cave_in_01.mul
+pc-w\audio\streams\event_triggered\den\den03_ambient_cave_in_02.mul
 pc-w\audio\streams\music\credits\creditsv01.mul
+pc-w\audio\streams\music\den\den_fuse_room_boo_stinger_01.mul
 pc-w\audio\streams\music\den_custom_no_bpm\01a_openingcinema_credits.mul
 pc-w\audio\streams\music\den_custom_no_bpm\01a_openingcinema_wakeup.mul
+pc-w\audio\streams\music\den_custom_no_bpm\01b_escapecocoon.mul
+pc-w\audio\streams\music\den_custom_no_bpm\01c_fallonspike.mul
+pc-w\audio\streams\music\den_custom_no_bpm\01c_fallonspike_v02.mul
+pc-w\audio\streams\music\den_custom_no_bpm\01d_pulloutspike_v02.mul
+pc-w\audio\streams\music\den_custom_no_bpm\02a_sacrifice_a.mul
+pc-w\audio\streams\music\den_custom_no_bpm\02b_explore.mul
+pc-w\audio\streams\music\den_custom_no_bpm\02b_fuse_room_stinger_02.mul
+pc-w\audio\streams\music\den_custom_no_bpm\02c_scavattack01_v02.mul
+pc-w\audio\streams\music\den_custom_no_bpm\03a_escape_solvepuzzle.mul
+pc-w\audio\streams\music\den_custom_no_bpm\04a_jumpbackgroundloop_v3.mul
+pc-w\audio\streams\music\den_custom_no_bpm\05a_scavattack02_150.mul
+pc-w\audio\streams\music\den_custom_no_bpm\05a_scavattack02_150_v2.mul
+pc-w\audio\streams\music\den_custom_no_bpm\06a_lastjump_v10.mul
+pc-w\audio\streams\music\den_custom_no_bpm\06c_runout_boulderpass01.mul
+pc-w\audio\streams\music\den_custom_no_bpm\06c_runout_boulderpass02.mul
 pc-w\audio\streams\music\den_custom_no_bpm\edits\03a_escape01_bigbangs_single_stinger_01.mul
+pc-w\audio\streams\music\den_custom_no_bpm\edits\03a_escape08_tone_02.mul
+pc-w\audio\streams\music\den_custom_no_bpm\runout_v2\03b_escape_slidedown_v02.mul
+pc-w\audio\streams\music\den_custom_no_bpm\runout_v2\03c_escape_runningv02.mul
+pc-w\audio\streams\music\den_custom_no_bpm\runout_v3\03a_escape_leavepuzzleroom_v03.mul
+pc-w\audio\streams\music\den_custom_no_bpm\runout_v3\04a_brass_swell_01.mul
+pc-w\audio\streams\music\den_custom_no_bpm\runout_v3\04a_brass_swell_02.mul
+pc-w\audio\streams\music\den_custom_no_bpm\runout_v3\04a_brass_swell_03.mul
+pc-w\audio\streams\music\den_custom_no_bpm\runout_v3\04a_brass_swell_04.mul
+pc-w\audio\streams\music\den_custom_no_bpm\runout_v3\06b_runoutmix_v03.mul
 pc-w\audio\streams\music\overture\full_mix_01_adventure_begins.mul
+pc-w\audio\streams\music\proximity_loops_no_bpm\proximity_05_v01.mul
+pc-w\audio\streams\music\rc_wolfden_custom_no_bpm\bowed_noise_loop_01.mul
 pc-w\audio\streams\music\stingers\short_stinger_18.mul
+pc-w\audio\streams\music\stingers_01_no_bpm\logslip_02.mul
+pc-w\audio\streams\music\stingers_01_no_bpm\logtraversal_03.mul
+pc-w\audio\streams\music\stingers_01_no_bpm\percussion_brass_stinger_descending_01.mul
+pc-w\audio\streams\music\stingers_01_no_bpm\planefall.mul
+pc-w\audio\streams\music\stingers_01_no_bpm\planereveal.mul
+pc-w\audio\streams\music\stingers_01_no_bpm\ui_stingers\mono_versions\iss_stinger_circle_closing_mono_02.mul
+pc-w\audio\streams\music\stingers_01_no_bpm\ui_stingers\non_specific\glass_bowl_rubber_mallet_03.mul
+pc-w\audio\streams\music\stingers_01_no_bpm\ui_stingers\objective_stinger_complete_01.mul
+pc-w\audio\streams\music\stingers_01_no_bpm\ui_stingers\reward_broken_weapon_set_stinger_01.mul
+pc-w\audio\streams\music\suite_02_level_02_90_bpm\brass_big_impact_stinger_01.mul
+pc-w\audio\streams\music\suite_02_level_02_90_bpm\brass_big_impact_stinger_02.mul
+pc-w\audio\streams\music\suite_02_level_02_90_bpm\brass_big_impact_stinger_03.mul
+pc-w\audio\streams\music\suite_02_level_02_90_bpm\percussion_big_drum_sparse_loop_01.mul
+pc-w\audio\streams\music\suite_02_level_02_90_bpm\woodwind_light_low_impact_stinger_01.mul
+pc-w\audio\streams\music\suite_02_level_02_90_bpm\woodwind_light_low_impact_stinger_02.mul
+pc-w\audio\streams\music\suite_02_level_02_90_bpm\woodwind_light_low_impact_stinger_03.mul
+pc-w\audio\streams\music\traversal_01_75_bpm\flutes_light_stinger_long_a_01.mul
+pc-w\audio\streams\music\traversal_01_75_bpm\flutes_stinger_long_a_01.mul
+pc-w\audio\streams\music\traversal_01_75_bpm\flutes_stinger_long_a_02.mul
+pc-w\audio\streams\music\traversal_01_75_bpm\percussion_metal_light_loop_a_01.mul
+pc-w\audio\streams\music\traversal_01_75_bpm\strings_dark_stinger_long_a_01.mul
+pc-w\audio\streams\music\traversal_01_75_bpm\strings_dark_stinger_long_a_04.mul
+pc-w\audio\streams\music\traversal_01_75_bpm\strings_flute_light_lara_stinger_long_02.mul
+pc-w\audio\streams\vo\act_01\102_sd_scavenger_den\102_sd_040_fuse_room_bark\scav_altar_background_rant_01.mul
+pc-w\audio\streams\vo\act_01\102_sd_scavenger_den\102_sd_040_fuse_room_bark\scav_bark_attack_heavy_01.mul
+pc-w\audio\streams\vo\act_01\102_sd_scavenger_den\102_sd_040_fuse_room_bark\scav_bark_attack_heavy_02.mul
+pc-w\audio\streams\vo\act_01\102_sd_scavenger_den\102_sd_040_fuse_room_bark\scav_bark_attack_heavy_03.mul
 pc-w\audio\streams\vo\act_01\102_sd_scavenger_den\102_sd_040_fuse_room_bark\scav_bark_attack_heavy_04.mul
+pc-w\audio\streams\vo\act_01\102_sd_scavenger_den\102_sd_040_fuse_room_bark\scav_bark_attack_light_04.mul
+pc-w\audio\streams\vo\act_01\102_sd_scavenger_den\102_sd_040_fuse_room_bark\scav_bark_attack_light_06.mul
+pc-w\audio\streams\vo\act_01\102_sd_scavenger_den\102_sd_040_fuse_room_bark\scav_bark_attack_medium_01.mul
+pc-w\audio\streams\vo\act_01\102_sd_scavenger_den\102_sd_040_fuse_room_bark\scav_bark_attack_medium_02.mul
+pc-w\audio\streams\vo\act_01\102_sd_scavenger_den\102_sd_040_fuse_room_bark\scav_bark_attack_medium_03.mul
+pc-w\audio\streams\vo\act_01\102_sd_scavenger_den\102_sd_040_fuse_room_bark\scav_bark_attack_medium_04.mul
+pc-w\audio\streams\vo\act_01\102_sd_scavenger_den\102_sd_040_fuse_room_bark\scav_bark_attack_medium_05.mul
+pc-w\audio\streams\vo\act_01\102_sd_scavenger_den\102_sd_040_fuse_room_bark\scav_bark_attack_medium_06.mul
+pc-w\audio\streams\vo\act_01\102_sd_scavenger_den\102_sd_040_fuse_room_bark\scav_bark_attack_medium_07.mul
+pc-w\audio\streams\vo\act_01\102_sd_scavenger_den\102_sd_040_fuse_room_bark\scav_bark_attack_medium_08.mul
+pc-w\audio\streams\vo\act_01\102_sd_scavenger_den\102_sd_040_fuse_room_bark\scav_bark_damage_medium_01.mul
+pc-w\audio\streams\vo\act_01\102_sd_scavenger_den\102_sd_040_fuse_room_bark\scav_bark_damage_medium_02.mul
+pc-w\audio\streams\vo\act_01\102_sd_scavenger_den\102_sd_040_fuse_room_bark\scav_bark_damage_medium_05.mul
+pc-w\audio\streams\vo\act_01\102_sd_scavenger_den\102_sd_060_cave_in_bark\scav_bark_death_01.mul
+pc-w\audio\streams\vo\act_01\102_sd_scavenger_den\102_sd_060_cave_in_bark\scav_bark_death_02.mul
+pc-w\audio\streams\vo\act_01\102_sd_scavenger_den\102_sd_060_cave_in_bark\scav_bark_death_03.mul
+pc-w\audio\streams\vo\lara\den\lara_den_cave_in_01.mul
+pc-w\audio\streams\vo\lara\den\lara_den_hallway_02.mul
+pc-w\audio\streams\vo\lara\den\lara_den_spike_04.mul
+pc-w\audio\streams\vo\lara\den\lara_den_swing_05.mul
+pc-w\audio\streams\vo\lara\den\lara_den_swing_fall_01.mul
 pc-w\audio_graph_chasm.drm
 pc-w\audio_graph_forest.drm
 pc-w\audio_graph_oniden.drm
@@ -443,11 +537,21 @@ pc-w\cine_walkie_loader.drm
 pc-w\cine_whitman_base.drm
 pc-w\cine_whitman_heavy.drm
 pc-w\cine_wolf_lowshine.drm
+pc-w\cinstream\ac_cliffhanger_wingbreak.drm
+pc-w\cinstream\ac_cliffhanger_wingbreak.mul
 pc-w\cinstream\chaosbeach.drm
+pc-w\cinstream\den_ascent_vista.drm
+pc-w\cinstream\den_ascent_vista.mul
 pc-w\cinstream\den_prologue_drag.drm
 pc-w\cinstream\den_prologue_drag.mul
 pc-w\cinstream\den_prologue_hoist.drm
 pc-w\cinstream\den_prologue_hoist.mul
+pc-w\cinstream\den_puzzle_blast.drm
+pc-w\cinstream\meettheendurance_a.drm
+pc-w\cinstream\meettheendurance_b.drm
+pc-w\cinstream\meettheendurance_b.mul
+pc-w\cinstream\signs_of_life_rl.drm
+pc-w\cinstream\tree_lean.drm
 pc-w\cliffs_house_fifth.drm
 pc-w\cliffs_house_first.drm
 pc-w\cliffs_house_fourth.drm
@@ -670,8 +774,18 @@ pc-w\design\image resources\frontenddynamicimages\extras\conceptart\1_characters
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\1_characters\05_oni\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\1_characters\06_solarii_leaders\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\1_characters\07_solarii\thumbnail_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\00_endurance\01_ship_full.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\00_endurance\01_ship_profile.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\00_endurance\03_ship_front_back.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\00_endurance\thumbail_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\00_endurance\thumbnail.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\01_amelias_camp\thumbnail_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\02_scavenger_den\01_alter.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\02_scavenger_den\02_alter.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\02_scavenger_den\03_alter.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\02_scavenger_den\04_living_room.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\02_scavenger_den\05.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\02_scavenger_den\thumbnail.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\02_scavenger_den\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\03_mountain_climb\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\04_mountain_village\thumbnail_locked.drm
@@ -689,6 +803,35 @@ pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environmen
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\17_returntoendurance\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\18_soti\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\19_queen\thumbnail_locked.drm
+pc-w\design\image resources\loadingscreen\mp\featsandaccolades\prowess_feats.drm
+pc-w\design\image resources\loadingscreen\mp\featsandaccolades\prowess_setbacks.drm
+pc-w\design\image resources\multi player\achievements\prowessicon.drm
+pc-w\design\image resources\multi player\charactericons\alex_icon.drm
+pc-w\design\image resources\multi player\charactericons\grim_icon.drm
+pc-w\design\image resources\multi player\charactericons\jonah_icon.drm
+pc-w\design\image resources\multi player\charactericons\lara_icon.drm
+pc-w\design\image resources\multi player\charactericons\liam_icon.drm
+pc-w\design\image resources\multi player\charactericons\oni_archer_icon.drm
+pc-w\design\image resources\multi player\charactericons\oni_general_icon.drm
+pc-w\design\image resources\multi player\charactericons\oni_soldier_icon.drm
+pc-w\design\image resources\multi player\charactericons\pilot_icon.drm
+pc-w\design\image resources\multi player\charactericons\reyes_icon.drm
+pc-w\design\image resources\multi player\charactericons\roth_icon.drm
+pc-w\design\image resources\multi player\charactericons\samantha_icon.drm
+pc-w\design\image resources\multi player\charactericons\scavenger_icon.drm
+pc-w\design\image resources\multi player\charactericons\solarii_bruiser_icon.drm
+pc-w\design\image resources\multi player\charactericons\solarii_creeper_icon.drm
+pc-w\design\image resources\multi player\charactericons\solarii_fixer_icon.drm
+pc-w\design\image resources\multi player\charactericons\solarii_mathias_icon.drm
+pc-w\design\image resources\multi player\charactericons\solarii_mathiaspriest_icon.drm
+pc-w\design\image resources\multi player\charactericons\solarii_nikolai_icon.drm
+pc-w\design\image resources\multi player\charactericons\solarii_saboteur_icon.drm
+pc-w\design\image resources\multi player\charactericons\solarii_smoker_icon.drm
+pc-w\design\image resources\multi player\charactericons\stephanie_icon.drm
+pc-w\design\image resources\multi player\charactericons\victor_icon.drm
+pc-w\design\image resources\multi player\charactericons\whitman_icon.drm
+pc-w\design\image resources\tutorial_images\tutorial_beacons_e3.drm
+pc-w\design\image resources\tutorial_images\tutorial_wall_scrammble.drm
 pc-w\dfgenerator.drm
 pc-w\dispatcher.drm
 pc-w\doc_item_journal_book.drm
@@ -2766,6 +2909,21 @@ pc-w\storm_slide_b.drm
 pc-w\storm_tt.drm
 pc-w\storm_tt_close.drm
 pc-w\storm_tt_exta.drm
+pc-w\streamlayers\ac_forest_ac_forest_audio_birds.drm
+pc-w\streamlayers\ac_forest_ac_forest_audio_rain.drm
+pc-w\streamlayers\ac_forest_ac_forest_dump.drm
+pc-w\streamlayers\ac_forest_ac_forest_morning.drm
+pc-w\streamlayers\ac_forest_campsite_cine_moss.drm
+pc-w\streamlayers\ac_forest_campsite_rocks_to_stream_out_during_cine.drm
+pc-w\streamlayers\ac_forest_campsite_unprepped_for_cine.drm
+pc-w\streamlayers\ac_forest_cine_props.drm
+pc-w\streamlayers\ac_forest_cine_trees_rain.drm
+pc-w\streamlayers\ac_forest_cine_trees_rain_toremove.drm
+pc-w\streamlayers\ac_forest_e3_hide.drm
+pc-w\streamlayers\ac_forest_story_fx.drm
+pc-w\streamlayers\ac_forest_story_triggers.drm
+pc-w\streamlayers\ac_forest_tunnel_plug.drm
+pc-w\streamlayers\ac_forest_waterfalls.drm
 pc-w\streamlayers\cine_chaos_beach_always_visible_in_beach_hub.drm
 pc-w\streamlayers\cine_chaos_beach_ambient_audio.drm
 pc-w\streamlayers\cine_chaos_beach_cine_chaos_beach.drm
@@ -2773,13 +2931,20 @@ pc-w\streamlayers\cine_chaos_beach_facade_sb.drm
 pc-w\streamlayers\cine_chaos_beach_facade_tb.drm
 pc-w\streamlayers\main_menu_1_sp_mainmenu_background.drm
 pc-w\streamlayers\main_menu_1_sp_mainmenu_preload_background.drm
+pc-w\streamlayers\main_menu_1_uiplus_streamlayer_mp_charaters.drm
+pc-w\streamlayers\oceanvista_ac_center.drm
 pc-w\streamlayers\oceanvista_ac_entrance.drm
+pc-w\streamlayers\oceanvista_ac_exit.drm
 pc-w\streamlayers\oceanvista_ac_ocean_sams_pack.drm
+pc-w\streamlayers\oceanvista_ac_ocean_sams_pack_open.drm
 pc-w\streamlayers\oceanvista_ac_vista.drm
 pc-w\streamlayers\oceanvista_cine_sams_pack_set.drm
 pc-w\streamlayers\oceanvista_hide_during_plane_outro.drm
 pc-w\streamlayers\oceanvista_plane_wing_bridge.drm
 pc-w\streamlayers\oceanvista_show_after_start_cine.drm
+pc-w\streamlayers\oceanvista_tree_lean_cine.drm
+pc-w\streamlayers\survival_den_puzzleroom_water_current_cage_overflow.drm
+pc-w\streamlayers\survival_den_puzzleroom_water_current_normal.drm
 pc-w\survival_den_puzzleroom.drm
 pc-w\survival_den_rambotunnel.drm
 pc-w\survival_den03.drm
