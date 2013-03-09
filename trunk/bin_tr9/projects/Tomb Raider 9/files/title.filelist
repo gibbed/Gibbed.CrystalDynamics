@@ -1,4 +1,4 @@
-; 3525/3729 (94%)
+; 3583/3729 (96%)
 local\localization\movies\attractmode.sch
 local\localization\movies\crossroads_trailer.sch
 local\localization\movies\newgameintro.sch
@@ -621,43 +621,68 @@ pc-w\descent_parachute_strap.drm
 pc-w\descent_precombat_fire_death_a.drm
 pc-w\descent_precombat_fire_death_b.drm
 pc-w\descent_tree_fall.drm
+pc-w\design\image resources\frontenddynamicimages\extras\characters\enemies\character_thumbnail_himiko.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\enemies\character_thumbnail_himiko_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\characters\enemies\character_thumbnail_mathias.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\enemies\character_thumbnail_mathias_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\characters\enemies\character_thumbnail_oni.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\enemies\character_thumbnail_oni_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\characters\enemies\character_thumbnail_prisoner.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\enemies\character_thumbnail_prisoner_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\characters\enemies\character_thumbnail_scav_heavy.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\enemies\character_thumbnail_scav_heavy_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\characters\enemies\character_thumbnail_stalker.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\enemies\character_thumbnail_stalker_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_alex.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_alex_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_deck_hand.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_deck_hand_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_grim.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_grim_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_jonah.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_jonah_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_lara.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_lara_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_reyes.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_reyes_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_roth.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_roth_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_sam.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_sam_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_samantha_ceremonial.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_samantha_ceremonial_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\characters\survivors\character_thumbnail_whitman_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\00_endurance\thumbail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\00_endurance\thumbnail.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\01_amelias_camp\thumbnail.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\01_amelias_camp\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\02_scavenger_den\thumbnail.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\02_scavenger_den\thumbnail_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\03_mountain_climb\thumbnail.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\03_mountain_climb\thumbnail_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\04_mountain_village\thumbnail.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\04_mountain_village\thumbnail_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\05_sos\thumbnail.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\05_sos\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\06_radiotower\thumbnail.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\06_radiotower\thumbnail_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\07_cliffs\thumbnail.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\07_cliffs\thumbnail_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\09_chasmmonastery\thumbnail.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\09_chasmmonastery\thumbnail_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\10_descent\thumbnail.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\10_descent\thumbnail_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\11_scavtown\thumbnail.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\11_scavtown\thumbnail_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\12_geothermal\thumbnail.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\12_geothermal\thumbnail_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\13_scavbase\thumbnail.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\13_scavbase\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\14_summitforest\thumbnail_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\15_tobeach\thumbnail.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\15_tobeach\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\16_beachhub\thumbnail_locked.drm
+pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\17_returntoendurance\thumbnail.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\17_returntoendurance\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\18_soti\thumbnail_locked.drm
 pc-w\design\image resources\frontenddynamicimages\extras\conceptart\2_environments\19_queen\thumbnail.drm
@@ -1195,6 +1220,8 @@ pc-w\generalbank.drm
 pc-w\global_menus.drm
 pc-w\globalachievements.drm
 pc-w\globaldebuginfo.drm
+pc-w\globaldlc_pack1_data.drm
+pc-w\globaldlc_pack2_data.drm
 pc-w\globalgameflow.drm
 pc-w\globaloutfits.drm
 pc-w\globaluiinfo.drm
@@ -2760,17 +2787,22 @@ pc-w\streamlayers\ac_main_post_wolf_fight_hide.drm
 pc-w\streamlayers\ac_main_sky_glow.drm
 pc-w\streamlayers\ac_main_stuff_to_hide_during_cine.drm
 pc-w\streamlayers\ac_main_vista_mtn.drm
+pc-w\streamlayers\bh_beach_hub_always_visible_in_beach_hub.drm
 pc-w\streamlayers\bh_beach_hub_axe_walls_bling.drm
 pc-w\streamlayers\bh_beach_hub_axe_walls_no_bling.drm
 pc-w\streamlayers\bh_beach_hub_cine_cfc_props.drm
+pc-w\streamlayers\bh_beach_hub_combat_ft_ruins.drm
 pc-w\streamlayers\bh_beach_hub_content_pt_boat.drm
+pc-w\streamlayers\bh_beach_hub_content_sandy_beach.drm
 pc-w\streamlayers\bh_beach_hub_facade_endurance_destroyed.drm
 pc-w\streamlayers\bh_beach_hub_facade_sb.drm
 pc-w\streamlayers\bh_beach_hub_facade_si_30.drm
 pc-w\streamlayers\bh_beach_hub_facade_tb.drm
+pc-w\streamlayers\bh_beach_hub_never_visible_from_rocky_beach.drm
 pc-w\streamlayers\bh_beach_hub_rockdeathc.drm
 pc-w\streamlayers\bh_beach_hub_vista_dump_and_load.drm
 pc-w\streamlayers\bh_sidetomb_connector_01_entrance_terrain.drm
+pc-w\streamlayers\bi_altar_room_retraversal_checkpoints.drm
 pc-w\streamlayers\bi_catacombs_puzzle_plug.drm
 pc-w\streamlayers\bi_catacombs_secondroomcruft.drm
 pc-w\streamlayers\bi_ceremony_ceremony_dump.drm
@@ -2799,7 +2831,9 @@ pc-w\streamlayers\connector_acmain_to_mountainclimb_a_whitmans_test_dump.drm
 pc-w\streamlayers\ct_batcave_batcave_metal.drm
 pc-w\streamlayers\ct_batcave_batcave_rocks.drm
 pc-w\streamlayers\ct_batcave_batcave_wood.drm
+pc-w\streamlayers\ct_fortress_of_solitude_batcave_metal.drm
 pc-w\streamlayers\ct_fortress_of_solitude_batcave_rocks.drm
+pc-w\streamlayers\ct_fortress_of_solitude_batcave_wood.drm
 pc-w\streamlayers\ct_windchasm_connector_chasm.drm
 pc-w\streamlayers\ct_windchasm_props.drm
 pc-w\streamlayers\ct_windchasm_puzzle_platforms.drm
@@ -2882,12 +2916,15 @@ pc-w\streamlayers\mountain_climb_lower_burning_hut_hires.drm
 pc-w\streamlayers\mountain_climb_lower_burning_hut_lores.drm
 pc-w\streamlayers\mountain_climb_lower_content.drm
 pc-w\streamlayers\mountain_climb_lower_content_b.drm
+pc-w\streamlayers\mountain_climb_lower_destroyed.drm
 pc-w\streamlayers\mountain_climb_mid_burning_hut_hires.drm
 pc-w\streamlayers\mountain_climb_mid_burning_hut_lores.drm
+pc-w\streamlayers\mountain_climb_retraversal_burned_buildings.drm
 pc-w\streamlayers\mountain_climb_runforlife_only.drm
 pc-w\streamlayers\mountain_climb_to_village_hub_connector_experience_way.drm
 pc-w\streamlayers\mountain_climb_upper_content.drm
 pc-w\streamlayers\mountain_climb_upper_content_story.drm
+pc-w\streamlayers\mountain_climb_upper_destroyed.drm
 pc-w\streamlayers\mountain_climb_upper_rewards.drm
 pc-w\streamlayers\mountain_climb_vista.drm
 pc-w\streamlayers\oceanvista_ac_center.drm
@@ -2902,14 +2939,24 @@ pc-w\streamlayers\qt_scale_the_ziggurat_art_zig_mountains_rear.drm
 pc-w\streamlayers\qt_the_ritual_pillar_fall_backtrack_gate.drm
 pc-w\streamlayers\qt_the_ritual_section_4_extra_assets.drm
 pc-w\streamlayers\qt_the_ritual_statue_debris.drm
+pc-w\streamlayers\qt_trial_by_fire_post_story.drm
 pc-w\streamlayers\qt_zig_to_ritual_connector_ziggurat_facade.drm
 pc-w\streamlayers\rc_01_marsh_content_burial.drm
 pc-w\streamlayers\rc_01_marsh_content_helicopter.drm
 pc-w\streamlayers\rc_01_marsh_resuscitation.drm
 pc-w\streamlayers\rc_01_marsh_vista.drm
 pc-w\streamlayers\rc_15_camp_content_camp_entrance.drm
+pc-w\streamlayers\rc_15_camp_content_hunter_side.drm
 pc-w\streamlayers\rc_15_camp_content_night.drm
+pc-w\streamlayers\rc_15_camp_content_wolf_side.drm
+pc-w\streamlayers\rc_15_camp_hunting_lodge_interior.drm
+pc-w\streamlayers\rc_20_wolfden_dump_for_hub.drm
+pc-w\streamlayers\rc_20_wolfden_exit_area.drm
+pc-w\streamlayers\rc_20_wolfden_metal.drm
+pc-w\streamlayers\rc_20_wolfden_objects.drm
 pc-w\streamlayers\rc_20_wolfden_post_story_rock_slide.drm
+pc-w\streamlayers\rc_20_wolfden_rocks.drm
+pc-w\streamlayers\rc_20_wolfden_terrain.drm
 pc-w\streamlayers\rc_20_wolfden_wood.drm
 pc-w\streamlayers\sb_05_detail.drm
 pc-w\streamlayers\sb_05_endurance_back_half.drm
@@ -2929,6 +2976,8 @@ pc-w\streamlayers\sh_scavenger_hub_2_always_visible_in_scav_2.drm
 pc-w\streamlayers\sh_scavenger_hub_2_big_bridge.drm
 pc-w\streamlayers\sh_scavenger_hub_2_cine_guardianangel.drm
 pc-w\streamlayers\sh_scavenger_hub_2_cine_roth_tower.drm
+pc-w\streamlayers\sh_scavenger_hub_2_combat_ft_dynamite.drm
+pc-w\streamlayers\sh_scavenger_hub_2_combat_ft_fix.drm
 pc-w\streamlayers\sh_scavenger_hub_2_content_alley_catwalk.drm
 pc-w\streamlayers\sh_scavenger_hub_2_content_barnayard.drm
 pc-w\streamlayers\sh_scavenger_hub_2_content_big_bridge_tower.drm
@@ -2953,12 +3002,14 @@ pc-w\streamlayers\sh_scavenger_hub_2_facade_scav1.drm
 pc-w\streamlayers\sh_scavenger_hub_2_facade_small_bridge.drm
 pc-w\streamlayers\sh_scavenger_hub_2_facade_to_the_beach.drm
 pc-w\streamlayers\sh_scavenger_hub_2_graphicsdata_scav2.drm
+pc-w\streamlayers\sh_scavenger_hub_2_scav2_state_destroyed.drm
 pc-w\streamlayers\sh_scavenger_hub_2_scav2_state_intact.drm
 pc-w\streamlayers\sh_scavenger_hub_2_scav2_terrain_mat_override.drm
 pc-w\streamlayers\sh_scavenger_hub_2_small_bridge.drm
 pc-w\streamlayers\sh_scavenger_hub_2_visible_from_scav1.drm
 pc-w\streamlayers\sh_scavenger_hub_cine_chopper_pilots.drm
 pc-w\streamlayers\sh_scavenger_hub_combat_firegate.drm
+pc-w\streamlayers\sh_scavenger_hub_combat_ft_scavtower.drm
 pc-w\streamlayers\sh_scavenger_hub_content_ancient_temple.drm
 pc-w\streamlayers\sh_scavenger_hub_content_backayard.drm
 pc-w\streamlayers\sh_scavenger_hub_content_banana_courtyard.drm
@@ -2973,11 +3024,14 @@ pc-w\streamlayers\sh_scavenger_hub_facade_scav2.drm
 pc-w\streamlayers\sh_scavenger_hub_facade_small_bridge.drm
 pc-w\streamlayers\sh_scavenger_hub_maingate.drm
 pc-w\streamlayers\sh_scavenger_hub_never_visible_from_scav_hub_2.drm
+pc-w\streamlayers\sh_scavenger_hub_scav1_state_destroyed.drm
 pc-w\streamlayers\sh_scavenger_hub_scav1_state_intact.drm
 pc-w\streamlayers\sh_scavenger_hub_visible_from_scav_hub_2.drm
 pc-w\streamlayers\shipendcinematic_cine_terrain_swapgroup_03.drm
+pc-w\streamlayers\si_10_research_second_half.drm
 pc-w\streamlayers\si_15_elevator_destroyed_elevator.drm
 pc-w\streamlayers\si_15_elevator_flood_lights_red.drm
+pc-w\streamlayers\si_20_machinery_emergency_lights_off.drm
 pc-w\streamlayers\si_25_tomb_barrier_broken.drm
 pc-w\streamlayers\tb_skub_to_kick_the_bucket_scav2_facade.drm
 pc-w\streamlayers\tb_to_beach_to_beach_hub_connector_bh_beach_hub_visible.drm
@@ -3025,6 +3079,10 @@ pc-w\streamlayers\vh_main_never_visible_from_backayard.drm
 pc-w\streamlayers\vh_main_never_visible_from_descent_hub.drm
 pc-w\streamlayers\vh_main_night.drm
 pc-w\streamlayers\vh_main_night_roth.drm
+pc-w\streamlayers\vh_main_retraversal.drm
+pc-w\streamlayers\vh_main_retraversal_checkpoints.drm
+pc-w\streamlayers\vh_main_retraversal_descent.drm
+pc-w\streamlayers\vh_main_retraversal_fix.drm
 pc-w\streamlayers\vh_main_vh_main_hunting.drm
 pc-w\streamlayers\vh_main_vista_mountain_day.drm
 pc-w\streamlayers\vh_main_wolf_den.drm
