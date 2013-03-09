@@ -1,4 +1,9 @@
-; 3465/3631 (95%)
+; 3470/3640 (95%)
+local\localization\movies\attractmode.sch
+local\localization\movies\newgameintro.sch
+local\localization\movies\sc3snippets.sch
+local\localization\movies\trfh_1_noslates.sch
+local\localization\movies\ww2sos_snippets.sch
 pc-w\ac_bendy_01_medium_shrub.drm
 pc-w\ac_bendy_cypress_hero.drm
 pc-w\ac_bendy_tortured_cypress.drm
