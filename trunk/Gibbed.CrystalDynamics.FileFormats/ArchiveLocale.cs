@@ -27,10 +27,7 @@ namespace Gibbed.CrystalDynamics.FileFormats
     [Flags]
     public enum ArchiveLocale : uint
     {
-        // ReSharper disable InconsistentNaming
-        Default = 0xFFFFFFFF,
-        UnusedFlags = 0xFFFFE000,
-        UnusedLanguages = 0x00001D60,
+        None = 0,
         English = 1 << 0,
         French = 1 << 1,
         German = 1 << 2,
@@ -39,11 +36,20 @@ namespace Gibbed.CrystalDynamics.FileFormats
         Japanese = 1 << 5,
         Portugese = 1 << 6,
         Polish = 1 << 7,
-        EnglishUK = 1 << 8,
+        EnglishUnitedKingdom = 1 << 8,
         Russian = 1 << 9,
         Czech = 1 << 10,
         Dutch = 1 << 11,
         Hungarian = 1 << 12,
-        // ReSharper restore InconsistentNaming
+        Arabic = 1 << 13,
+        Korean = 1 << 14,
+        Chinese = 1 << 15,
+        Default = 0xFFFFFFFFu,
+
+        DefinedLocales = English | French | German | Italian |
+                     Spanish | Japanese | Portugese | Polish |
+                     EnglishUnitedKingdom | Russian | Czech | Dutch |
+                     Hungarian | Arabic | Korean | Chinese,
+        UndefinedLocales = ~DefinedLocales,
     }
 }

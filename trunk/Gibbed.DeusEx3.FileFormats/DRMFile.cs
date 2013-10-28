@@ -24,14 +24,15 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using Gibbed.CrystalDynamics.FileFormats;
 using Gibbed.IO;
 
 namespace Gibbed.DeusEx3.FileFormats
 {
-    public class DRMFile
+    public class DrmFile
     {
         public uint Version;
-        public bool LittleEndian;
+        public Endian Endian;
         public uint Flags;
 
         public List<DRM.Section> Sections = new List<DRM.Section>();
@@ -40,12 +41,12 @@ namespace Gibbed.DeusEx3.FileFormats
 
         public void Deserialize(Stream input)
         {
-            var magic = input.ReadValueU32(false);
+            var magic = input.ReadValueU32(Endian.Big);
             input.Seek(-4, SeekOrigin.Current);
 
-            if (magic == CDRMFile.Magic)
+            if (magic == CompressedDrmFile.Signature)
             {
-                input = CDRMFile.Decompress(input);
+                input = CompressedDrmFile.Decompress(input);
             }
 
             if (input.Position + 32 > input.Length)
@@ -53,30 +54,29 @@ namespace Gibbed.DeusEx3.FileFormats
                 throw new FormatException("not enough data for header");
             }
 
-            var version = input.ReadValueU32();
+            var version = input.ReadValueU32(Endian.Little);
             if (version != 19 && version.Swap() != 19 &&
                 version != 21 && version.Swap() != 21)
             {
                 throw new FormatException();
             }
 
-            this.LittleEndian =
-                version == 19 ||
-                version == 21;
-            this.Version = this.LittleEndian == true ? version : version.Swap();
+            var endian = version == 19 || version == 21 ? Endian.Little : Endian.Big;
+            this.Endian = endian;
+            this.Version = version == 19 || version == 21 ? version : version.Swap();
 
             if (this.Version == 19)
             {
                 throw new NotSupportedException();
             }
 
-            var unknown04_Size = input.ReadValueU32(this.LittleEndian);
-            var unknown08_Size = input.ReadValueU32(this.LittleEndian);
-            var unknown0C = input.ReadValueU32(this.LittleEndian); // extra data after first block?
-            var unknown10 = input.ReadValueU32(this.LittleEndian);
-            this.Flags = input.ReadValueU32(this.LittleEndian);
-            var sectionCount = input.ReadValueU32(this.LittleEndian);
-            var unknown1C_Count = input.ReadValueU32(this.LittleEndian);
+            var unknown04_Size = input.ReadValueU32(endian);
+            var unknown08_Size = input.ReadValueU32(endian);
+            var unknown0C = input.ReadValueU32(endian); // extra data after first block?
+            var unknown10 = input.ReadValueU32(endian);
+            this.Flags = input.ReadValueU32(endian);
+            var sectionCount = input.ReadValueU32(endian);
+            var unknown1C_Count = input.ReadValueU32(endian);
 
             if (unknown0C != 0)
             {
@@ -92,7 +92,7 @@ namespace Gibbed.DeusEx3.FileFormats
             for (uint i = 0; i < sectionCount; i++)
             {
                 sectionHeaders[i] = new DRM.SectionHeader();
-                sectionHeaders[i].Deserialize(input, this.LittleEndian);
+                sectionHeaders[i].Deserialize(input, endian);
             }
 
             this.Unknown08s.Clear();
@@ -141,7 +141,7 @@ namespace Gibbed.DeusEx3.FileFormats
                     using (var buffer = input.ReadToMemoryStream(sectionHeader.HeaderSize))
                     {
                         var resolver = new DRM.Resolver();
-                        resolver.Deserialize(buffer, this.LittleEndian);
+                        resolver.Deserialize(buffer, endian);
                         section.Resolver = resolver;
                     }
                 }

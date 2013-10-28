@@ -110,8 +110,8 @@ namespace Gibbed.DeusEx3.Demux
                     throw new FormatException("unexpected sample rate");
                 }
 
-                var littleEndian = validSampleRates.Contains(header.SampleRate);
-                if (littleEndian == false)
+                var endian = validSampleRates.Contains(header.SampleRate) ? Endian.Little : Endian.Big;
+                if (endian != Endian.Little)
                 {
                     header.Swap();
                 }
@@ -188,10 +188,10 @@ namespace Gibbed.DeusEx3.Demux
 
                 while (input.Position < input.Length)
                 {
-                    var segmentType = input.ReadValueU32(littleEndian);
-                    var segmentSize = input.ReadValueU32(littleEndian);
-                    var segmentUnknown4 = input.ReadValueU32(littleEndian);
-                    var segmentUnknown8 = input.ReadValueU32(littleEndian);
+                    var segmentType = input.ReadValueU32(endian);
+                    var segmentSize = input.ReadValueU32(endian);
+                    var segmentUnknown4 = input.ReadValueU32(endian);
+                    var segmentUnknown8 = input.ReadValueU32(endian);
 
                     if (verbose == true)
                     {
@@ -228,10 +228,10 @@ namespace Gibbed.DeusEx3.Demux
                     {
                         while (data.Position < segmentSize)
                         {
-                            var blockSize = data.ReadValueU32(littleEndian);
-                            var blockStream = data.ReadValueU32(littleEndian);
-                            var blockFlags = data.ReadValueU32(littleEndian);
-                            var blockUnknown8 = data.ReadValueU32(littleEndian);
+                            var blockSize = data.ReadValueU32(endian);
+                            var blockStream = data.ReadValueU32(endian);
+                            var blockFlags = data.ReadValueU32(endian);
+                            var blockUnknown8 = data.ReadValueU32(endian);
 
                             if (verbose == true)
                             {

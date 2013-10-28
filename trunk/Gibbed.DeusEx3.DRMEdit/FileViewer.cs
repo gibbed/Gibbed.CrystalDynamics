@@ -31,7 +31,7 @@ namespace Gibbed.DeusEx3.DRMEdit
     public partial class FileViewer : Form
     {
         private string FilePath;
-        private FileFormats.DRMFile FileData;
+        private FileFormats.DrmFile FileData;
 
         public FileViewer()
         {
@@ -64,7 +64,7 @@ namespace Gibbed.DeusEx3.DRMEdit
 
             using (var input = File.OpenRead(path))
             {
-                var rez = new FileFormats.DRMFile();
+                var rez = new FileFormats.DrmFile();
                 rez.Deserialize(input);
                 this.FileData = rez;
             }

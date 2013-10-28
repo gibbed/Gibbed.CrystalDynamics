@@ -25,6 +25,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Xml;
 using Gibbed.CrystalDynamics.FileFormats;
 using Gibbed.IO;
@@ -103,6 +104,7 @@ namespace Gibbed.TombRaider7.Unpack
             bool overwriteFiles = false;
             bool verbose = true;
             string currentProject = null;
+            string filterPattern = null;
 
             var options = new OptionSet()
             {
@@ -115,6 +117,7 @@ namespace Gibbed.TombRaider7.Unpack
                     "ou|only-unknowns", "only extract unknown files",
                     v => extractUnknowns = v != null ? true : extractUnknowns
                 },
+                { "f|filter=", "filter files using pattern", v => filterPattern = v },
                 { "v|verbose", "be verbose", v => verbose = v != null },
                 { "h|help", "show this message and exit", v => showHelp = v != null },
                 { "p|project=", "override current project", v => currentProject = v },
@@ -148,6 +151,12 @@ namespace Gibbed.TombRaider7.Unpack
 
             var inputPath = extras[0];
             var outputPath = extras.Count > 1 ? extras[1] : Path.ChangeExtension(inputPath, null) + "_unpack";
+
+            Regex filter = null;
+            if (string.IsNullOrEmpty(filterPattern) == false)
+            {
+                filter = new Regex(filterPattern, RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            }
 
             string bigPathSuffix;
             var bigPathBase = GetBasePath(inputPath, out bigPathSuffix);
@@ -188,7 +197,8 @@ namespace Gibbed.TombRaider7.Unpack
             };
 
             using (var xml = XmlWriter.Create(
-                Path.Combine(outputPath, "bigfile.xml"), settings))
+                Path.Combine(outputPath, "bigfile.xml"),
+                settings))
             {
                 xml.WriteStartDocument();
                 xml.WriteStartElement("files");
@@ -222,7 +232,8 @@ namespace Gibbed.TombRaider7.Unpack
 
                             var bigPath = string.Format("{0}.{1}{2}",
                                                         bigPathBase,
-                                                        currentBigFile.Value.ToString(CultureInfo.InvariantCulture).PadLeft(3, '0'),
+                                                        currentBigFile.Value.ToString(CultureInfo.InvariantCulture)
+                                                                      .PadLeft(3, '0'),
                                                         bigPathSuffix);
 
                             if (verbose == true)
@@ -260,7 +271,8 @@ namespace Gibbed.TombRaider7.Unpack
                                             read = zlib.Read(guess,
                                                              0,
                                                              (int)Math.Min(
-                                                                 entry.UncompressedSize, guess.Length));
+                                                                 entry.UncompressedSize,
+                                                                 guess.Length));
                                         }
                                         else
                                         {
@@ -273,12 +285,14 @@ namespace Gibbed.TombRaider7.Unpack
                                         read = data.Read(guess,
                                                          0,
                                                          (int)Math.Min(
-                                                             entry.UncompressedSize, guess.Length));
+                                                             entry.UncompressedSize,
+                                                             guess.Length));
                                     }
                                 }
 
                                 extension = FileExtensions.Detect(
-                                    guess, Math.Min(guess.Length, read));
+                                    guess,
+                                    Math.Min(guess.Length, read));
                             }
 
                             name = entry.NameHash.ToString("X8");
@@ -308,6 +322,12 @@ namespace Gibbed.TombRaider7.Unpack
                         else
                         {
                             name = Path.Combine(entry.Locale.ToString("X8"), name);
+                        }
+
+                        if (filter != null &&
+                            filter.IsMatch(name) == false)
+                        {
+                            continue;
                         }
 
                         var entryPath = Path.Combine(outputPath, name);

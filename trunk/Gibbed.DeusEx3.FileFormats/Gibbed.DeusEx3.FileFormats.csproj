@@ -43,8 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CDRMFile.cs" />
-    <Compile Include="DRMFile.cs" />
+    <Compile Include="DrmFile.cs" />
     <Compile Include="DRM\ScriptSection.cs" />
     <Compile Include="DRM\Section.cs" />
     <Compile Include="DRM\SectionHeader.cs" />
@@ -56,6 +55,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Gibbed.CrystalDynamics.FileFormats\Gibbed.CrystalDynamics.FileFormats.csproj">
+      <Project>{2F2E00FA-694C-4A3D-BC83-710D35426782}</Project>
+      <Name>Gibbed.CrystalDynamics.FileFormats</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gibbed.IO\Gibbed.IO.csproj">
       <Project>{047857BA-DAA3-4CA7-AFB8-A1B082B28C6A}</Project>
       <Name>Gibbed.IO</Name>
