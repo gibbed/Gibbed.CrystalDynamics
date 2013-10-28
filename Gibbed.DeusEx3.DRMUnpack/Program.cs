@@ -78,7 +78,7 @@ namespace Gibbed.DeusEx3.DRMUnpack
             string inputPath = extras[0];
             string outputPath = extras.Count > 1 ? extras[1] : Path.ChangeExtension(inputPath, null) + "_unpack";
 
-            var drm = new DRMFile();
+            var drm = new DrmFile();
             using (var input = File.OpenRead(inputPath))
             {
                 drm.Deserialize(input);

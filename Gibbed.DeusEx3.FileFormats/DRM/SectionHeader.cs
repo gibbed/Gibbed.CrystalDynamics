@@ -63,9 +63,9 @@ namespace Gibbed.DeusEx3.FileFormats.DRM
             }
         }
 
-        public void Deserialize(Stream input, bool littleEndian)
+        public void Deserialize(Stream input, Endian endian)
         {
-            this.DataSize = input.ReadValueU32(littleEndian);
+            this.DataSize = input.ReadValueU32(endian);
 
             var type = input.ReadValueU8();
             if (ValidSectionTypes.ContainsKey(type) == false)
@@ -75,10 +75,10 @@ namespace Gibbed.DeusEx3.FileFormats.DRM
             this.Type = (SectionType)type;
 
             this.Unknown05 = input.ReadValueU8();
-            this.Unknown06 = input.ReadValueU16(littleEndian);
-            this.Flags = input.ReadValueU32(littleEndian);
-            this.Id = input.ReadValueU32(littleEndian);
-            this.Unknown10 = input.ReadValueU32(littleEndian);
+            this.Unknown06 = input.ReadValueU16(endian);
+            this.Flags = input.ReadValueU32(endian);
+            this.Id = input.ReadValueU32(endian);
+            this.Unknown10 = input.ReadValueU32(endian);
         }
 
         public override string ToString()

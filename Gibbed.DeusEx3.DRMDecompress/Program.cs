@@ -23,7 +23,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using Gibbed.DeusEx3.FileFormats;
+using Gibbed.CrystalDynamics.FileFormats;
 using Gibbed.IO;
 using NDesk.Options;
 
@@ -76,12 +76,13 @@ namespace Gibbed.DeusEx3.DRMDecompress
             Stream data;
             using (var input = File.OpenRead(inputPath))
             {
-                var isCompressed = input.ReadValueU32(false) == CDRMFile.Magic;
+                var magic = input.ReadValueU32(Endian.Big);
+                var isCompressed = magic == CompressedDrmFile.Signature;
                 input.Seek(-4, SeekOrigin.Current);
 
                 if (isCompressed == true)
                 {
-                    data = CDRMFile.Decompress(input);
+                    data = CompressedDrmFile.Decompress(input);
                 }
                 else
                 {

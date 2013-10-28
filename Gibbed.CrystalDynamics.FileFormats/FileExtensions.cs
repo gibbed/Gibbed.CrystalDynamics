@@ -40,7 +40,7 @@ namespace Gibbed.CrystalDynamics.FileFormats
                 guess[2] == 'R' &&
                 guess[3] == 'M')
             {
-                return "drm";
+                return "cdrm";
             }
 
             if (read >= 4 &&
@@ -51,8 +51,8 @@ namespace Gibbed.CrystalDynamics.FileFormats
             {
                 return "usm";
             }
-            if (
-                read >= 4 &&
+
+            if (read >= 4 &&
                 guess[0] == 0x89 &&
                 guess[1] == 'P' &&
                 guess[2] == 'N' &&
@@ -93,7 +93,8 @@ namespace Gibbed.CrystalDynamics.FileFormats
 
                 if (version == 14 || version.Swap() == 14 ||
                     version == 19 || version.Swap() == 19 ||
-                    version == 21 || version.Swap() == 21)
+                    version == 21 || version.Swap() == 21 ||
+                    version == 22 || version.Swap() == 22)
                 {
                     return "drm";
                 }
@@ -110,13 +111,11 @@ namespace Gibbed.CrystalDynamics.FileFormats
                     sampleRate == 36000 || swappedRate == 36000 ||
                     sampleRate == 44100 || swappedRate == 44100 ||
                     sampleRate == 48000 || swappedRate == 48000 ||
-
+                    
                     (sampleRate >= 43900 && sampleRate <= 44300) ||
                     (swappedRate >= 43900 && swappedRate <= 44300) ||
-                    
                     (sampleRate >= 31000 && sampleRate <= 32200) ||
-                    (swappedRate >= 31000 && swappedRate <= 32200)
-                    )
+                    (swappedRate >= 31000 && swappedRate <= 32200))
                 {
                     return "mul";
                 }

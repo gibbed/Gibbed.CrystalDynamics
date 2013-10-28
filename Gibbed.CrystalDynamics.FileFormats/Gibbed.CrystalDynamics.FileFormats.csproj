@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\other\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,7 +46,9 @@
     <Compile Include="BigArchiveFileV1.cs" />
     <Compile Include="BigArchiveFileV2.cs" />
     <Compile Include="ArchiveLocale.cs" />
+    <Compile Include="CompressedDrmFile.cs" />
     <Compile Include="FileExtensions.cs" />
+    <Compile Include="ITigerFileSystem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringHelpers.cs" />
     <Compile Include="TigerArchiveFile.cs" />

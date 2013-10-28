@@ -35,18 +35,18 @@ namespace Gibbed.DeusEx3.FileFormats.DRM
         public List<uint> Unknown3s = new List<uint>();
         public List<Unknown4Resolver> Unknown4s = new List<Unknown4Resolver>();
 
-        public void Deserialize(Stream input, bool littleEndian)
+        public void Deserialize(Stream input, Endian endian)
         {
             if (input.Length < 20)
             {
                 throw new FormatException("bad section header size?");
             }
 
-            var count0 = input.ReadValueU32(littleEndian);
-            var count1 = input.ReadValueU32(littleEndian);
-            var count2 = input.ReadValueU32(littleEndian);
-            var count3 = input.ReadValueU32(littleEndian);
-            var count4 = input.ReadValueU32(littleEndian);
+            var count0 = input.ReadValueU32(endian);
+            var count1 = input.ReadValueU32(endian);
+            var count2 = input.ReadValueU32(endian);
+            var count3 = input.ReadValueU32(endian);
+            var count4 = input.ReadValueU32(endian);
 
             this.LocalDataResolvers.Clear();
             for (uint i = 0; i < count0; i++)
