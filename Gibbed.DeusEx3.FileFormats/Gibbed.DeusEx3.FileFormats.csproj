@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DrmFile.cs" />
+    <Compile Include="DRMFile.cs" />
     <Compile Include="DRM\ScriptSection.cs" />
     <Compile Include="DRM\Section.cs" />
     <Compile Include="DRM\SectionHeader.cs" />
