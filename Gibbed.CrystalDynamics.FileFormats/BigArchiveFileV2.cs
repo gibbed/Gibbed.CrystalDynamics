@@ -56,13 +56,12 @@ namespace Gibbed.CrystalDynamics.FileFormats
 
         public static int EstimateHeaderSize(int count)
         {
-            return
-                (4 + // file alignment
-                 64 + // base path
-                 4 + // count
-                 (4 * count) + // name hashes
-                 (16 * count)) // entry table
-                    .Align(2048); // aligned to 2048 bytes
+            return (4 + // file alignment
+                    64 + // base path
+                    4 + // count
+                    (4 * count) + // name hashes
+                    (16 * count)) // entry table
+                .Align(2048); // aligned to 2048 bytes
         }
 
         public void Serialize(Stream output)

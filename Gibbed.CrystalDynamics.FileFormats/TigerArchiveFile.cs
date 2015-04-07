@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2013 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2015 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -30,49 +30,74 @@ namespace Gibbed.CrystalDynamics.FileFormats
 {
     public class TigerArchiveFile
     {
-        private const uint _Signature = 0x53464154; // 'TAFS' => Tiger Archive File System
+        private const uint _Signature = 0x54414653; // 'TAFS' => Tiger Archive File System
 
+        #region Fields
         private Endian _Endian = Endian.Little;
-        private readonly List<Entry> _Entries = new List<Entry>();
+        private readonly List<Entry> _Entries;
+        private uint _DataFileCount;
+        private uint _Priority;
+        private string _BasePath;
+        #endregion
 
+        public TigerArchiveFile()
+        {
+            this._Entries = new List<Entry>();
+        }
+
+        #region Properties
         public Endian Endian
         {
             get { return this._Endian; }
             set { this._Endian = value; }
         }
 
-        public uint DataFileCount { get; set; }
-        public uint Priority { get; set; }
-        public string BasePath { get; set; }
-
         public List<Entry> Entries
         {
             get { return this._Entries; }
         }
 
+        public uint DataFileCount
+        {
+            get { return this._DataFileCount; }
+            set { this._DataFileCount = value; }
+        }
+
+        public uint Priority
+        {
+            get { return this._Priority; }
+            set { this._Priority = value; }
+        }
+
+        public string BasePath
+        {
+            get { return this._BasePath; }
+            set { this._BasePath = value; }
+        }
+        #endregion
+
         public static int EstimateHeaderSize(int count)
         {
-            return
-                (4 + // magic
-                 4 + // version
-                 4 + // data file count
-                 4 + // entry count
-                 4 + // priority
-                 32 + // base path
-                 (16 * count)) // entry table
-                    .Align(2048); // aligned to 2048 bytes
+            return (4 + // magic
+                    4 + // version
+                    4 + // data file count
+                    4 + // entry count
+                    4 + // priority
+                    32 + // base path
+                    (16 * count)) // entry table
+                .Align(2048); // aligned to 2048 bytes
         }
 
         public void Serialize(Stream output)
         {
             var endian = this.Endian;
 
-            output.WriteValueU32(_Signature, endian);
+            output.WriteValueU32(_Signature, Endian.Big);
             output.WriteValueU32(3, endian);
-            output.WriteValueU32(this.DataFileCount, endian);
+            output.WriteValueU32(this._DataFileCount, endian);
             output.WriteValueS32(this.Entries.Count, endian);
-            output.WriteValueU32(this.Priority);
-            output.WriteString(this.BasePath ?? "", 32, Encoding.ASCII);
+            output.WriteValueU32(this._Priority, endian);
+            output.WriteString(this._BasePath ?? "", 32, Encoding.ASCII);
 
             foreach (var entry in this.Entries)
             {
@@ -96,42 +121,44 @@ namespace Gibbed.CrystalDynamics.FileFormats
 
         public void Deserialize(Stream input)
         {
-            var magic = input.ReadValueU32(Endian.Little);
-            if (magic != _Signature &&
-                magic.Swap() != _Signature)
+            var magic = input.ReadValueU32(Endian.Big);
+            if (magic != _Signature)
             {
-                throw new FormatException();
-            }
-            var endian = magic == _Signature ? Endian.Little : Endian.Big;
-
-            var version = input.ReadValueU32(endian);
-            if (version != 3)
-            {
-                throw new FormatException();
+                throw new FormatException("bad magic");
             }
 
-            this.DataFileCount = input.ReadValueU32(endian);
+            var version = input.ReadValueU32(Endian.Little);
+            if (version != 3 && version.Swap() != 3)
+            {
+                throw new FormatException("bad version");
+            }
+            var endian = version == 3 ? Endian.Little : Endian.Big;
+
+            this._Endian = endian;
+            this._DataFileCount = input.ReadValueU32(endian);
             var entryCount = input.ReadValueU32(endian);
-            this.Priority = input.ReadValueU32(endian);
-            this.BasePath = input.ReadString(32, true, Encoding.ASCII);
+            this._Priority = input.ReadValueU32(endian);
+            this._BasePath = input.ReadString(32, true, Encoding.ASCII);
 
-            this.Entries.Clear();
+            this._Entries.Clear();
             for (uint i = 0; i < entryCount; i++)
             {
+                var nameHash = input.ReadValueU32(endian);
+                var locale = input.ReadValueU32(endian);
+                var size = input.ReadValueU32(endian);
+                var bits = input.ReadValueU32(endian);
+
                 var entry = new Entry
                 {
-                    NameHash = input.ReadValueU32(endian),
-                    Locale = input.ReadValueU32(endian),
-                    Size = input.ReadValueU32(endian)
+                    NameHash = nameHash,
+                    Locale = locale,
+                    Size = size,
+                    Offset = (bits & 0xFFFFF800) >> 0,
+                    DataIndex = (byte)((bits & 0x0000000F) >> 0),
+                    Priority = (byte)((bits & 0x000007F0) >> 4),
                 };
 
-                var offset = input.ReadValueU32(endian);
-                entry.Offset = (offset & 0xFFFFF800) >> 0;
-                entry.DataIndex = (byte)((offset & 0x0000000F) >> 0);
-                entry.Priority = (byte)((offset & 0x000007F0) >> 4);
-
-                if ( /*entry.Priority != 0 &&*/
-                    entry.Priority != this.Priority)
+                if (entry.Priority != this.Priority)
                 {
                     throw new FormatException();
                 }
@@ -141,13 +168,13 @@ namespace Gibbed.CrystalDynamics.FileFormats
                     throw new FormatException();
                 }
 
-                this.Entries.Add(entry);
+                this._Entries.Add(entry);
             }
         }
 
-        public class Entry
+        public struct Entry
         {
-            public uint NameHash { get; set; }
+            public uint NameHash;
 
             /// <summary>
             /// Locale is a bitmask representing what languages this resource is
@@ -156,29 +183,23 @@ namespace Gibbed.CrystalDynamics.FileFormats
             /// Typically languages that are not implemented will have their bits set
             /// for all non-'Default' resources.
             /// </summary>
-            public uint Locale { get; set; }
+            public uint Locale;
 
-            public uint Size { get; set; }
-            public uint Offset { get; set; }
-            public byte DataIndex { get; set; }
-            public byte Priority { get; set; }
+            public uint Size;
+            public uint Offset;
+            public byte DataIndex;
+            public byte Priority;
 
             public override string ToString()
             {
-                return string.Format("{0:X8}:{1:X8} @ {4}:{2} ({3} bytes)",
-                                     this.NameHash,
-                                     this.Locale,
-                                     this.Offset,
-                                     this.Size,
-                                     this.DataIndex);
+                return string.Format(
+                    "{0:X8}:{1:X8} @ {4}:{2} ({3} bytes)",
+                    this.NameHash,
+                    this.Locale,
+                    this.Offset,
+                    this.Size,
+                    this.DataIndex);
             }
-        }
-
-        [Flags]
-        public enum EntryFlags : byte
-        {
-            None = 0,
-            IsCompressed = 1 << 0,
         }
     }
 }

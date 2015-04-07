@@ -121,6 +121,12 @@ namespace Gibbed.DeusEx3.RebuildFileLists
             var inputPaths = new List<string>();
             inputPaths.AddRange(Directory.GetFiles(installPath, "*.000", SearchOption.AllDirectories));
 
+            foreach (var badName in new[] { "modding", "mods" })
+            {
+                var badPath = Path.Combine(installPath, badName);
+                inputPaths.RemoveAll(ip => ip.StartsWith(badPath) == true);
+            }
+
             var outputPaths = new List<string>();
 
             Console.WriteLine("Processing...");

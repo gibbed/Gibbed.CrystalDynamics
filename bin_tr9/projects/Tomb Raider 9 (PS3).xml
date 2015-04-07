@@ -1,0 +1,9 @@
+<project>
+	<name>Tomb Raider 9 (PS3)</name>
+	<dependencies>
+		<dependency>Shared</dependency>
+	</dependencies>
+	<list_location>Tomb Raider 9 (PS3)</list_location>
+	<install_locations>
+	</install_locations>
+</project>

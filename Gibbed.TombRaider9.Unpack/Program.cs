@@ -47,44 +47,42 @@ namespace Gibbed.TombRaider9.Unpack
                 throw new ArgumentNullException("path");
             }
 
-            var extension = Path.GetExtension(path);
-
-            if (extension != null)
+            string[] extensions = { ".000", ".tiger" };
+            foreach (var extension in extensions.Reverse())
             {
-                extension = extension.ToLowerInvariant();
-
-                if (extension == ".tiger")
+                var other = Path.GetExtension(path);
+                if (other == null || other.ToLowerInvariant() != extension)
                 {
-                    path = Path.ChangeExtension(path, null);
+                    return false;
                 }
+                path = Path.ChangeExtension(path, null);
             }
-
-            return Path.GetExtension(path) == ".000";
+            return true;
         }
 
-        private static string GetBasePath(string path, out string suffix)
+        private static string GetBasePath(string path)
         {
             if (path == null)
             {
                 throw new ArgumentNullException("path");
             }
 
-            suffix = "";
-
-            var extension = Path.GetExtension(path);
-
-            if (extension != null)
+            string[] extensions = { ".000", ".tiger" };
+            foreach (var extension in extensions.Reverse())
             {
-                extension = extension.ToLowerInvariant();
-
-                if (extension == ".tiger")
+                var other = Path.GetExtension(path);
+                if (other == null || other.ToLowerInvariant() != extension)
                 {
-                    suffix = extension;
-                    path = Path.ChangeExtension(path, null);
+                    break;
                 }
+                path = Path.ChangeExtension(path, null);
             }
+            return path;
+        }
 
-            return Path.ChangeExtension(path, null);
+        private static string GetExtension(uint index)
+        {
+            return "." + index.ToString(CultureInfo.InvariantCulture).PadLeft(3, '0') + ".tiger";
         }
 
         public static void Main(string[] args)
@@ -127,8 +125,7 @@ namespace Gibbed.TombRaider9.Unpack
                 return;
             }
 
-            if (extras.Count < 1 ||
-                extras.Count > 2 ||
+            if (extras.Count < 1 || extras.Count > 2 ||
                 showHelp == true ||
                 Is000(extras[0]) == false)
             {
@@ -140,7 +137,8 @@ namespace Gibbed.TombRaider9.Unpack
             }
 
             var inputPath = extras[0];
-            var outputPath = extras.Count > 1 ? extras[1] : Path.ChangeExtension(inputPath, null) + "_unpack";
+            var basePath = GetBasePath(inputPath);
+            var outputPath = extras.Count > 1 ? extras[1] : basePath + "_unpack";
 
             Regex filter = null;
             if (string.IsNullOrEmpty(filterPattern) == false)
@@ -148,24 +146,19 @@ namespace Gibbed.TombRaider9.Unpack
                 filter = new Regex(filterPattern, RegexOptions.Compiled | RegexOptions.IgnoreCase);
             }
 
-            string bigPathSuffix;
-            var bigPathBase = GetBasePath(inputPath, out bigPathSuffix);
-
             var manager = ProjectData.Manager.Load(currentProject);
             if (manager.ActiveProject == null)
             {
                 Console.WriteLine("Warning: no active project loaded.");
             }
 
-            var archive = new TigerArchiveFile();
+            var header = new TigerArchiveFile();
             using (var input = File.OpenRead(inputPath))
             {
-                archive.Deserialize(input);
+                header.Deserialize(input);
             }
 
-            var hashes = manager.LoadLists("*.filelist",
-                                           s => s.HashFileName(),
-                                           s => s.ToLowerInvariant());
+            var hashes = manager.LoadLists("*.filelist", s => s.HashFileName(), s => s.ToLowerInvariant());
 
             Directory.CreateDirectory(outputPath);
 
@@ -174,58 +167,52 @@ namespace Gibbed.TombRaider9.Unpack
                 Indent = true,
             };
 
-            var xmlPath = Path.Combine(outputPath, "tiger.xml");
+            var xmlPath = Path.Combine(outputPath, "@tiger.xml");
             using (var xml = XmlWriter.Create(xmlPath, settings))
             {
                 xml.WriteStartDocument();
                 xml.WriteStartElement("files");
-                xml.WriteAttributeString("endian", archive.Endian.ToString().ToLowerInvariant());
-                xml.WriteAttributeString("basepath", archive.BasePath);
-                xml.WriteAttributeString("priority", archive.Priority.ToString(CultureInfo.InvariantCulture));
+                xml.WriteAttributeString("endian", header.Endian.ToString());
+                xml.WriteAttributeString("basepath", header.BasePath);
+                xml.WriteAttributeString("priority", header.Priority.ToString(CultureInfo.InvariantCulture));
 
                 Stream data = null;
-                byte? currentDataIndex = null;
+                byte? dataIndex = null;
                 uint? lastLocale = null;
                 {
                     long current = 0;
-                    long total = archive.Entries.Count;
+                    long total = header.Entries.Count;
 
-                    foreach (var entry in archive.Entries
-                                                 .OrderBy(e => e.Offset)
-                                                 .ThenBy(e => e.DataIndex))
+                    //long? lastOffset = null;
+
+                    foreach (var entry in header.Entries.OrderBy(e => e.Offset).ThenBy(e => e.DataIndex))
                     {
                         current++;
 
-                        if (currentDataIndex.HasValue == false ||
-                            currentDataIndex.Value != entry.DataIndex)
+                        if (dataIndex.HasValue == false || dataIndex.Value != entry.DataIndex)
                         {
                             if (data != null)
                             {
                                 data.Close();
                             }
 
-                            currentDataIndex = entry.DataIndex;
+                            dataIndex = entry.DataIndex;
 
-                            var bigPath = string.Format("{0}.{1}{2}",
-                                                        bigPathBase,
-                                                        currentDataIndex.Value.ToString(CultureInfo.InvariantCulture)
-                                                                        .PadLeft(3, '0'),
-                                                        bigPathSuffix);
+                            var dataPath = basePath + GetExtension(dataIndex.Value);
 
                             if (verbose == true)
                             {
-                                Console.WriteLine(bigPath);
+                                Console.WriteLine(dataPath);
                             }
 
-                            data = File.OpenRead(bigPath);
+                            data = File.OpenRead(dataPath);
                         }
 
                         string name = hashes[entry.NameHash];
 
                         if (name == null)
                         {
-                            if (extractUnknowns.HasValue == true &&
-                                extractUnknowns.Value == false)
+                            if (extractUnknowns.HasValue == true && extractUnknowns.Value == false)
                             {
                                 continue;
                             }
@@ -238,22 +225,21 @@ namespace Gibbed.TombRaider9.Unpack
 
                                 if (entry.Size > 0)
                                 {
-                                    data.Seek(entry.Offset, SeekOrigin.Begin);
+                                    data.Position = entry.Offset;
                                     read = data.Read(guess, 0, (int)Math.Min(entry.Size, guess.Length));
                                 }
 
                                 extension = FileExtensions.Detect(guess, Math.Min(guess.Length, read));
                             }
 
-                            name = entry.NameHash.ToString("X8");
+                            name = entry.NameHash.ToString("X8", CultureInfo.InvariantCulture);
                             name = Path.ChangeExtension(name, "." + extension);
                             name = Path.Combine(extension, name);
                             name = Path.Combine("__UNKNOWN", name);
                         }
                         else
                         {
-                            if (extractUnknowns.HasValue == true &&
-                                extractUnknowns.Value == true)
+                            if (extractUnknowns.HasValue == true && extractUnknowns.Value == true)
                             {
                                 continue;
                             }
@@ -274,8 +260,7 @@ namespace Gibbed.TombRaider9.Unpack
                             name = Path.Combine(entry.Locale.ToString("X8"), name);
                         }
 
-                        if (filter != null &&
-                            filter.IsMatch(name) == false)
+                        if (filter != null && filter.IsMatch(name) == false)
                         {
                             continue;
                         }
@@ -288,20 +273,32 @@ namespace Gibbed.TombRaider9.Unpack
                             Directory.CreateDirectory(entryParentPath);
                         }
 
-                        if (lastLocale.HasValue == false ||
-                            lastLocale.Value != entry.Locale)
+                        if (lastLocale.HasValue == false || lastLocale.Value != entry.Locale)
                         {
-                            xml.WriteComment(string.Format(" {0} = {1} ",
-                                                           entry.Locale.ToString("X8"),
-                                                           ((ArchiveLocale)entry.Locale)));
+                            xml.WriteComment(string.Format(
+                                " {0} = {1} ",
+                                entry.Locale.ToString("X8", CultureInfo.InvariantCulture),
+                                ((ArchiveLocale)entry.Locale)));
                             lastLocale = entry.Locale;
                         }
 
-                        xml.WriteStartElement("entry");
-                        xml.WriteAttributeString("hash", entry.NameHash.ToString("X8"));
-                        xml.WriteAttributeString("locale", entry.Locale.ToString("X8"));
+                        /*
+                        if (lastOffset != null)
+                        {
+                            xml.WriteComment(string.Format(" padding = {0} @ {1}",
+                                                           entry.Offset - lastOffset.Value,
+                                                           lastOffset.Value));
+                        }
+                        lastOffset = entry.Offset + entry.Size;
 
-                        if (entry.Priority != archive.Priority)
+                        xml.WriteComment(string.Format(" offset = {0} ", entry.Offset));
+                        */
+
+                        xml.WriteStartElement("entry");
+                        xml.WriteAttributeString("hash", entry.NameHash.ToString("X8", CultureInfo.InvariantCulture));
+                        xml.WriteAttributeString("locale", entry.Locale.ToString("X8", CultureInfo.InvariantCulture));
+
+                        if (entry.Priority != header.Priority)
                         {
                             xml.WriteAttributeString("priority", entry.Priority.ToString(CultureInfo.InvariantCulture));
                         }
@@ -309,25 +306,21 @@ namespace Gibbed.TombRaider9.Unpack
                         xml.WriteValue(name);
                         xml.WriteEndElement();
 
-                        if (overwriteFiles == false &&
-                            File.Exists(entryPath) == true)
+                        if (overwriteFiles == false && File.Exists(entryPath) == true)
                         {
                             continue;
                         }
 
                         if (verbose == true)
                         {
-                            Console.WriteLine("[{0}/{1}] {2}",
-                                              current,
-                                              total,
-                                              name);
+                            Console.WriteLine("[{0}/{1}] {2}", current, total, name);
                         }
 
                         using (var output = File.Create(entryPath))
                         {
                             if (entry.Size > 0)
                             {
-                                data.Seek(entry.Offset, SeekOrigin.Begin);
+                                data.Position = entry.Offset;
                                 output.WriteFromStream(data, entry.Size);
                             }
                         }
