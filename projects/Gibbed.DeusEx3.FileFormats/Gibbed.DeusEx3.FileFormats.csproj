@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net45</TargetFrameworks>
+    <Company>Gibbed</Company>
+    <Authors>Gibbed</Authors>
+    <Description>http://gib.me/</Description>
+    <Copyright>Copyright © Gibbed 2020</Copyright>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gibbed.CrystalDynamics.FileFormats\Gibbed.CrystalDynamics.FileFormats.csproj" />
+    <ProjectReference Include="..\Gibbed.IO\Gibbed.IO.csproj" />
+  </ItemGroup>
+</Project>
